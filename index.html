@@ -2,11 +2,17 @@
 
 <head>
 
+<!-- Meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- CSS and JS frameworks from CDNs -->
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
 <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+<!-- IEEE UIUC Style -->
+<link rel="stylesheet" href="/css/front-page.css">
 
 <!-- Favicon -->
 <link rel="icon" href="/favicon.png" />
@@ -17,7 +23,135 @@
 
 <body>
 
-The new IEEE UIUC Website!
+
+<!-- Header and navigation bar -->
+<div class="custom-wrapper pure-g header" style="position:fixed; z-index:4; width:100%" id="menu">
+
+    <div class="pure-u-1 pure-u-md-1-4" style="padding:3vh">
+        <div class="pure-menu custom-can-transform">
+            <a href="/" class="pure-menu-heading custom-brand"><img src="img/common/logo.png"></a>
+            <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+        </div>
+    </div>
+
+    <div class="pure-u-1 pure-u-md-3-8">
+        <div class="pure-menu pure-menu-horizontal custom-can-transform my-navbar">
+            <ul class="pure-menu-list" style="vertical-align:top">
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link navbar-link navbar-link-active">About</a>
+                    <hr class="navbar-active" />
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link navbar-link">News</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link navbar-link">Corporate</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link navbar-link">Contact</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link navbar-link"><b>Join</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Splash image -->
+<div class="splash-container" style="position:relative">
+    <div class="splash">
+        <h1 class="splash-head">IEEE UIUC</h1>
+    </div>
+
+</div>
+
+
+<div class="content-wrapper">
+    
+    <!--calc(-1 * calc( calc(357 / 5542) * 100vw )) leds to the -6.2vw value -->
+    <div class="content" style="margin:0;padding:0;transform:translateY(-6.2vw);margin-bottom:-6.2vw">
+        <!--<img src="img/common/hill.svg" id="crap1" style="padding:0 0 0 0; margin:0;">-->
+        <div style="margin:0;padding:0;" id="hill">
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 1330.0170898 111.0201645" enable-background="new 0 0 1330.0170898 111.0201645" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#F3F3F3" d="M1329.5910645,85.628479h-5.845459
+                    c-3.548584-0.0498047-7.0863037-0.2005615-10.6015625-0.5487671c-34.1479492-3.3826294-68.2609863-7.0701294-102.338623-11.0620117
+                    c-65.2365723-7.6419067-130.1629639-17.6530151-195.0432129-27.8278809
+                    C925.0385742,31.9620972,834.3230591,17.2034912,742.9047241,8.1043081
+                    C493.7620544-16.6935425,244.726593,18.1914673,2.2095664,75.0276489c-0.7158203,0.1677856-1.4591675,0.3543091-2.2095337,0.5524292
+                    v10.1218262h1330.0169678v25.3182373h0.0001221V99.958313V85.628479v-0.0033569
+                    C1329.875,85.6275635,1329.7331543,85.6262817,1329.5910645,85.628479z"/>
+                </svg>
+        </div>
+
+        <h2 class="content-head is-center" style="font-size:2.5em; text-align:left; padding-left: 5%; margin:auto">Welcome to the IEEE UIUC Student Branch</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1-8"></div>
+            <div class="l-box pure-u-1-2">
+                <p>
+                    IEEE (pronounced I-Triple-E), which stands for the Institute of Electrical and Electronics Engineers, is known as the world’s largest professional association for the advancement of technology. Here at the University of Illinois at Urbana-Champaign, IEEE represents the second largest student branch in the nation. Though it may seem from the name that we consist of students only from the Electrical and Computer Engineering department, we in fact encompass all different engineering fields and welcome this diversity. Our organization strives to further students professional and educational development through a wide array of opportunities. Please take a look at what we have to offer, and come visit the IEEE Office located at ECEB 1016!
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content footer-ribbon">
+        <div class="pure-g" style="color:white">
+            <div class="l-box-lrg pure-u-md-1-3">
+            <h2 class="content-head" style="color:white">Twitter @ieee_uiuc</h2>
+            <p>Come to IEEE Elections on April 8th!</p>
+            <br />
+            <p>#56ek</p>
+            <br />
+            <p>El presidente knows best</p>
+            </div>
+
+            <div class="l-box-lrg pure-u-md-1-3"></div>
+
+            <div class="l-box-lrg pure-u-md-1-3">
+            <h2 class="content-head" style="color:white">Problem of the Week</h2>
+            <p>How many Mike Kims does it take to screw in the light bulb to the left?</p>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+    <!--
+    <div class="footer l-box is-center pure-g">
+    </div>
+    -->
+
+    <footer class="footer pure-g">
+        <div class="pure-u-1 pure-u-md-1-3 copyright">
+          <p>© 2015 IEEE UIUC Student Branch<br />
+          1016 Electrical and Computer Engineering Bldg<br />
+          Champaign, Illinois</p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-6 corporate">
+          <a href="#"><img src="/img/IEEE-Logo.png"></img></a>
+          <a href="#"><img src="/img/Illinois-Logo.png"></img></a>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3 social">
+          <a href="#"><img src="/img/Github.png"></img></a>
+          <a href="#"><img src="/img/Facebook.png"></img></a>
+          <a href="#"><img src="/img/Twitter.png"></img></a>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-6 sitemap">
+          <a href="#">Site Map</a>
+          <p>IEEE-IT@illinois.edu</p>
+        </div>
+    </footer>
+
+</div>
+
+<script src="js/test.js"></script>
 
 </body>
 
