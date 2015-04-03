@@ -144,7 +144,7 @@ a.pure-button-primary {
     background-image:linear-gradient(
       rgba(18, 48, 66, 0.60), 
       rgba(18, 48, 66, 0.60)
-    ),url('../../img/common/eceb.jpg');
+    ),url('/img/eceb.jpg');
     background-repeat: no-repeat;
     background-position: center center, center center;
     background-size: cover, cover;
@@ -223,7 +223,7 @@ a.pure-button-primary {
 }
 
 .footer-ribbon {
-    background:url('../../img/common/footer.png'), rgb(20, 54, 70);
+    background:url('/img/footer.png'), rgb(20, 54, 70);
     background-repeat: no-repeat;
     background-position: 40% center, center center;
     background-size: contain, cover;
