@@ -14,7 +14,7 @@ $(document).ready(function()
         }
         */
 
-        var content = $("#hill");
+        var content = $(".content-wrapper");
 
         // get the computed height of the navbar
         var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
