@@ -62,7 +62,7 @@ $(document).ready(function()
 	    document.getElementById('toggle').classList.toggle('x');
 
 	    // when the menu is opened on mobile it should also set the color as solid
-	    setTimeout(function(){menu.classList.toggle('solid-nav');} , 500);
+	    //setTimeout(function(){menu.classList.toggle('solid-nav');} , 500);
 
 	    // on menu close it's changing back to transparent before it closes
 	};
