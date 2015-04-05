@@ -208,6 +208,15 @@ a.pure-button-primary {
     color: white;
 }
 
+/* 6.2 is calculated by the aspect ratio of the hill */
+.hill {
+    margin: 0;
+    padding: 0;
+    transform: translateY(-6.2vw);
+    margin-bottom: -6.2vw;
+}
+
+
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
     color: #1f8dd6;
