@@ -359,10 +359,16 @@ a.pure-button-primary {
 }
 
 .custom-wrapper.open {
-    height: 14em;
+    background-color: rgba(20, 54, 70, 1);
+    height: 28em;
+}
+
+.ieee-menu-item {
+    height: auto;
 }
 
 .custom-menu-3 {
+    padding: 1vh;
     text-align: right;
 }
 
@@ -441,17 +447,6 @@ a.pure-button-primary {
     text-align: center;
     margin: 0 auto;
 }
-
-.my-navbar{
-position:absolute;
-top:50%;
--webkit-transform:translate(0%, -50%);
--moz-transform:translate(0%, -50%);
-transform:translate(0%, -50%);
-right:3vh;
-width:auto;
-}
-
 
 @media (max-width: 47.999em) {
 

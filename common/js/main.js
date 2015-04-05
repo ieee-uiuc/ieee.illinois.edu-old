@@ -6,13 +6,11 @@ $(document).ready(function()
         var nav = $("#menu");
 
         // if the menu is open and you scroll, close the menu
-        /*
         if (nav[0].classList.contains('open'))
         {
             nav[0].classList.toggle('open');
             $("#toggle")[0].classList.toggle('x');
         }
-        */
 
         var content = $(".content-wrapper");
 
@@ -47,17 +45,8 @@ $(document).ready(function()
 	    else {
 	        toggleHorizontal();
 	    }
+
 	    menu.classList.toggle('open');
-
-	    // toggle the mobile menu display attribute
-	    /*
-	    var myNav = $(".my-navbar");
-	    if (myNav.css("display") == "none")
-	        myNav.css("display", "block")
-	    else
-	        myNav.css("display", "none");
-	       */
-
 
 	    document.getElementById('toggle').classList.toggle('x');
 
