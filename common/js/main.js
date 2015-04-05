@@ -1,5 +1,5 @@
 // jQuery to make the navbar solid color on scroll
-$(document).ready(function()
+function readyToGo()
 {
     $(window).scroll(function()
     {
@@ -68,4 +68,4 @@ $(document).ready(function()
 
 	window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 
-});
+}
