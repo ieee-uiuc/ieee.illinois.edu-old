@@ -438,17 +438,21 @@ a.pure-button-primary {
     margin: 0 auto;
 }
 
-.my-navbar{
+@media (min-width: 48em){
+    .my-navbar{
     position:absolute;
     top:50%;
     -webkit-transform:translate(0%, -50%);
     -moz-transform:translate(0%, -50%);
     transform:translate(0%, -50%);
-    right:3vh;
+    /*right:3vh;*/
     width:auto;
+    }
+
 }
 
-@media (max-width: 48em) {
+
+@media (max-width: 47.999em) {
 
     .custom-toggle {
         display: block;
