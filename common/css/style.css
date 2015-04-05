@@ -154,14 +154,7 @@ footer {
 .social img, .corporate img {
   padding-left: .1em;
   padding-right: .1em;
-}
-
-.copyright {
-  text-align: left;
-}
-
-.copyright p {
-  padding-left: 5em;
+  display: inline;
 }
 
 .sitemap {
