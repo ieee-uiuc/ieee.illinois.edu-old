@@ -341,9 +341,7 @@ a.pure-button-primary {
 
 .custom-wrapper {
     background-color: rgba(0,0,0,0);
-    margin-bottom: 1em;
     -webkit-font-smoothing: antialiased;
-    height: 150px;
     overflow: hidden;
     -webkit-transition: height 0.5s, background 0.5s;
     -moz-transition: height 0.5s, background 0.5s
@@ -353,11 +351,6 @@ a.pure-button-primary {
 
 .custom-wrapper.open {
     height: 14em;
-}
-
-.custom-menu-3 {
-    text-align: right;
-    float: right;
 }
 
 .custom-toggle {
