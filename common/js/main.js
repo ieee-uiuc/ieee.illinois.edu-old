@@ -31,7 +31,7 @@ $(document).ready(function()
 
 	function toggleHorizontal() {
 	    [].forEach.call(
-	        menu[0].querySelectorAll('.custom-can-transform'),
+	        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
 	        function(el){
 	            el.classList.toggle('pure-menu-horizontal');
 	        }
@@ -41,7 +41,7 @@ $(document).ready(function()
 	function toggleMenu() {
 	    // set timeout so that the panel has a chance to roll up
 	    // before the menu switches states
-	    if (menu[0].classList.contains('open')) {
+	    if (menu.classList.contains('open')) {
 	        setTimeout(toggleHorizontal, 500);
 	    }
 	    else {
