@@ -448,12 +448,7 @@ a.pure-button-primary {
     width:auto;
 }
 
-@media (max-width: 720px) {
-
-    .custom-menu-3 {
-        text-align: right;
-        float: right;
-    }
+@media (max-width: 48em) {
 
     .custom-toggle {
         display: block;
