@@ -2,11 +2,11 @@
 function readyToGo()
 {
 	var logo = $("#logo");
+	var nav = $("#menu");
+	var menu = nav[0];
 
     $(window).scroll(function()
     {
-        var nav = $("#menu");
-
         // if the menu is open and you scroll, close the menu
         if (nav[0].classList.contains('open'))
         {
@@ -32,7 +32,7 @@ function readyToGo()
         }
     });
 
-    var menu = document.getElementById('menu'),
+    
     WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
 	function toggleHorizontal() {
