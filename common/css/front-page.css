@@ -261,12 +261,12 @@ a.pure-button-primary {
   padding-right: .1em;
 }
 
-.copyright {
-  text-align: left;
-}
+@media (max-width: 47.999em) {
 
-.copyright p {
-  padding-left: 5em;
+  .social img, .corporate img {
+    height: 7.5%;
+  }
+
 }
 
 .sitemap {
