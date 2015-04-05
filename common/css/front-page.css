@@ -28,6 +28,10 @@ label {
     height: auto;
 }
 
+.small-logo {
+    height: 50px;
+}
+
 /*
  * -- LAYOUT STYLES --
  * These are some useful classes which I will need
@@ -339,6 +343,12 @@ a.pure-button-primary {
     }
 }
 
+#logo {
+    -webkit-transition: height 0.5s, width 0.5s;
+    -moz-transition: height 0.5s, width 0.5s
+    -ms-transition: height 0.5s, width 0.5s
+    transition: height 0.5s, width 0.5s
+}
 
 /* Begin custom css for nav bar, other stuff */
 
@@ -346,7 +356,6 @@ a.pure-button-primary {
     background-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
-    height: 8em;
     -webkit-transition: height 0.5s, background 0.5s;
     -moz-transition: height 0.5s, background 0.5s
     -ms-transition: height 0.5s, background 0.5s
@@ -446,6 +455,10 @@ a.pure-button-primary {
 
 @media (max-width: 47.999em) {
 
+    .custom-wrapper {
+        height: 8em;
+    }
+
     .custom-toggle {
         display: inline;
     }
@@ -460,6 +473,10 @@ a.pure-button-primary {
 
     .social img, .corporate img {
         height: 7.5%;
+    }
+
+    #logo {
+        height: 50px;
     }
 
 }
