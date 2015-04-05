@@ -364,7 +364,7 @@ a.pure-button-primary {
 
 .custom-wrapper.open {
     background-color: rgba(20, 54, 70, 1);
-    height: 28em;
+    height: 26em;
 }
 
 .ieee-menu-item {
@@ -456,7 +456,7 @@ a.pure-button-primary {
 @media (max-width: 47.999em) {
 
     .custom-wrapper {
-        height: 8em;
+        height: 6em;
     }
 
     .custom-toggle {
