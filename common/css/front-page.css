@@ -362,6 +362,10 @@ a.pure-button-primary {
     height: 14em;
 }
 
+.custom-menu-3 {
+    text-align: right;
+}
+
 .custom-toggle {
     width: 100px;
     height: 100px;
@@ -453,6 +457,10 @@ width:auto;
 
     .custom-toggle {
         display: block;
+    }
+
+    .custom-menu-3 {
+        text-align: left;
     }
 
 }
