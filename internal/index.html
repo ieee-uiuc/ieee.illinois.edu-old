@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+<!-- Local CSS -->
+<link rel="stylesheet" href="/common/css/front-page.css" />
+<link rel="stylesheet" href="/common/css/style.css" />
+
 <!-- Favicon -->
 <link rel="icon" href="/favicon.png" />
 
@@ -20,9 +24,35 @@
 
 <body>
 
-To be used by the board.
+<!-- Header and navigation bar -->
+<div class="custom-wrapper pure-g header" style="position:fixed; z-index:4; width:100%" id="menu"></div>
+
+<!-- Splash image -->
+<div class="splash-container" style="position:relative">
+    <div class="splash">
+    </div>
+</div>
+
+<!-- Hill, content, footer -->
+<div class="content-wrapper content-wrapper-offset">
+
+  <section>
+    	<div class="pure-g">
+  			To be used by the board.
+  		</div>
+  	</section>
+  
+  <footer class="footer pure-g" id="footer"></footer>
+
+</div>
 
 <script src="/common/js/main.js"></script>
+
+<!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
+<script>
+  $( "#menu" ).load( "/common/header.html", readyToGo);
+  $( "#footer" ).load( "/common/footer.html" );
+</script>
 
 </body>
 

@@ -20,9 +20,31 @@
 
 <body>
 
-Description of the IEEE National Organization and IEEE@UIUC
+<!-- Header and navigation bar -->
+<div class="custom-wrapper pure-g header" style="position:fixed; z-index:4; width:100%" id="menu"></div>
+
+<!-- Splash image -->
+<div class="splash-container" style="position:relative">
+    <div class="splash">
+    </div>
+</div>
+
+<!-- Hill, content, footer -->
+<div class="content-wrapper content-wrapper-offset">
+
+  About us!
+  
+  <footer class="footer pure-g" id="footer"></footer>
+
+</div>
 
 <script src="/common/js/main.js"></script>
+
+<!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
+<script>
+  $( "#menu" ).load( "/common/header.html", readyToGo);
+  $( "#footer" ).load( "/common/footer.html" );
+</script>
 
 </body>
 
