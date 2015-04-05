@@ -438,17 +438,14 @@ a.pure-button-primary {
     margin: 0 auto;
 }
 
-@media (min-width: 48em){
-    .my-navbar{
-    position:absolute;
-    top:50%;
-    -webkit-transform:translate(0%, -50%);
-    -moz-transform:translate(0%, -50%);
-    transform:translate(0%, -50%);
-    /*right:3vh;*/
-    width:auto;
-    }
-
+.my-navbar{
+position:absolute;
+top:50%;
+-webkit-transform:translate(0%, -50%);
+-moz-transform:translate(0%, -50%);
+transform:translate(0%, -50%);
+right:3vh;
+width:auto;
 }
 
 
@@ -457,11 +454,5 @@ a.pure-button-primary {
     .custom-toggle {
         display: block;
     }
-
-    .my-navbar{
-        display: none;
-    }
-
-
 
 }
