@@ -28,6 +28,7 @@ function readyToGo()
         else
         {
             nav.removeClass("solid-nav");
+            logo.css("height", "initial");
         }
     });
 
