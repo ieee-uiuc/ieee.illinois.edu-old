@@ -37,6 +37,10 @@ section .pure-g > div .bio {
   margin: 0 auto;
 }
 
+.name-pos-email {
+  text-align: center;
+}
+
 .l-box {
   padding: 1em;
 }
