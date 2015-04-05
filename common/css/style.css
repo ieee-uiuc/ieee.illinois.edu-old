@@ -156,6 +156,15 @@ footer {
   padding-right: .1em;
 }
 
+@media (max-width: 47.999em) {
+
+  .social img, .corporate img {
+    height: 7.5%;
+  }
+
+}
+
+
 .sitemap {
   text-align: right;
 }
