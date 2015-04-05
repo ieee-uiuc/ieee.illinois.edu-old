@@ -20,12 +20,14 @@ function readyToGo()
         var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
 
         // On scroll, make the navbar solid, and the logo smaller
-        if (nav.offset().top > content.offset().top-navHeight) {
+        if (nav.offset().top > content.offset().top-navHeight)
+        {
             nav.addClass("solid-nav");
             logo.css("height", "50px");
-        } else {
+        }
+        else
+        {
             nav.removeClass("solid-nav");
-            logo.css("height", "initial");
         }
     });
 
