@@ -274,31 +274,20 @@ footer {
   background-color: rgb(20, 54, 70);
   color: #f3f3f3;
   vertical-align: center;
-  font-size: .75em;
 }
 
-.social, .corporate {
+.footer-content {
   padding-top: 1%;
+  text-align: center;
 }
 
-.social img, .corporate img {
+.footer-content img {
   padding-left: .1em;
   padding-right: .1em;
+  height: 60px;
 }
 
-.sitemap {
-  text-align: right;
-}
 
-.sitemap p, .sitemap a {
-  padding-right: 5em;
-}
-
-.sitemap a {
-  text-decoration: none;
-  font-weight: bold;
-  color: inherit;
-}
 
 /*////////////////////////////////////////////
 //                                          //
