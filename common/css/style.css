@@ -284,7 +284,7 @@ footer {
 .footer-content img {
   padding-left: .1em;
   padding-right: .1em;
-  height: 60px;
+  height: 6vh;
 }
 
 
@@ -533,14 +533,6 @@ a.pure-button-primary {
 
     .content-head {
         font-size: 2em;
-    }
-
-    .social img, .corporate img {
-        height: 7.5%;
-    }
-
-    #logo {
-        height: 50px;
     }
 
 }
