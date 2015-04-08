@@ -23,12 +23,12 @@ function readyToGo()
         if (nav.offset().top > content.offset().top-navHeight)
         {
             nav.addClass("solid-nav");
-            logo.css("height", "50px");
+            logo.addClass("small-logo");
         }
         else
         {
             nav.removeClass("solid-nav");
-            logo.css("height", "initial");
+            logo.removeClass("small-logo");
         }
     });
 
