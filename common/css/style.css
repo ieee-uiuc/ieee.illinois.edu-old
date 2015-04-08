@@ -139,6 +139,14 @@ p {
   background: rgba(255, 116, 0, 1);
 }
 
+.orange-button {
+  background-color: rgba(255, 116, 0, 1);
+}
+
+.orange-text {
+  color: rgba(255, 116, 0, 1);
+}
+
 /*////////////////////////////////////////////
 //                                          //
 //               Navigation Bar             //
@@ -235,11 +243,6 @@ p {
     margin:auto
 }
 
-/* This is a modifier class used when the content-head is inside a ribbon */
-.content-head-ribbon {
-    color: white;
-}
-
 /* 6.2 is calculated by the aspect ratio of the hill */
 .hill {
     margin: 0;
@@ -264,7 +267,7 @@ p {
 ////////////////////////////////////////////*/
 
 footer {
-  background-color: #041218;
+  background-color: rgb(20, 54, 70);
   color: #f3f3f3;
   vertical-align: center;
   font-size: .75em;
