@@ -19,12 +19,6 @@ ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
 }
 
 section .pure-g > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* These divs need to act as a border-box
-      else they don't take the padding correctly
-      and get sqeezed together */
     padding: 5em;
     padding-left: 5%;
     padding-right: 5%;
@@ -32,8 +26,8 @@ section .pure-g > div {
 }
 
 section .pure-g > div .bio {
-  text-align: left;
-  width: 75%;
+  text-align: center;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -59,9 +53,10 @@ section .pure-g > div .bio {
 
 body {
   background-color: #f3f3f3;
-  color: #000;
+  color: rgb(68, 85, 92);
 }
 
+/* h1 is to be used for the title of the page */
 h1 {
   color: #f3f3f3;
   font-size: 5em;
@@ -71,8 +66,9 @@ h1 {
   margin-left: 1%; /* Off-set from left-side of page */
 }
 
+/* h2 is to be used for sub-headings */
 h2 {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 200;
   padding-top: 1em;
   margin: 0 auto .5em;
@@ -83,7 +79,7 @@ p {
 }
 
 .email {
-  color: #4c637b;
+  color: #ff7400;
   text-decoration: none;
   margin: 1em auto;
   display: block;
@@ -99,7 +95,7 @@ p {
 }
 
 .highlight .email {
-  color: #afb8bc;
+  color: #ff7400;
   /* Makes the email address stand out
     better on the darker background */
 }
@@ -116,6 +112,25 @@ p {
   color: #F3F3F3;
 }
 
+/* ------------->>> Scrollbar <<<--------------*/
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+  background:transparent;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 116, 0, 1);
+}
+
 /*////////////////////////////////////////////
 //                                          //
 //               Navigation Bar             //
@@ -124,13 +139,6 @@ p {
 
 .small-logo {
     height: 50px;
-}
-
-#logo {
-    -webkit-transition: height 0.5s, width 0.5s;
-    -moz-transition: height 0.5s, width 0.5s
-    -ms-transition: height 0.5s, width 0.5s
-    transition: height 0.5s, width 0.5s
 }
 
 /*////////////////////////////////////////////
@@ -232,20 +240,6 @@ p {
     margin-bottom: -6.3vw;
 }
 
-/* This is the class used for the content sub-headers (<h3>) */
-.content-subhead {
-    color: #1f8dd6;
-}
-    .content-subhead i {
-        margin-right: 7px;
-    }
-
-/* This is the class used for the dark-background areas. */
-.ribbon {
-    background: #2d3e50;
-    color: #aaa;
-}
-
 /* lightbulb img version
 .footer-ribbon {
     background:url('/common/img/footer.png'), rgb(68, 85, 92);
@@ -254,11 +248,6 @@ p {
     background-size: contain, cover;
 }
 */
-
-/*no lightbulb img version*/
-.footer-ribbon {
-    background: rgb(68, 85, 92);
-}
 
 /*////////////////////////////////////////////
 //                                          //
@@ -309,6 +298,8 @@ footer {
   max-width: 15em;
   margin-left: auto;
   margin-right: auto;
+
+  border-radius: 100%;
 }
 
 .committee {
@@ -424,17 +415,18 @@ a.pure-button-primary {
     background-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
-    -webkit-transition: height 0.5s, background 0.5s;
-    -moz-transition: height 0.5s, background 0.5s
-    -ms-transition: height 0.5s, background 0.5s
-    transition: height 0.5s, background 0.5s
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+    -ms-transition: background 0.5s;
+    transition: background 0.5s;
 }
 
 .custom-wrapper.open {
     background-color: rgba(20, 54, 70, 1);
-    height: 26em;
+    height: 22em;
 }
 
+/* Mobile menu fix */
 .ieee-menu-item {
     height: auto;
 }
@@ -524,7 +516,7 @@ a.pure-button-primary {
 @media (max-width: 47.999em) {
 
     .custom-wrapper {
-        height: 6em;
+        height: 5em;
     }
 
     .custom-toggle {
