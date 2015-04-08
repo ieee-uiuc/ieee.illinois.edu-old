@@ -17,7 +17,7 @@
 <!-- Favicon -->
 <link rel="icon" href="/favicon.png" />
 
-<title>Executive Board | IEEE UIUC</title>
+<title>Join | IEEE UIUC</title>
 
 </head>
 
@@ -29,6 +29,7 @@
 <!-- Splash image -->
 <div class="splash-container" style="position:relative">
     <div class="splash">
+      <h1>Join</h1>
     </div>
 </div>
 
@@ -36,10 +37,64 @@
 <div class="content-wrapper content-wrapper-offset">
 
   <section>
-      <div class="pure-g">
-        Allows users to fill out their information to join IEEE.
+    <h2 class="is-center">Signup Form</h2>
+    <div class="pure-g">
+
+      <div class="pure-u-1">
+
+        <form class="pure-form pure-form-aligned" action="join.php" method="post">
+          <h3>Which mailing lists would you like to join?</h3>
+          <div class="pure-control-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="First Last" required autocomplete>
+          </div>
+
+          <div class="pure-control-group">
+              <label for="netid">NetID</label>
+              <input id="netid" type="text" placeholder="NetID" required>
+          </div>
+
+          <div class="pure-control-group">
+              <label for="uin">UIN</label>
+              <input id="uin" type="text" placeholder="UIN" required>
+          </div>
+
+          <div class="pure-control-group">
+              <label for="email">Email Address</label>
+              <input id="email" type="email" placeholder="Email Address">
+          </div>
+
+          <div class="pure-control-group">
+              <label for="national">National Member ID</label>
+              <input id="national" type="text" placeholder="It's a number!">
+          </div>
+
+          <div class="pure-control-group">
+              <label for="resume">Resume</label>
+              <input id="resume" type="file">
+          </div>
+
+          <h3>Which mailing lists would you like to join?</h3>
+          <div class="pure-control-group">
+            <p> <input id="announce" type="checkbox"> Announce (Weekly Newsletter)</input> </p>
+            <p> <input id="projects" type="checkbox"> Projects Committee</input> </p>
+            <p> <input id="jsdc" type="checkbox"> JSDC Team</input> </p>
+            <p> <input id="corporate" type="checkbox"> Corporate Committee</input> </p>
+            <p> <input id="networking" type="checkbox"> Networking Committee</input> </p>
+            <p> <input id="external" type="checkbox"> External Relations Committee</input> </p>
+            <p> <input id="corporate" type="checkbox"> Social Committee</input> </p>
+            <p> <input id="corporate" type="checkbox"> Spark Magazine Committee</input> </p>
+            <p> <input id="corporate" type="checkbox"> Awards Committee</input> </p>
+          </div>
+
+          <div class="pure-controls">
+              <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          </div>
+
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
   
   <footer class="footer pure-g" id="footer"></footer>
 

@@ -235,18 +235,6 @@ a {
 
 }
 
-/* This is the class used for the main content headers (<h2>) */
-.content-head {
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin: 2em 0 1em;
-    font-size:2.5em;
-    text-align:left;
-    padding-left: 5%;
-    margin:auto
-}
-
 /* 6.2 is calculated by the aspect ratio of the hill */
 .hill {
     margin: 0;
@@ -337,23 +325,6 @@ footer {
     text-align: center;
 }
 
-/*
- * -- PURE FORM STYLES --
- * Style the form inputs and labels
- */
-.pure-form label {
-    margin: 1em 0 0;
-    font-weight: bold;
-    font-size: 100%;
-}
-
-.pure-form input[type] {
-    border: 2px solid #ddd;
-    box-shadow: none;
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-}
 
 /*
  * -- PURE BUTTON STYLES --
@@ -531,8 +502,8 @@ a.pure-button-primary {
         text-align: left;
     }
 
-    .content-head {
-        font-size: 2em;
+    #logo {
+      height: 50px;
     }
 
 }
