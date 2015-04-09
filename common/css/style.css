@@ -204,7 +204,7 @@ a {
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 20px;
+    font-size: 2em;
     font-weight: bold;
     color: white;
     border: 3px solid white;
@@ -360,28 +360,12 @@ a.pure-button-primary {
         height: 50%;
     }
 
-    .splash-head {
-        font-size: 250%;
-    }
-
 
     /* We remove the border-separator assigned to .l-box-lrg */
     .l-box-lrg {
         border: none;
     }
 
-}
-
-/*
- * -- DESKTOP (AND UP) MEDIA QUERIES --
- * On desktops and other large devices, we want to over-ride some
- * of the mobile and tablet styles.
- */
-@media (min-width: 78em) {
-    /* We increase the header font size even more */
-    .splash-head {
-        font-size: 300%;
-    }
 }
 
 /* Begin custom css for nav bar, other stuff */
