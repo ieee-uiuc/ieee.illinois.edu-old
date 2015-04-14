@@ -1,10 +1,10 @@
 /*
-This CSS is set to augment the PureCSS framework found at PureCSS.io
-Please make every effort to use the tools that PureCSS already
-provides to us. Modifying this document should be reserved for
-theming our web site.
+* This CSS file is for styling specific to IEEE UIUC's
+* website at ieee.illinois.edu.
+*
+* Authors: Anit Gandhi, Caleb Albers
+* Last Modified: April 14, 2015
 */
-
 
 /*////////////////////////////////////////////
 //                                          //
@@ -13,20 +13,16 @@ theming our web site.
 ////////////////////////////////////////////*/
 
 ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
-  text-shadow: none;
-  /* Text shadow had to go or be edited to
-    look better on the .highlight sections */
+	text-shadow: none;
+	/* Text shadow had to go or be edited to
+		look better on the .highlight sections */
 }
 
 section .pure-g > div {
-    padding: 5em;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 0;
-}
-
-.l-box {
-  padding: 1em;
+	padding: 5em;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 0;
 }
 
 /*////////////////////////////////////////////
@@ -36,127 +32,111 @@ section .pure-g > div {
 ////////////////////////////////////////////*/
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-/* Messing with fonts */
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-* {
-  font-family: Raleway;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: #f3f3f3;
-  color: rgb(68, 85, 92);
+	background-color: #f3f3f3;
+	color: rgb(68, 85, 92);
 }
+
+/* The entire website should have the Raleway font */
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+* {
+	font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+/* ----------->>> Text Sizes <<<------------*/
 
 /* h1 is to be used for the title of the page */
 h1 {
-  color: #f3f3f3;
-  font-size: 7em;
-  font-weight: 400;
-  margin-bottom: none;
-  line-height: initial; /* Shortens line-height */
-  margin-left: 1%; /* Off-set from left-side of page */
+	color: #f3f3f3;
+	font-size: 7em;
+	font-weight: 400;
+	margin-bottom: none;
+	line-height: initial; /* Shortens line-height */
+	margin-left: 1%; /* Off-set from left-side of page */
 }
 
 /* h2 is to be used for sub-headings */
 h2 {
-  font-size: 4em;
-  font-weight: 200;
-  padding-top: 1em;
-  margin: 0 auto .5em;
+	font-size: 4em;
+	font-weight: 200;
+	padding-top: 1em;
+	margin: 0 auto .5em;
 }
 
 h3 {
-  font-size: 2em;
-  font-weight: 200;
+	font-size: 2em;
+	font-weight: 200;
 }
 
 h4 {
-  font-size: 1.5em;
-  font-weight: 200;
+	font-size: 1.5em;
+	font-weight: 200;
 }
 
 p {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 a {
-  color: rgb(255, 116, 0);
-  text-decoration: none;
+	color: rgb(255, 116, 0);
+	text-decoration: none;
 }
 
-/* ----------->>> Highlights <<<------------*/
+.is-center {
+	text-align: center;
+}
 
+.orange-text {
+	color: rgba(255, 116, 0, 1);
+}
+
+/* ----------->>> Highlight Section <<<------------*/
 
 .highlight {
-  background-color: #44555c;
-  color: #f3f3f3;
+	background-color: #44555c;
+	color: #f3f3f3;
 }
 
-.highlight .email {
-  color: #ff7400;
-  /* Makes the email address stand out
-    better on the darker background */
-}
-
-
-/* ------------->>> Extras <<<--------------*/
+/* ------------->>> Text Selection <<<--------------*/
 
 ::-moz-selection {
-  background: #ff7400; /* Gecko Browsers */
-  color: #F3F3F3;
+	background: #ff7400; /* Gecko Browsers */
+	color: #F3F3F3;
 }
 ::selection {
-  background: #ff7400; /* WebKit/Blink Browsers */
-  color: #F3F3F3;
+	background: #ff7400; /* WebKit/Blink Browsers */
+	color: #F3F3F3;
 }
 
 /* ------------->>> Scrollbar <<<--------------*/
 
 ::-webkit-scrollbar
 {
-  width: 12px;  /* for vertical scrollbars */
-  height: 12px; /* for horizontal scrollbars */
-  background:transparent;
+	width: 12px;  /* for vertical scrollbars */
+	height: 12px; /* for horizontal scrollbars */
+	background:transparent;
 }
 
 ::-webkit-scrollbar-track
 {
-  background: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar-thumb
 {
-  background: rgba(255, 116, 0, 1);
-}
-
-.orange-button {
-  background-color: rgba(255, 116, 0, 1);
-}
-
-.orange-text {
-  color: rgba(255, 116, 0, 1);
-}
-
-/*////////////////////////////////////////////
-//                                          //
-//               Navigation Bar             //
-//                                          //
-////////////////////////////////////////////*/
-
-.small-logo {
-    height: 50px;
+	background: rgba(255, 116, 0, 1);
 }
 
 /*////////////////////////////////////////////
@@ -165,89 +145,204 @@ a {
 //                                          //
 ////////////////////////////////////////////*/
 
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
+/* ----------->>> Main Image and Page Title <<<------------*/
 
+/* Splash Image */
 .splash-container {
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 50%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
+	z-index: 1;
+	overflow: hidden;
+	/* The following styles are required for the "scroll-over" effect */
+	width: 100%;
+	height: 50%;
+	top: 0;
+	left: 0;
+	position: fixed !important;
 
-    background-image:linear-gradient(
-      rgba(18, 48, 66, 0.60),
-      rgba(18, 48, 66, 0.60)
-    ),url('/common/img/eceb.jpg');
-    background-repeat: no-repeat;
-    background-position: center center, center center;
-    background-size: cover, cover;
+	background-image:linear-gradient(
+		rgba(18, 48, 66, 0.60),
+		rgba(18, 48, 66, 0.60)
+	),url('/common/img/eceb.jpg');
+	background-repeat: no-repeat;
+	background-position: center center, center center;
+	background-size: cover, cover;
 }
 
 .splash {
-    /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
-    text-align: center;
-    /*text-transform: uppercase;*/
+	/* absolute center .splash within .splash-container */
+	width: 80%;
+	height: 50%;
+	margin: auto;
+	position: absolute;
+	top: 100px; left: 0; bottom: 0; right: 0;
+	text-align: center;
 }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 2em;
-    font-weight: bold;
-    color: white;
-    border: 3px solid white;
-    font-weight: 100;
-    border-radius: 5px;
+	font-size: 2em;
+	font-weight: bold;
+	color: white;
+	border: 3px solid white;
+	font-weight: 100;
+	border-radius: 5px;
 }
 
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-    color: white;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
-}
+/* ----------->>> Main Content <<<------------*/
 
-/*
- * -- CONTENT STYLES --
- * This represents the content area (everything below the blue section)
- */
+/* Wrapper for main content, has scrollover effect */
 .content-wrapper {
-    /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    min-height: 12%;
-    z-index: 2;
-    background: rgb(243,243,243);
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	min-height: 12%;
+	z-index: 2;
+	background: rgb(243,243,243);
 
 }
 
 /* 6.2 is calculated by the aspect ratio of the hill */
 .hill {
-    margin: 0;
-    padding: 0;
-    transform: translateY(-6.3vw);
-    margin-bottom: -6.3vw;
+	margin: 0;
+	padding: 0;
+	transform: translateY(-6.15vw);
+	margin-bottom: -6.15vw;
 }
 
 /* lightbulb img version
 .footer-ribbon {
-    background:url('/common/img/footer.png'), rgb(68, 85, 92);
-    background-repeat: no-repeat;
-    background-position: 40% center, center center;
-    background-size: contain, cover;
+		background:url('/common/img/footer.png'), rgb(68, 85, 92);
+		background-repeat: no-repeat;
+		background-position: 40% center, center center;
+		background-size: contain, cover;
 }
 */
+
+/* ----------->>> Buttons <<<------------*/
+
+/* Custom button styles that override PureCSS styles */
+.pure-button {
+	background-color: rgb(255, 116, 0);
+	color: white;
+	padding: 0.5em 2em;
+	border-radius: 5px;
+}
+
+a.pure-button-primary {
+	background: white;
+	color: #1f8dd6;
+	border-radius: 5px;
+	font-size: 120%;
+}
+
+/*////////////////////////////////////////////
+//                                          //
+//              Header/Navbar               //
+//                                          //
+////////////////////////////////////////////*/
+
+.custom-wrapper {
+	background-color: rgba(0,0,0,0);
+	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
+	-webkit-transition: background 0.5s;
+	-moz-transition: background 0.5s;
+	-ms-transition: background 0.5s;
+	transition: background 0.5s;
+}
+
+.custom-wrapper.open {
+	background-color: rgba(20, 54, 70, 1);
+	height: 28em;
+}
+
+/* Mobile menu fix */
+.ieee-menu-item {
+	height: auto;
+}
+
+.custom-menu-3 {
+	padding: 1vh;
+	text-align: right;
+}
+
+.custom-toggle {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 3vh;
+	right: 0;
+	display: none;
+}
+
+.custom-toggle .bar {
+	background-color: rgb(255,116,0);
+	display: block;
+	width: 50px;
+	height: 5px;
+	border-radius: 50px;
+	position: absolute;
+	top: 18px;
+	right: 7px;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.custom-toggle .bar:first-child {
+	-webkit-transform: translateY(-12px);
+	-moz-transform: translateY(-12px);
+	-ms-transform: translateY(-12px);
+	transform: translateY(-12px);
+}
+
+.custom-toggle.x .bar {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.custom-toggle.x .bar:first-child {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.small-logo {
+	height: 50px;
+}
+
+.solid-nav {
+	background-color: rgba(20, 54, 70, 1);
+}
+
+.navbar-link {
+	font-size: 1.5em;
+	color: rgba(255, 255, 255, 1);
+	padding-bottom: 0.5vh;
+	padding-left: 0.75vw;
+	padding-right: 0.75vw;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+	background-color: rgba(255,116,0,0.3)!important;
+}
+
+.navbar-link-active{
+	color: rgb(255,116,0);
+}
+
+.navbar-active {
+	border: 0;
+	color: rgba(255,116,0,1);
+	background-color: rgba(255,116,0,1)!important;
+	height: 0.3vh;
+	text-align: center;
+	margin: 0 auto;
+}
 
 /*////////////////////////////////////////////
 //                                          //
@@ -256,23 +351,21 @@ a {
 ////////////////////////////////////////////*/
 
 footer {
-  background-color: rgb(20, 54, 70);
-  color: #f3f3f3;
-  vertical-align: center;
+	background-color: rgb(20, 54, 70);
+	color: #f3f3f3;
+	vertical-align: center;
 }
 
 .footer-content {
-  padding-top: 1%;
-  text-align: center;
+	padding-top: 1%;
+	text-align: center;
 }
 
 .footer-content img {
-  padding-left: .1em;
-  padding-right: .1em;
-  height: 6vh;
+	padding-left: .1em;
+	padding-right: .1em;
+	height: 6vh;
 }
-
-
 
 /*////////////////////////////////////////////
 //                                          //
@@ -283,203 +376,49 @@ footer {
 /* ----------->>> Exec Board <<<------------*/
 
 .headshot {
-  width: 75%;
-  max-width: 15em;
-  margin-left: auto;
-  margin-right: auto;
-
-  border-radius: 100%;
+	width: 75%;
+	max-width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 100%;
 }
 
 /*////////////////////////////////////////////
 //                                          //
-//         Sort, and Media Queries          //
+//               Media Queries              //
 //                                          //
 ////////////////////////////////////////////*/
 
+/* Tablet/Desktop Specific */
+@media (min-width: 48em)
+{
 
-
-/*
- * -- LAYOUT STYLES --
- * These are some useful classes which I will need
- */
-.l-box {
-    padding: 1em;
-}
-
-.l-box-lrg {
-    padding: 2em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.is-center {
-    text-align: center;
-}
-
-
-/*
- * -- PURE BUTTON STYLES --
- * I want my pure-button elements to look a little different
- */
-.pure-button {
-    background-color: rgb(255, 116, 0);
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
-}
-
-a.pure-button-primary {
-    background: white;
-    color: #1f8dd6;
-    border-radius: 5px;
-    font-size: 120%;
-}
-
-
-
-/*
- * -- TABLET (AND UP) MEDIA QUERIES --
- * On tablets and other medium-sized devices, we want to customize some
- * of the mobile styles.
- */
-@media (min-width: 48em) {
-
-    /* We decrease the width of the .splash, since we have more width
-    to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
-
-
-    /* We remove the border-separator assigned to .l-box-lrg */
-    .l-box-lrg {
-        border: none;
-    }
+	/* Decrease .splash width, since we have more width to work with */
+	.splash {
+		width: 50%;
+		height: 50%;
+	}
 
 }
 
-/* Begin custom css for nav bar, other stuff */
+/* Mobile Specific */
+@media (max-width: 47.999em)
+{
 
-.custom-wrapper {
-    background-color: rgba(0,0,0,0);
-    -webkit-font-smoothing: antialiased;
-    overflow: hidden;
-    -webkit-transition: background 0.5s;
-    -moz-transition: background 0.5s;
-    -ms-transition: background 0.5s;
-    transition: background 0.5s;
-}
+	.custom-wrapper {
+		height: 5em;
+	}
 
-.custom-wrapper.open {
-    background-color: rgba(20, 54, 70, 1);
-    height: 28em;
-}
+	.custom-toggle {
+		display: inline;
+	}
 
-/* Mobile menu fix */
-.ieee-menu-item {
-    height: auto;
-}
+	.custom-menu-3 {
+		text-align: left;
+	}
 
-.custom-menu-3 {
-    padding: 1vh;
-    text-align: right;
-}
-
-.custom-toggle {
-    width: 50px;
-    height: 50px;
-    /*
-    position: absolute;
-    top: 25%;
-    right: 0;
-    */
-    display: none;
-}
-
-.custom-toggle .bar {
-    background-color: rgb(255,116,0);
-    display: block;
-    width: 50px;
-    height: 5px;
-    border-radius: 50px;
-    position: absolute;
-    top: 18px;
-    right: 7px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.custom-toggle .bar:first-child {
-    -webkit-transform: translateY(-12px);
-    -moz-transform: translateY(-12px);
-    -ms-transform: translateY(-12px);
-    transform: translateY(-12px);
-}
-
-.custom-toggle.x .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.custom-toggle.x .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-.solid-nav {
-    background-color: rgba(20, 54, 70, 1);
-}
-
-.navbar-link {
-    font-size: 1.5em;
-    color: rgba(255, 255, 255, 1);
-    padding-bottom: 0.5vh;
-    padding-left: 0.75vw;
-    padding-right: 0.75vw;
-}
-
-.navbar-link:hover,
-.navbar-link:focus {
-    background-color: rgba(255,116,0,0.3)!important;
-}
-
-.navbar-link-active{
-    color: rgb(255,116,0);
-}
-
-.navbar-active {
-    border: 0;
-    color: rgba(255,116,0,1);
-    background-color: rgba(255,116,0,1)!important;
-    height: 0.3vh;
-    text-align: center;
-    margin: 0 auto;
-}
-
-@media (max-width: 47.999em) {
-
-    .custom-wrapper {
-        height: 5em;
-    }
-
-    .custom-toggle {
-        display: inline;
-    }
-
-    .custom-menu-3 {
-        text-align: left;
-    }
-
-    #logo {
-      height: 50px;
-    }
+	#logo {
+		height: 50px;
+	}
 
 }
-
