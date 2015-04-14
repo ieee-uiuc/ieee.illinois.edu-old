@@ -5,98 +5,105 @@ function readyToGo()
 	var nav = $("#menu");
 	var menu = nav[0];
 
-    $(window).scroll(function()
-    {
-        // if the menu is open and you scroll, close the menu
-        if (nav[0].classList.contains('open'))
-        {
-            nav[0].classList.toggle('open');
-            $("#toggle")[0].classList.toggle('x');
-        }
+	$(window).scroll(function()
+	{
+		// if the menu is open and you scroll, close the menu
+		if (nav[0].classList.contains('open'))
+		{
+			nav[0].classList.toggle('open');
+			$("#toggle")[0].classList.toggle('x');
+		}
 
-        var content = $(".content-wrapper");
+		var content = $(".content-wrapper");
 
-        // get the computed height of the navbar
-        var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
+		// get the computed height of the navbar
+		var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
 
-        // On scroll, make the navbar solid, and the logo smaller
-        if (nav.offset().top > content.offset().top-navHeight)
-        {
-            nav.addClass("solid-nav");
-            logo.addClass("small-logo");
-        }
-        else
-        {
-            nav.removeClass("solid-nav");
-            logo.removeClass("small-logo");
-        }
-    });
+		// On scroll, make the navbar solid, and the logo smaller
+		if (nav.offset().top > content.offset().top-navHeight)
+		{
+			nav.addClass("solid-nav");
+			logo.addClass("small-logo");
+		}
+		else
+		{
+			nav.removeClass("solid-nav");
+			logo.removeClass("small-logo");
+		}
+	});
 
-    
-    WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
+	
+	WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
 	function toggleHorizontal() {
-	    [].forEach.call(
-	        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
-	        function(el){
-	            el.classList.toggle('pure-menu-horizontal');
-	        }
-	    );
+		[].forEach.call(
+			document.getElementById('menu').querySelectorAll('.custom-can-transform'),
+			function(el){
+				el.classList.toggle('pure-menu-horizontal');
+			}
+		);
 	};
 
 	function toggleMenu() {
-	    // set timeout so that the panel has a chance to roll up
-	    // before the menu switches states
-	    if (menu.classList.contains('open')) {
-	        setTimeout(toggleHorizontal, 500);
-	    }
-	    else {
-	        toggleHorizontal();
-	    }
+		// set timeout so that the panel has a chance to roll up
+		// before the menu switches states
+		if (menu.classList.contains('open')) {
+			setTimeout(toggleHorizontal, 500);
+		}
+		else {
+			toggleHorizontal();
+		}
 
-	    menu.classList.toggle('open');
+		menu.classList.toggle('open');
 
-	    document.getElementById('toggle').classList.toggle('x');
+		document.getElementById('toggle').classList.toggle('x');
 
-	    // when the menu is opened on mobile it should also set the color as solid
-	    //setTimeout(function(){menu.classList.toggle('solid-nav');} , 500);
+		// when the menu is opened on mobile it should also set the color as solid
+		//setTimeout(function(){menu.classList.toggle('solid-nav');} , 500);
 
-	    // on menu close it's changing back to transparent before it closes
+		// on menu close it's changing back to transparent before it closes
 	};
 
 	function closeMenu() {
-	    if (menu.classList.contains('open')) {
-	        toggleMenu();
-	    }
+		if (menu.classList.contains('open')) {
+			toggleMenu();
+		}
 	}
 
 	document.getElementById('toggle').addEventListener('click', function (e) {
-	    toggleMenu();
+		toggleMenu();
 	});
 
 	window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 
 	// Sidebar nav scrolling animation
   $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	$('a[href*=#]:not([href=#])').click(function() {
+	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
+		var target = $(this.hash);
+		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		if (target.length) {
+		  $('html,body').animate({
+			scrollTop: target.offset().top
+		  }, 1000);
+		  return false;
+		}
+	  }
+	});
   });
 
   /* Collapsible sections
   $('#tech-link').click(function(){
-    $('#tech-content').slideToggle('slow');
+	$('#tech-content').slideToggle('slow');
 	});
   */
 
+}
+
+function submitJoin()
+{
+	var data = $("#join_form .pure-g .pure-u-1 .pure-form .pure-control-group input").serialize();
+
+	alert("data: " + data);
 }

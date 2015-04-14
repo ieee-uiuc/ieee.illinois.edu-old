@@ -25,14 +25,6 @@ section .pure-g > div {
     padding-top: 0;
 }
 
-section .pure-g > div .bio {
-  text-align: center;
-}
-
-.name-pos-email {
-  text-align: center;
-}
-
 .l-box {
   padding: 1em;
 }
@@ -49,6 +41,19 @@ section .pure-g > div .bio {
     box-sizing: border-box;
 }
 
+/* Messing with fonts */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+* {
+  font-family: Raleway;
+}
+
 body {
   background-color: #f3f3f3;
   color: rgb(68, 85, 92);
@@ -57,7 +62,7 @@ body {
 /* h1 is to be used for the title of the page */
 h1 {
   color: #f3f3f3;
-  font-size: 7vh;
+  font-size: 7em;
   font-weight: 400;
   margin-bottom: none;
   line-height: initial; /* Shortens line-height */
@@ -66,7 +71,7 @@ h1 {
 
 /* h2 is to be used for sub-headings */
 h2 {
-  font-size: 5.5vh;
+  font-size: 4em;
   font-weight: 200;
   padding-top: 1em;
   margin: 0 auto .5em;
@@ -88,15 +93,8 @@ p {
 
 a {
   color: rgb(255, 116, 0);
-}
-
-.email {
-  color: #ff7400;
   text-decoration: none;
-  margin: 1em auto;
-  display: block;
 }
-
 
 /* ----------->>> Highlights <<<------------*/
 
@@ -199,7 +197,7 @@ a {
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 /* This is the main heading that appears on the blue section */
@@ -208,7 +206,6 @@ a {
     font-weight: bold;
     color: white;
     border: 3px solid white;
-    padding: 1em 1.6em;
     font-weight: 100;
     border-radius: 5px;
 }
@@ -294,12 +291,6 @@ footer {
   border-radius: 100%;
 }
 
-.committee {
-  color: #ff7400;
-  text-decoration: none;
-}
-
-
 /*////////////////////////////////////////////
 //                                          //
 //         Sort, and Media Queries          //
@@ -331,7 +322,7 @@ footer {
  * I want my pure-button elements to look a little different
  */
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: rgb(255, 116, 0);
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
