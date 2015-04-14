@@ -280,10 +280,10 @@ a.pure-button-primary {
 	background-color: rgba(0,0,0,0);
 	-webkit-font-smoothing: antialiased;
 	overflow: hidden;
-	-webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-	-ms-transition: background 0.5s;
-	transition: background 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .custom-wrapper.open {
@@ -349,8 +349,17 @@ a.pure-button-primary {
 	transform: rotate(-45deg);
 }
 
+.logo {
+	max-height: 85px;
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
 .small-logo {
-	height: 50px;
+	max-height: 50px;
 }
 
 .solid-nav {
@@ -451,8 +460,8 @@ footer {
 		text-align: left;
 	}
 
-	#logo {
-		height: 50px;
+	.logo {
+		max-height: 50px;
 	}
 
 }

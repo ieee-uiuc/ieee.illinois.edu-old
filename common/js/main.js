@@ -1,36 +1,10 @@
-// jQuery to make the navbar solid color on scroll
 function readyToGo()
 {
-	var logo = $("#logo");
+	var logo = $(".logo");
 	var nav = $("#menu");
 	var menu = nav[0];
 
-	$(window).scroll(function()
-	{
-		// if the menu is open and you scroll, close the menu
-		if (nav[0].classList.contains('open'))
-		{
-			nav[0].classList.toggle('open');
-			$("#toggle")[0].classList.toggle('x');
-		}
-
-		var content = $(".content-wrapper");
-
-		// get the computed height of the navbar
-		var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
-
-		// On scroll, make the navbar solid, and the logo smaller
-		if (nav.offset().top > content.offset().top-navHeight)
-		{
-			nav.addClass("solid-nav");
-			logo.addClass("small-logo");
-		}
-		else
-		{
-			nav.removeClass("solid-nav");
-			logo.removeClass("small-logo");
-		}
-	});
+	
 
 	
 	WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
@@ -76,8 +50,50 @@ function readyToGo()
 
 	window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 
-	// Sidebar nav scrolling animation
-  $(function() {
+  /* Collapsible sections
+  $('#tech-link').click(function(){
+	$('#tech-content').slideToggle('slow');
+	});
+  */
+
+}
+
+// jQuery to make the navbar solid color on scroll
+$(window).scroll(function()
+{
+	var logo = $(".logo");
+	var nav = $("#menu");
+
+	// if the menu is open and you scroll, close the menu
+	if (nav[0].classList.contains('open'))
+	{
+		nav[0].classList.toggle('open');
+		$("#toggle")[0].classList.toggle('x');
+	}
+
+	var content = $(".content-wrapper");
+
+	// get the computed height of the navbar
+	var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
+
+	// On scroll, make the navbar solid, and the logo smaller
+	// have to use jquery animate since css can't do height
+	if (nav.offset().top > content.offset().top-navHeight)
+	{
+		nav.addClass("solid-nav");
+		logo.addClass("small-logo");
+		//logo.animate({height: "50px"}, 500);
+	}
+	else
+	{
+		nav.removeClass("solid-nav");
+		logo.removeClass("small-logo");
+		//logo.animate({height: "initial"}, 500);
+	}
+});
+
+// Sidebar nav scrolling animation
+$(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
@@ -91,15 +107,8 @@ function readyToGo()
 		}
 	  }
 	});
-  });
+});
 
-  /* Collapsible sections
-  $('#tech-link').click(function(){
-	$('#tech-content').slideToggle('slow');
-	});
-  */
-
-}
 
 function submitJoin()
 {
