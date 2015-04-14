@@ -42,6 +42,34 @@ body {
 	color: rgb(68, 85, 92);
 }
 
+/* ------------->>> Scrollbar <<<--------------*/
+
+::-webkit-scrollbar
+{
+	width: 12px;  /* for vertical scrollbars */
+	height: 12px; /* for horizontal scrollbars */
+	background:transparent;
+}
+
+::-webkit-scrollbar-track
+{
+	background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: rgba(255, 116, 0, 1);
+}
+
+/*////////////////////////////////////////////
+//                                          //
+//                 Text/Fonts               //
+//                                          //
+////////////////////////////////////////////*/
+
+
+/* ----------->>> Fonts <<<------------*/
+
 /* The entire website should have the Raleway font */
 @font-face {
 	font-family: 'Raleway';
@@ -51,8 +79,20 @@ body {
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+/* But fall back to other fonts in case it doesn't work */
 * {
 	font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+/* ------------->>> Text Selection <<<--------------*/
+
+::-moz-selection {
+	background: #ff7400; /* Gecko Browsers */
+	color: #F3F3F3;
+}
+::selection {
+	background: #ff7400; /* WebKit/Blink Browsers */
+	color: #F3F3F3;
 }
 
 /* ----------->>> Text Sizes <<<------------*/
@@ -99,7 +139,11 @@ a {
 }
 
 .orange-text {
-	color: rgba(255, 116, 0, 1);
+	color: rgb(255, 116, 0);
+}
+
+.grey-text {
+	color:rgb(68, 85, 92);
 }
 
 /* ----------->>> Highlight Section <<<------------*/
@@ -109,34 +153,43 @@ a {
 	color: #f3f3f3;
 }
 
-/* ------------->>> Text Selection <<<--------------*/
+/* ----------->>> Buttons <<<------------*/
 
-::-moz-selection {
-	background: #ff7400; /* Gecko Browsers */
-	color: #F3F3F3;
-}
-::selection {
-	background: #ff7400; /* WebKit/Blink Browsers */
-	color: #F3F3F3;
-}
-
-/* ------------->>> Scrollbar <<<--------------*/
-
-::-webkit-scrollbar
-{
-	width: 12px;  /* for vertical scrollbars */
-	height: 12px; /* for horizontal scrollbars */
-	background:transparent;
+/* Custom button styles that override PureCSS styles */
+.pure-button {
+	background-color: rgb(255, 116, 0);
+	color: rgb(243,243,243);
+	padding: 0.5em 2em;
+	border-radius: 5px;
 }
 
-::-webkit-scrollbar-track
-{
-	background: rgba(0, 0, 0, 0);
+.pure-button-md {
+	font-size: 1.5em;
 }
 
-::-webkit-scrollbar-thumb
-{
-	background: rgba(255, 116, 0, 1);
+.pure-button-lg {
+	font-size: 3em;
+}
+
+a.pure-button-primary {
+	background: white;
+	color: #1f8dd6;
+	border-radius: 5px;
+	font-size: 120%;
+}
+
+/* ----------->>> Padding Boxes <<<------------*/
+
+.l-box {
+	padding: 1em;
+	padding: 5em;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 0;
+}
+
+.l-box-lrg {
+    padding: 2em;
 }
 
 /*////////////////////////////////////////////
@@ -147,20 +200,21 @@ a {
 
 /* ----------->>> Main Image and Page Title <<<------------*/
 
-/* Splash Image */
+/* Splash Image wrapper for scrollover effect */
 .splash-container {
 	z-index: 1;
 	overflow: hidden;
-	/* The following styles are required for the "scroll-over" effect */
+
 	width: 100%;
 	height: 50%;
 	top: 0;
 	left: 0;
 	position: fixed !important;
 
+	/* Blue filter over image */
 	background-image:linear-gradient(
-		rgba(18, 48, 66, 0.60),
-		rgba(18, 48, 66, 0.60)
+		rgba(20, 54, 70, 0.60),
+		rgba(20, 54, 70, 0.60)
 	),url('/common/img/eceb.jpg');
 	background-repeat: no-repeat;
 	background-position: center center, center center;
@@ -197,7 +251,6 @@ a {
 	min-height: 12%;
 	z-index: 2;
 	background: rgb(243,243,243);
-
 }
 
 /* 6.2 is calculated by the aspect ratio of the hill */
@@ -216,23 +269,6 @@ a {
 		background-size: contain, cover;
 }
 */
-
-/* ----------->>> Buttons <<<------------*/
-
-/* Custom button styles that override PureCSS styles */
-.pure-button {
-	background-color: rgb(255, 116, 0);
-	color: white;
-	padding: 0.5em 2em;
-	border-radius: 5px;
-}
-
-a.pure-button-primary {
-	background: white;
-	color: #1f8dd6;
-	border-radius: 5px;
-	font-size: 120%;
-}
 
 /*////////////////////////////////////////////
 //                                          //
@@ -357,14 +393,9 @@ footer {
 }
 
 .footer-content {
-	padding-top: 1%;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
 	text-align: center;
-}
-
-.footer-content img {
-	padding-left: .1em;
-	padding-right: .1em;
-	height: 6vh;
 }
 
 /*////////////////////////////////////////////
