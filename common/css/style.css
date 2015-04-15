@@ -102,9 +102,6 @@ h1 {
 	color: #f3f3f3;
 	font-size: 7em;
 	font-weight: 400;
-	margin-bottom: none;
-	line-height: initial; /* Shortens line-height */
-	margin-left: 1%; /* Off-set from left-side of page */
 }
 
 /* h2 is to be used for sub-headings */
@@ -217,11 +214,13 @@ a {
 
 .splash {
 	/* absolute center .splash within .splash-container */
-	width: 80%;
+	width: 100%;
 	height: 50%;
 	margin: auto;
 	position: absolute;
-	top: 100px; left: 0; bottom: 0; right: 0;
+	top: 100px;
+	left: 0;
+	right: 0;
 	text-align: center;
 }
 
@@ -458,6 +457,21 @@ footer {
 /* Mobile Specific */
 @media (max-width: 47.999em)
 {
+
+	/* Make fonts smaller on mobile
+	/* h1 is to be used for the title of the page */
+	h1 {
+		font-size: 4em;
+	}
+
+	/* h2 is to be used for sub-headings */
+	h2 {
+		font-size: 2.5em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
 
 	.custom-wrapper {
 		height: 5em;
