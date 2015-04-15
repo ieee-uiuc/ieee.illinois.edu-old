@@ -1,17 +1,15 @@
 function readyToGo()
 {
 	var logo = $(".logo");
-	var nav = $("#menu");
+	var nav = $(".custom-wrapper");
 	var menu = nav[0];
 
-	
-
-	
 	WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
+	/* need to change this to jquery */
 	function toggleHorizontal() {
 		[].forEach.call(
-			document.getElementById('menu').querySelectorAll('.custom-can-transform'),
+			$(".custom-wrapper")[0].querySelectorAll('.custom-can-transform'),
 			function(el){
 				el.classList.toggle('pure-menu-horizontal');
 			}
@@ -62,7 +60,7 @@ function readyToGo()
 $(window).scroll(function()
 {
 	var logo = $(".logo");
-	var nav = $("#menu");
+	var nav = $(".custom-wrapper");
 
 	// if the menu is open and you scroll, close the menu
 	if (nav[0].classList.contains('open'))

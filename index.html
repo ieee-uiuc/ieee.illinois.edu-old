@@ -25,12 +25,12 @@
 
 
 <!-- Header and navigation bar -->
-<div class="custom-wrapper pure-g pure-menu-fixed" style="width:100%" id="menu"></div>
+<div class="custom-wrapper pure-g pure-menu-fixed"></div>
 
 <!-- Splash image -->
 <div class="splash-container" style="height:87.5%">
 	<div class="splash">
-		<div class="splash-head" style="height:40vh">
+		<div class="splash-head">
 			Elections are coming up! <br />
 			Day : Today! (April 8, 2015) <br />
 			Time: 5PM </br />
@@ -109,8 +109,8 @@
 
 <!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
 <script>
-	$( "#menu" ).load( "/common/header.php", readyToGo);
-	$( "#footer" ).load( "/common/footer.html" );
+	$(".custom-wrapper").load( "/common/header.php", readyToGo);
+	$(".footer").load( "/common/footer.html" );
 </script>
 
 </body>

@@ -24,7 +24,7 @@
 <body>
 
 <!-- Header and navigation bar -->
-<div class="custom-wrapper pure-g header" style="position:fixed; z-index:4; width:100%" id="menu"></div>
+<div class="custom-wrapper pure-g pure-menu-fixed"></div>
 
 <!-- Splash image -->
 <div class="splash-container" style="position:relative">
@@ -200,8 +200,8 @@
 
 <!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
 <script>
-  $( "#menu" ).load( "/common/header.php", readyToGo);
-  $( "#footer" ).load( "/common/footer.html" );
+  $(".custom-wrapper").load( "/common/header.php", readyToGo);
+	$(".footer").load( "/common/footer.html" );
 </script>
 
 </body>

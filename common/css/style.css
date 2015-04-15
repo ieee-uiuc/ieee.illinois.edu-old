@@ -224,14 +224,17 @@ a {
 	text-align: center;
 }
 
-/* This is the main heading that appears on the blue section */
+/* News Slider */
 .splash-head {
 	font-size: 2em;
-	font-weight: bold;
-	color: white;
-	border: 3px solid white;
-	font-weight: 100;
-	border-radius: 5px;
+	color: rgb(243, 243, 243);
+
+	border: 2px solid rgb(243, 243, 243);
+	border-radius: 10px;
+
+	height: 50vh;
+	margin-top: 5%;
+
 }
 
 /* ----------->>> Main Content <<<------------*/
@@ -277,10 +280,17 @@ a {
 	background-color: rgba(0,0,0,0);
 	-webkit-font-smoothing: antialiased;
 	overflow: hidden;
+	width: 100%;
+
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	transition: all 0.5s;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .custom-wrapper.open {
@@ -450,6 +460,11 @@ footer {
 	.splash {
 		width: 50%;
 		height: 50%;
+	}
+
+	/* News Slider */
+	.splash-head {
+		font-size: 4em;
 	}
 
 }
