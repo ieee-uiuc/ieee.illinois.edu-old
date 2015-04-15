@@ -206,7 +206,7 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/eceb.jpg');
+	),url('/common/img/splash/eceb.jpg');
 	background-repeat: no-repeat;
 	background-position: center center, center center;
 	background-size: cover, cover;
@@ -214,7 +214,7 @@ a {
 
 .splash {
 	/* absolute center .splash within .splash-container */
-	width: 100%;
+	width: 50%;
 	height: 50%;
 	margin: auto;
 	position: absolute;
@@ -226,14 +226,13 @@ a {
 
 /* News Slider */
 .splash-head {
-	font-size: 2em;
+	font-size: 4em;
 	color: rgb(243, 243, 243);
-
 	border: 2px solid rgb(243, 243, 243);
 	border-radius: 10px;
-
 	height: 50vh;
 	margin-top: 5%;
+	overflow: hidden;
 
 }
 
@@ -452,20 +451,16 @@ footer {
 //                                          //
 ////////////////////////////////////////////*/
 
+/*
+Note that I'm applying custom styles to mobile, meaning
+the default for me is Tablet/Desktop. This is in contrast to
+the PureCSS framework being mobile-first. In future changes,
+you are welcome to flip this around to make it consistent.
+*/
+
 /* Tablet/Desktop Specific */
 @media (min-width: 48em)
 {
-
-	/* Decrease .splash width, since we have more width to work with */
-	.splash {
-		width: 50%;
-		height: 50%;
-	}
-
-	/* News Slider */
-	.splash-head {
-		font-size: 4em;
-	}
 
 }
 
@@ -507,6 +502,19 @@ footer {
 
 	.logo {
 		max-height: 50px;
+	}
+
+	.splash {
+		width: 90%;
+		height: 50%;
+	}
+
+	.splash-head {
+		font-size: 2em;
+	}
+
+	.pure-hidden {
+		display: none;
 	}
 
 }
