@@ -420,13 +420,23 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
-	vertical-align: center;
 }
 
 .footer-content {
-	padding-top: 1vh;
-	padding-bottom: 1vh;
+	padding: 1em;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
 	text-align: center;
+}
+
+.footer-content * {
+	margin: auto;
+}
+
+.footer-logo {
+	height: 48px;
 }
 
 /*////////////////////////////////////////////
@@ -515,6 +525,12 @@ you are welcome to flip this around to make it consistent.
 
 	.pure-hidden {
 		display: none;
+	}
+
+	.footer-logo {
+		height: 32px;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+  		-webkit-tap-highlight-color: transparent;
 	}
 
 }
