@@ -251,8 +251,12 @@ a {
 .hill {
 	margin: 0;
 	padding: 0;
-	transform: translateY(-6.15vw);
 	margin-bottom: -6.15vw;
+
+	-webkit-transform: translateY(-6.15vw);
+	-moz-transform: translateY(-6.15vw);
+	-ms-transform: translateY(-6.15vw);
+	transform: translateY(-6.15vw);
 }
 
 /* lightbulb img version
@@ -291,7 +295,20 @@ a {
 }
 
 .custom-menu-3 {
-	padding: 1vh;
+	padding: 0 1vh;
+
+	/* Hack for vertically (visually) centering it */
+	-webkit-transform: translateY(55%);
+	-moz-transform: translateY(55%);
+	-ms-transform: translateY(55%);
+	transform: translateY(55%);
+
+	/* Match the transform animation with the rest */
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+
 	text-align: right;
 }
 
@@ -452,6 +469,11 @@ footer {
 
 	.custom-menu-3 {
 		text-align: left;
+
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
 	}
 
 	.logo {

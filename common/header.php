@@ -34,7 +34,7 @@
 
 	<div class="pure-u-1 pure-u-md-3-4">
 		<div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
-			<ul class="pure-menu-list" style="vertical-align:top">
+			<ul class="pure-menu-list">
 				<li class="pure-menu-item ieee-menu-item">
 					<?php
 

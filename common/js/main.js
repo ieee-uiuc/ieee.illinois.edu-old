@@ -82,13 +82,15 @@ $(window).scroll(function()
 	{
 		nav.addClass("solid-nav");
 		logo.addClass("small-logo");
-		//logo.animate({height: "50px"}, 500);
+		$(".custom-menu-3").css("transform", "translateY(35%)");
+
 	}
 	else
 	{
 		nav.removeClass("solid-nav");
 		logo.removeClass("small-logo");
-		//logo.animate({height: "initial"}, 500);
+		$(".custom-menu-3").css("transform", "translateY(55%)");
+		
 	}
 });
 
