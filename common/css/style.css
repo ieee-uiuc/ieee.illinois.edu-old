@@ -438,6 +438,21 @@ footer {
 	height: 48px;
 }
 
+/*
+.footer > .footer-content {
+	font-size: 1.25em;
+}
+
+.footer > .footer-content .pure-u-1 {
+	padding-bottom: 1vh;
+}
+
+.footer > .footer-content .pure-u-1 > b > a {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+*/
+
 /*////////////////////////////////////////////
 //                                          //
 //               Page Specific              //
