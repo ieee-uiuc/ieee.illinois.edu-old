@@ -19,10 +19,10 @@ ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
 }
 
 section .pure-g > div {
-	padding: 5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 	padding-left: 5%;
 	padding-right: 5%;
-	padding-top: 0;
 }
 
 /*////////////////////////////////////////////
@@ -108,24 +108,21 @@ h1 {
 h2 {
 	font-size: 4em;
 	font-weight: 200;
-	padding-top: 1em;
-	margin: 0;
+	margin: 1vh;
 }
 
 h3 {
 	font-size: 2em;
 	font-weight: 200;
-	margin: 0;
 }
 
 h4 {
 	font-size: 1.5em;
 	font-weight: 200;
-	margin: 0;
 }
 
 p {
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 a {
@@ -484,7 +481,6 @@ you are welcome to flip this around to make it consistent.
 	/* h1 is to be used for the title of the page */
 	h1 {
 		font-size: 4em;
-		margin: 0;
 	}
 
 	/* h2 is to be used for sub-headings */
@@ -494,6 +490,14 @@ you are welcome to flip this around to make it consistent.
 
 	h3 {
 		font-size: 1.5em;
+	}
+
+	h4 {
+		font-size: 1.25em;
+	}
+
+	p {
+		font-size: 1em;
 	}
 
 	.custom-wrapper {
