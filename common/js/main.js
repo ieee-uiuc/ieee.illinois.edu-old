@@ -100,7 +100,7 @@ $(window).scroll(function()
 	}
 });
 
-// Sidebar nav scrolling animation
+// Smooth anchor scrolling animation
 $(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -116,7 +116,6 @@ $(function() {
 	  }
 	});
 });
-
 
 function submitJoin()
 {

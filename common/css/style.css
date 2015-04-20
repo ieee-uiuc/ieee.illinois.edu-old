@@ -3,27 +3,8 @@
 * website at ieee.illinois.edu.
 *
 * Authors: Anit Gandhi, Caleb Albers
-* Last Modified: April 14, 2015
+* Last Modified: April 19, 2015
 */
-
-/*////////////////////////////////////////////
-//                                          //
-//                  Resets                  //
-//                                          //
-////////////////////////////////////////////*/
-
-ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
-	text-shadow: none;
-	/* Text shadow had to go or be edited to
-		look better on the .highlight sections */
-}
-
-section .pure-g > div {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	padding-left: 5%;
-	padding-right: 5%;
-}
 
 /*////////////////////////////////////////////
 //                                          //
@@ -59,6 +40,11 @@ body {
 ::-webkit-scrollbar-thumb
 {
 	background: rgba(255, 116, 0, 1);
+}
+
+section .pure-g > div {
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 /*////////////////////////////////////////////
@@ -112,12 +98,16 @@ h1 {
 h2 {
 	font-size: 4em;
 	font-weight: 200;
-	margin: 1vh;
+	margin: 0;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 
 h3 {
 	font-size: 2em;
 	font-weight: 200;
+	margin: 0;
+	padding: 0;
 }
 
 h4 {
@@ -127,11 +117,12 @@ h4 {
 
 p {
 	font-size: 1.25em;
+	text-align: justify;
 }
 
 a {
 	color: rgb(255, 116, 0);
-	text-decoration: none;
+	/*text-decoration: none;*/
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
   	-webkit-tap-highlight-color: transparent;
 }
@@ -178,10 +169,6 @@ a {
 
 .l-box {
 	padding: 1em;
-	padding: 5em;
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-top: 0;
 }
 
 .l-box-lrg {
@@ -231,20 +218,24 @@ a {
 
 /* News Slider */
 .splash-head {
-	font-size: 4em;
+	margin: auto;
 	color: rgb(243, 243, 243);
 	border: 2px solid rgb(243, 243, 243);
 	border-radius: 10px;
 	height: 50vh;
-	overflow: hidden;
-	position: relative;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    transform: translateY(-50%);
-
+	background-color: rgba(0,0,0,0);
 }
+
+.flex-direction-nav a:before,
+.flex-direction-nav a.flex-prev:before,
+.flex-direction-nav a,
+.flex-control-paging li a, 
+.flex-control-paging li a.flex-active {
+	z-index: 5000;
+	color: rgba(243,243,243,1);
+}
+
+
 
 /* ----------->>> Main Content <<<------------*/
 
@@ -493,6 +484,22 @@ you are welcome to flip this around to make it consistent.
 /* Tablet/Desktop Specific */
 @media (min-width: 48em)
 {
+	/*Force the file input to fit on desktops */
+	input[type="file"] {
+		width: 50%;
+	}
+
+	.splash-head 
+	{
+		width: 50%;
+		overflow: hidden;
+		position: relative;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+	    -webkit-transform: translateY(-50%);
+	    -moz-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	}
 
 }
 
@@ -545,7 +552,11 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.splash-head {
-		font-size: 2em;
+		-ms-transform: translateY(-25%);
+	    -webkit-transform: translateY(-25%);
+	    -moz-transform: translateY(-25%);
+	    transform: translateY(-25%);
+	    */
 	}
 
 	.pure-hidden {
@@ -554,6 +565,10 @@ you are welcome to flip this around to make it consistent.
 
 	.footer-logo {
 		height: 32px;
+	}
+
+	input[type="text"] {
+		width: 100%;
 	}
 
 }

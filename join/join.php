@@ -8,6 +8,14 @@ require_once(__DIR__ . "/../common/php/PHPMailer.php");
 // Save all the user information into local variables
 parse_str($_POST["userData"]);
 
+// Following "<Name> - <NetID> - Resume" naming scheme
+$resumeName = $member_name . " - " . $member_netid . " - " . "Resume";
+
+
+/*************************
+	Mail the resume 
+*************************/
+
 // Set up the mailing information
 $mail = new PHPMailer;
 
@@ -18,11 +26,11 @@ $mail->addAddress("ieee.uiuc@gmail.com");
 // Attach the resume file
 if (isset($_FILES['resume']) &&
     $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
-    $mail->AddAttachment($_FILES['resume']['tmp_name'], $_FILES['resume']['name']);
+    $mail->AddAttachment($_FILES['resume']['tmp_name'], $resumeName);
 }
 
 $mail->isHTML(true);
-$mail->Subject = "{$member_name}\'s Resume";
+$mail->Subject = "{$member_name}'s Resume";
 $mail->Body = "Here is the resume of <b>{$member_name}</b>";
 
 // Send the email, saving status
@@ -32,15 +40,25 @@ if (!$mail->send())
 }
 else
 {
-	$mail_status .= "success";
+	$mail_status = "success";
 }
+
+
+/* Return the status to the page */
 
 if ($mail_status != "success")
 {
 	echo $mail_status;
 }
 
-print_r($committees);
+echo "<p>Thank you for becoming a member of IEEE UIUC.<p> 
+	  <p>You have signed up for the following committees: </p>
+	  <p>and the following TAGs: </p>";
+
+
+
+
+
 
 // if the netid is in the db already, echo saying that
 
