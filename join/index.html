@@ -47,36 +47,37 @@
             <h3>Sign up now!</h3>
             <div class="pure-control-group">
                 <label for="name">Name</label>
-                <input name="name" type="text" placeholder="First Last" required autofocus>
+                <input name="member_name" type="text" placeholder="First Last" required autofocus>
             </div>
 
             <div class="pure-control-group">
                 <label for="netid">NetID</label>
-                <input name="netid" type="text" placeholder="NetID" maxlength="8" required>
+                <input name="member_netid" type="text" placeholder="NetID" maxlength="8" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="uin">UIN</label>
-                <input name="uin" type="text" placeholder="9 Digits" pattern="[0-9]{9}" required>
+                <input name="member_uin" type="text" placeholder="9 Digits" pattern="[0-9]{9}" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="email">Email Address</label>
-                <input name="email" type="email" placeholder="Email Address" required>
+                <input name="member_email" type="email" placeholder="Email Address" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="national">National Member ID</label>
-                <input name="national" type="text" placeholder="From IEEE National">
+                <input name="member_national" type="text" placeholder="From IEEE National">
             </div>
 
             <div class="pure-control-group">
                 <label for="resume">Resume</label>
-                <input name="resume" type="file">
+                <input name="member_resume" type="file">
             </div>
 
             <div class="pure-control-group">
-                <input name="announce" value="announce" type="checkbox"> Announce (Weekly Newsletter)</input>
+                <label for="announce">Join Announce Newsletter?</label>
+                <input name="announce" type="checkbox">
             </div>
 
           </div>
@@ -103,7 +104,12 @@
           <div class="pure-form pure-form-aligned">
             <h3>Which <a href="/about/TAGs">TAGs</a> would you like to join/receive emails from?</h3>
             <div class="pure-control-group">
-              <p> <input name="tags[]" value="tag-energy" type="checkbox"> TAG Energy</input> </p>
+              <p> <input name="tags[]" value="tag-energy" type="checkbox"> TAG-Energy</input> </p>
+              <p> <input name="tags[]" value="tag-cps" type="checkbox"> TAG-CPS (Cyber Physical Systems)</input> </p>
+              <p> <input name="tags[]" value="tag-circuits" type="checkbox"> TAG-Circuits</input> </p>
+              <p> <input name="tags[]" value="tag-bot" type="checkbox"> TAG-Bot</input> </p>
+              <p> <input name="tags[]" value="tag-dsp" type="checkbox"> TAG-DSP (Digital Signal Processing)</input> </p>
+              <p> <input name="tags[]" value="tag-systems" type="checkbox"> TAG-Systems</input> </p>
             </div>
           </div>
         </div>

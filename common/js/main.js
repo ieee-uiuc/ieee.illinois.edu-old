@@ -120,7 +120,27 @@ $(function() {
 
 function submitJoin()
 {
-	var data = $("#join_form .pure-g .pure-u-1 .pure-form .pure-control-group input").serialize();
+	// Gather the form data and serialize it
+	var userData = $("#join_form .pure-g .pure-u-1 .pure-form .pure-control-group input").serialize();
 
-	alert("data: " + data);
+	// The file element
+	var resumeFile = $("input[name='member_resume']")[0].files[0];
+
+	// Create the FormData object. Note that I don't care for supporting IE9 or below.
+	var fd = new FormData();
+	fd.append("userData", userData);
+	fd.append("resume", resumeFile);
+
+	// Send it over, and alert the response
+	$.ajax({
+	  url: "join.php",
+	  type: "POST",
+	  data: fd,
+	  processData: false,
+	  contentType: false,
+	  success: function(data, textStatus, jqXHR){
+	  	alert(data);
+	  }
+	});
+	
 }
