@@ -418,14 +418,18 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
 }
 
 .footer-content {
 	padding: 1em;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
+	display: -ms-inline-flexbox;
+	display: -webkit-inline-flex;
+	display: inline-flex;
+	align-items: center;
 	text-align: center;
 }
 
@@ -436,21 +440,6 @@ footer {
 .footer-logo {
 	height: 48px;
 }
-
-/*
-.footer > .footer-content {
-	font-size: 1.25em;
-}
-
-.footer > .footer-content .pure-u-1 {
-	padding-bottom: 1vh;
-}
-
-.footer > .footer-content .pure-u-1 > b > a {
-	padding-left: 1em;
-	padding-right: 1em;
-}
-*/
 
 /*////////////////////////////////////////////
 //                                          //
