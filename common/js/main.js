@@ -80,23 +80,11 @@ $(window).scroll(function()
 	{
 		nav.addClass("solid-nav");
 		logo.addClass("small-logo");
-
-		// need to do this only on desktop, and I don't care about IE9.
-		if (window.matchMedia('(min-width: 48em)').matches)
-		{
-			$(".custom-menu-3").css("transform", "translateY(35%)");
-		}
 	}
 	else
 	{
 		nav.removeClass("solid-nav");
-		logo.removeClass("small-logo");
-
-		if (window.matchMedia('(min-width: 48em)').matches)
-		{
-			$(".custom-menu-3").css("transform", "translateY(55%)");
-		}
-		
+		logo.removeClass("small-logo");		
 	}
 });
 

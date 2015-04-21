@@ -310,7 +310,6 @@ a {
 	-webkit-transform: translateY(55%);
 	-moz-transform: translateY(55%);
 	-ms-transform: translateY(55%);
-	transform: translateY(55%);
 
 	/* Match the transform animation with the rest */
 	-webkit-transition: all 0.5s;
