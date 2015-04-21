@@ -306,11 +306,6 @@ a {
 .custom-menu-3 {
 	padding: 0 1vh;
 
-	/* Hack for vertically (visually) centering it */
-	-webkit-transform: translateY(55%);
-	-moz-transform: translateY(55%);
-	-ms-transform: translateY(55%);
-
 	/* Match the transform animation with the rest */
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -408,6 +403,15 @@ a {
 	margin: 0 auto;
 }
 
+.flex-nav {
+	display: -ms-inline-flexbox!important;
+	display: -webkit-inline-flex!important;
+	display: inline-flex!important;
+
+	align-items: center!important;
+	-webkit-align-items: center!important;
+}
+
 /*////////////////////////////////////////////
 //                                          //
 //                  Footer                  //
@@ -420,7 +424,10 @@ footer {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
+	flex-direction: row;
+	-webkit-flex-direction: row;
 	align-items: center;
+	-webkit-align-items: center;
 }
 
 .footer-content {
@@ -429,6 +436,9 @@ footer {
 	display: -webkit-inline-flex;
 	display: inline-flex;
 	align-items: center;
+	-webkit-align-items: center;
+	flex-direction: row;
+	-webkit-flex-direction: row;
 	text-align: center;
 }
 
@@ -487,6 +497,10 @@ you are welcome to flip this around to make it consistent.
 	    -webkit-transform: translateY(-50%);
 	    -moz-transform: translateY(-50%);
 	    transform: translateY(-50%);
+	}
+
+	.navbar-link {
+		padding: 0 0.75vw;
 	}
 
 }
