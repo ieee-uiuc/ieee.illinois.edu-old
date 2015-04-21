@@ -45,20 +45,17 @@ else
 
 
 /* Return the status to the page */
-
 if ($mail_status != "success")
 {
-	echo $mail_status;
+	//echo $mail_status . "\n";
 }
 
+/*
 echo "<p>Thank you for becoming a member of IEEE UIUC.<p> 
+	  <p>You have signed up for the Announce mailing list. </p>
 	  <p>You have signed up for the following committees: </p>
 	  <p>and the following TAGs: </p>";
-
-
-
-
-
+*/
 
 // if the netid is in the db already, echo saying that
 

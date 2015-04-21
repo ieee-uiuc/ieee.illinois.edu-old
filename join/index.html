@@ -50,7 +50,7 @@
 
             <div class="pure-control-group">
                 <label for="netid">NetID</label>
-                <input name="member_netid" type="text" placeholder="NetID" maxlength="8" required>
+                <input name="member_netid" type="text" placeholder="NetID" maxlength="8" onchange="setEmail()" required>
             </div>
 
             <div class="pure-control-group">
@@ -69,8 +69,8 @@
             </div>
 
             <div class="pure-control-group">
-                <label for="resume">Resume</label>
-                <input name="member_resume" type="file">
+                <label for="resume">Resume (only PDF and Word!)</label>
+                <input name="member_resume" type="file" accept=".pdf, .doc, .docx">
             </div>
 
             <div class="pure-control-group">

@@ -23,40 +23,34 @@ body {
 	color: rgb(68, 85, 92);
 }
 
+section .pure-g > div {
+	padding: 1.5% 3%;
+}
+
 /* ------------->>> Scrollbar <<<--------------*/
 
 ::-webkit-scrollbar
 {
-	width: 12px;  /* for vertical scrollbars */
-	height: 12px; /* for horizontal scrollbars */
+	width: 12px;
+	height: 12px;
 	background:transparent;
 }
 
 ::-webkit-scrollbar-track
 {
-	background: rgba(0, 0, 0, 0);
+	background: rgb(243,243,243);
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background: rgba(255, 116, 0, 1);
+	background: rgb(255, 116, 0);
 }
 
-section .pure-g > div {
-	padding-left: 5%;
-	padding-right: 5%;
-}
+/* ----------->>> Text Decoration <<<------------*/
 
-/*////////////////////////////////////////////
-//                                          //
-//                 Text/Fonts               //
-//                                          //
-////////////////////////////////////////////*/
-
-
-/* ----------->>> Fonts <<<------------*/
-
-/* The entire website should have the Raleway font */
+/* The entire website should have the Raleway font, 
+*   but fall back to just sans-serif. 
+*/
 @font-face {
 	font-family: 'Raleway';
 	font-style: normal;
@@ -64,13 +58,11 @@ section .pure-g > div {
 	  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2'), url(http://fonts.gstatic.com/s/raleway/v9/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
 }
 
-/* But fall back to other fonts in case it doesn't work */
 * {
 	font-family: 'Raleway', sans-serif;
 }
 
-/* ------------->>> Text Selection <<<--------------*/
-
+/* Text Selection should be orange */
 ::-moz-selection {
 	background: #ff7400; /* Gecko Browsers */
 	color: #F3F3F3;
@@ -88,31 +80,23 @@ h1 {
 	font-size: 7em;
 	font-weight: 400;
 
-	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	user-select: none;
 }
 
 /* h2 is to be used for sub-headings */
 h2 {
 	font-size: 4em;
-	font-weight: 200;
-	margin: 0;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
 }
 
 h3 {
 	font-size: 2em;
-	font-weight: 200;
-	margin: 0;
-	padding: 0;
 }
 
 h4 {
 	font-size: 1.5em;
-	font-weight: 200;
 }
 
 p {
@@ -120,9 +104,17 @@ p {
 	text-align: justify;
 }
 
+h2, h3, h4, p {
+	font-weight: 400;
+	margin: 0;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
 a {
 	color: rgb(255, 116, 0);
-	/*text-decoration: none;*/
+
+	/* This disables that annoying fill on mobile links */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
   	-webkit-tap-highlight-color: transparent;
 }
@@ -223,19 +215,18 @@ a {
 	border: 2px solid rgb(243, 243, 243);
 	border-radius: 10px;
 	height: 50vh;
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 }
 
+/* Make the flex slider buttons more visible */
 .flex-direction-nav a:before,
 .flex-direction-nav a.flex-prev:before,
 .flex-direction-nav a,
 .flex-control-paging li a, 
 .flex-control-paging li a.flex-active {
 	z-index: 5000;
-	color: rgba(243,243,243,1);
+	color: rgb(243,243,243);
 }
-
-
 
 /* ----------->>> Main Content <<<------------*/
 
@@ -277,7 +268,7 @@ a {
 ////////////////////////////////////////////*/
 
 .custom-wrapper {
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 	-webkit-font-smoothing: antialiased;
 	overflow: hidden;
 	width: 100%;
@@ -287,14 +278,14 @@ a {
 	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 
-	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	user-select: none;
 }
 
 .custom-wrapper.open {
-	background-color: rgba(20, 54, 70, 1);
+	background-color: rgb(20, 54, 70);
 	height: 28em;
 }
 
@@ -305,8 +296,10 @@ a {
 
 .custom-menu-3 {
 	padding: 0 1vh;
+	width: 100%;
 
 	/* Match the transform animation with the rest */
+	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -333,6 +326,8 @@ a {
 	position: absolute;
 	top: 18px;
 	right: 7px;
+
+	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -340,6 +335,7 @@ a {
 }
 
 .custom-toggle .bar:first-child {
+	-o-transform: translateY(-12px);
 	-webkit-transform: translateY(-12px);
 	-moz-transform: translateY(-12px);
 	-ms-transform: translateY(-12px);
@@ -347,6 +343,7 @@ a {
 }
 
 .custom-toggle.x .bar {
+	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -354,6 +351,7 @@ a {
 }
 
 .custom-toggle.x .bar:first-child {
+	-o-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
@@ -363,6 +361,7 @@ a {
 .logo {
 	max-height: 85px;
 
+	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -374,12 +373,12 @@ a {
 }
 
 .solid-nav {
-	background-color: rgba(20, 54, 70, 1);
+	background-color: rgb(20, 54, 70);
 }
 
 .navbar-link {
 	font-size: 1.5em;
-	color: rgba(255, 255, 255, 1);
+	color: rgb(243, 243, 243);
 	padding-bottom: 0.5vh;
 	padding-left: 0.75vw;
 	padding-right: 0.75vw;
@@ -396,20 +395,23 @@ a {
 
 .navbar-active {
 	border: 0;
-	color: rgba(255,116,0,1);
-	background-color: rgba(255,116,0,1)!important;
+	color: rgb(255,116,0);
+	background-color: rgb(255,116,0)!important;
 	height: 0.3vh;
 	text-align: center;
 	margin: 0 auto;
 }
 
 .flex-nav {
-	display: -ms-inline-flexbox!important;
-	display: -webkit-inline-flex!important;
-	display: inline-flex!important;
+	display: -ms-inline-flexbox;
+	display: -moz-inline-flex;
+	display: -webkit-inline-flex;
+	display: inline-flex;
 
-	align-items: center!important;
-	-webkit-align-items: center!important;
+	-ms-align-items: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+  	align-items: center;
 }
 
 /*////////////////////////////////////////////
@@ -421,25 +423,30 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
+
 	display: -ms-flexbox;
+	display: -moz-flex;
 	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
-	-webkit-flex-direction: row;
-	align-items: center;
+	
+	-ms-align-items: center;
+	-moz-align-items: center;
 	-webkit-align-items: center;
+  	align-items: center;
 }
 
 .footer-content {
 	padding: 1em;
+
 	display: -ms-inline-flexbox;
+	display: -moz-inline-flex;
 	display: -webkit-inline-flex;
 	display: inline-flex;
-	align-items: center;
+	
+	-ms-align-items: center;
+	-moz-align-items: center;
 	-webkit-align-items: center;
-	flex-direction: row;
-	-webkit-flex-direction: row;
-	text-align: center;
+  	align-items: center;
 }
 
 .footer-content * {
@@ -464,6 +471,12 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 100%;
+}
+
+#twitter-wrapper iframe
+{
+	pointer-events: none;
+	overflow: scroll;
 }
 
 /*////////////////////////////////////////////
@@ -533,7 +546,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.custom-wrapper {
-		height: 5em;
+		height: 4em;
 	}
 
 	.custom-toggle {
@@ -543,6 +556,7 @@ you are welcome to flip this around to make it consistent.
 	.custom-menu-3 {
 		text-align: left;
 
+		-o-transform: none;
 		-webkit-transform: none;
 		-moz-transform: none;
 		-ms-transform: none;
@@ -554,11 +568,11 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.splash-head {
+		-o-transform: translateY(-25%);
 		-ms-transform: translateY(-25%);
 	    -webkit-transform: translateY(-25%);
 	    -moz-transform: translateY(-25%);
 	    transform: translateY(-25%);
-	    */
 	}
 
 	.pure-hidden {
