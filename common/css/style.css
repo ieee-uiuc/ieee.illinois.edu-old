@@ -89,6 +89,8 @@ h1 {
 /* h2 is to be used for sub-headings */
 h2 {
 	font-size: 4em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
 }
 
 h3 {
@@ -104,14 +106,24 @@ p {
 	text-align: justify;
 }
 
+/* Only those lists that are next to paragraphs should have larger fonts */
+p ~ ol,
+p ~ ul {
+	font-size: 1.15em;
+}
+
 h2, h3, h4, p {
 	font-weight: 400;
 	margin: 0;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
+}
+
+h3, h4, p {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 
 a {
+	font-size: 1.25em;
 	color: rgb(255, 116, 0);
 
 	/* This disables that annoying fill on mobile links */
@@ -121,6 +133,11 @@ a {
 
 .is-center {
 	text-align: center;
+}
+
+.horizontal-center {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .orange-text {
@@ -312,7 +329,7 @@ a {
 	width: 50px;
 	height: 50px;
 	position: absolute;
-	top: 3vh;
+	top: 1em;
 	right: 0;
 	display: none;
 }
@@ -541,7 +558,7 @@ you are welcome to flip this around to make it consistent.
 		font-size: 1.25em;
 	}
 
-	p {
+	p, a, ul, li {
 		font-size: 1em;
 	}
 
