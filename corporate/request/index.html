@@ -1,0 +1,62 @@
+<html>
+
+<head>
+
+<!-- Meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
+<!-- CSS and JS frameworks from CDNs -->
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- Local CSS -->
+<link rel="stylesheet" href="/common/css/style.css" />
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.png" />
+
+<title>Corporate Event Request | IEEE UIUC</title>
+
+</head>
+
+<body>
+
+<!-- Header and navigation bar -->
+<div class="custom-wrapper pure-g pure-menu-fixed"></div>
+
+<!-- Splash image -->
+<div class="splash-container" style="position:relative">
+    <div class="splash">
+      <h1>Corporate Event Request</h1>
+    </div>
+</div>
+
+<!-- Hill, content, footer -->
+<div class="content-wrapper content-wrapper-offset">
+
+  <section>
+    <h2 class="is-center">Request Form</h2>
+    <div class="pure-g">
+      <div class="pure-u-1 is-center">
+        <iframe src="https://illinois.edu/fb/sec/7433718" height="2200" width="100%"></iframe></p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer pure-g" id="footer"></footer>
+
+</div>
+
+<script src="/common/js/main.js"></script>
+
+<!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
+<script>
+  $(".custom-wrapper").load( "/common/header.php", readyToGo);
+	$(".footer").load( "/common/footer.html" );
+</script>
+
+</body>
+
+</html>
