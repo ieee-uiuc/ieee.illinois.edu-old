@@ -216,10 +216,22 @@ a {
 .splash {
 	/* absolute center .splash within .splash-container */
 	width: 100%;
+
+	/* attempt at vertical center */
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+	/*
 	height: 50%;
 	margin: auto;
 	position: absolute;
 	top: 100px;
+	*/
+
 	left: 0;
 	right: 0;
 	text-align: center;
@@ -228,6 +240,7 @@ a {
 /* News Slider */
 .splash-head {
 	margin: auto;
+	width: 50%;
 	color: rgb(243, 243, 243);
 	border: 2px solid rgb(243, 243, 243);
 	border-radius: 10px;
@@ -517,18 +530,6 @@ you are welcome to flip this around to make it consistent.
 		width: 50%;
 	}
 
-	.splash-head 
-	{
-		width: 50%;
-		overflow: hidden;
-		position: relative;
-		top: 50%;
-		-ms-transform: translateY(-50%);
-	    -webkit-transform: translateY(-50%);
-	    -moz-transform: translateY(-50%);
-	    transform: translateY(-50%);
-	}
-
 	.navbar-link {
 		padding: 0 0.75vw;
 	}
@@ -542,7 +543,7 @@ you are welcome to flip this around to make it consistent.
 	/* Make fonts smaller on mobile
 	/* h1 is to be used for the title of the page */
 	h1 {
-		font-size: 4em;
+		font-size: 3.5em;
 	}
 
 	/* h2 is to be used for sub-headings */
@@ -584,16 +585,13 @@ you are welcome to flip this around to make it consistent.
 		max-height: 50px;
 	}
 
-	.splash-head {
-		-o-transform: translateY(-25%);
-		-ms-transform: translateY(-25%);
-	    -webkit-transform: translateY(-25%);
-	    -moz-transform: translateY(-25%);
-	    transform: translateY(-25%);
-	}
-
 	.pure-hidden {
 		display: none;
+	}
+
+	.splash-head 
+	{
+		width: 95%;
 	}
 
 	.footer-logo {
