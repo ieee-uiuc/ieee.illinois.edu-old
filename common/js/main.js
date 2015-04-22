@@ -137,3 +137,54 @@ function submitJoin()
 	});
 	
 }
+
+// make an ajax call to the news.php, parse the json response
+function loadNews()
+{
+	var news = $("#news-container");
+	var err_str = '<div class="pure-u-1"><h4>Could not load news items. Please try refreshing the page.</h4></div>';
+	var no_posts_str = '<div class="pure-u-1"><h4>There are no posts to display.</h4></div>';
+
+	$.get( "getNews.php", function( data )
+	{
+		// data comes in as a string, holding either "error: <error code>" or json
+		
+		// if it errored out, put in the error string
+		if (data.indexOf("error: ") >= 0)
+		{
+			news.append(err_str);
+			return;
+		}
+
+		else if (data == "none")
+		{
+			news.append(no_posts_str);
+			return;
+		}
+
+		//alert(data);
+
+		// else if it was a json output
+		var data_arr = $.parseJSON(data);
+
+		$(data_arr).each(function(index, curr)
+		{
+
+			var title = curr.post_title;
+			var description = curr.post_description;
+			var imageURL = curr.post_image;
+
+			// only set the pic if url is present
+			var picDiv = '<div class="pure-u-1 pure-u-md-1-4"></div>';
+			if (imageURL !== "")
+				picDiv = '<div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
+			
+			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 style="text-decoration: underline">' + title + '</h3><p>' + description + '</p></div>'
+
+			news.append(picDiv + contentDiv);
+
+		});
+
+	});
+	
+}
