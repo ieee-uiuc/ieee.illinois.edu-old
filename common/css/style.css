@@ -207,10 +207,18 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/eceb.jpg');
+	),url('/common/img/splash/grainger.jpg');
 	background-repeat: no-repeat;
 	background-position: center center, center center;
 	background-size: cover, cover;
+}
+
+.splash-eceb-1
+{
+	background-image:linear-gradient(
+		rgba(20, 54, 70, 0.60),
+		rgba(20, 54, 70, 0.60)
+	),url('/common/img/splash/eceb.jpg');
 }
 
 .splash {

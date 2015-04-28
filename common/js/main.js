@@ -142,10 +142,10 @@ function submitJoin()
 function loadNews()
 {
 	var news = $("#news-container");
-	var err_str = '<div class="pure-u-1"><h4>Could not load news items. Please try refreshing the page.</h4></div>';
-	var no_posts_str = '<div class="pure-u-1"><h4>There are no posts to display.</h4></div>';
+	var err_str = '<h4>Could not load news items. Please try refreshing the page.</h4>';
+	var no_posts_str = '<h4>There are no posts to display.</h4>';
 
-	$.get( "getNews.php", function( data )
+	$.get( "/common/php/getNews.php?type=news", function( data )
 	{
 		// data comes in as a string, holding either "error: <error code>" or json
 		
@@ -162,8 +162,6 @@ function loadNews()
 			return;
 		}
 
-		//alert(data);
-
 		// else if it was a json output
 		var data_arr = $.parseJSON(data);
 
@@ -175,16 +173,60 @@ function loadNews()
 			var imageURL = curr.post_image;
 
 			// only set the pic if url is present
-			var picDiv = '<div class="pure-u-1 pure-u-md-1-4"></div>';
+			var picDiv = '<div class="pure-g"><div class="pure-u-1 pure-u-md-1-4"></div>';
 			if (imageURL !== "")
-				picDiv = '<div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
+				picDiv = '<div class="pure-g"><div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
 			
-			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 style="text-decoration: underline">' + title + '</h3><p>' + description + '</p></div>'
+			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 style="text-decoration: underline">' + title + '</h3><p>' + description + '</p></div></div>'
 
 			news.append(picDiv + contentDiv);
 
 		});
 
 	});
-	
 }
+
+// for the front page news
+function loadFrontNews()
+{
+	var slides = $(".slides");
+
+	$.get( "/common/php/getNews.php?type=front", function( data )
+	{
+		// data comes in as a string, holding either "error: <error code>" or json
+		
+		// if it errored out, put in the error string
+		if (data.indexOf("error: ") >= 0)
+		{
+			slides.append('<li><h3>Could not load news items. Please try refreshing the page.</h3></li>');
+			return;
+		}
+
+		else if (data == "none")
+		{
+			slides.append('<li><h3>There are no posts to display.</h3><li>');
+			return;
+		}
+
+		// else if it was a json output
+		var data_arr = $.parseJSON(data);
+
+		$(data_arr).each(function(index, curr)
+		{
+			var title = curr.post_title;
+			var description = curr.post_description;
+			var imageURL = curr.post_image;
+
+			slides.append('<li><h3>' + title + '</h3>' + '<h4>' + description + '</h4></li>');
+		});
+
+		// now that it's all loaded, call the flexslider stuff
+		$('.flexslider').flexslider({
+	    	slideshowSpeed : 7500,
+	    	animation : "slide",
+	    	maxItems : 5,
+	    });
+	});
+
+}
+
