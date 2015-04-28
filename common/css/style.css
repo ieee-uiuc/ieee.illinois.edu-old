@@ -534,6 +534,13 @@ you are welcome to flip this around to make it consistent.
 		padding: 0 0.75vw;
 	}
 
+	.flex-nav {
+		/* stretch to fill height to fix on firefox */
+		position: absolute;
+		top: 0;
+		bottom: 0;
+	}
+
 }
 
 /* Mobile Specific */
