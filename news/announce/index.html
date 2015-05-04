@@ -27,14 +27,14 @@
 <div class="custom-wrapper pure-g pure-menu-fixed"></div>
 
 <!-- Splash image -->
-<div class="splash-container" style="position:relative">
+<div class="splash-container">
     <div class="splash">
       <h1>Announce</h1>
     </div>
 </div>
 
 <!-- Hill, content, footer -->
-<div class="content-wrapper content-wrapper-offset">
+<div class="content-wrapper">
 
   <section>
     <h2 class="is-center">Announce Archive</h2>
@@ -54,8 +54,8 @@
 
 <!-- Load the header, and once that's done, call readyToGo to add in all the stuff from main.js -->
 <script>
-  $(".custom-wrapper").load( "/common/header.php", readyToGo);
-	$(".footer").load( "/common/footer.html" );
+  $(".custom-wrapper").load("/common/header.php");
+	$(".footer").load("/common/footer.html", readyToGo);
 </script>
 
 </body>
