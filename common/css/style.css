@@ -254,6 +254,7 @@ a {
 	border-radius: 10px;
 	height: 50vh;
 	background-color: transparent;
+	overflow: hidden;
 }
 
 /* Make the flex slider buttons more visible */
