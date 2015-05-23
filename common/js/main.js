@@ -230,3 +230,6 @@ function loadFrontNews()
 
 }
 
+// whenever main.js is loaded, load in header and footer
+$(".custom-wrapper").load("/common/header.php", readyToGo);
+$(".footer").load("/common/footer.html");
