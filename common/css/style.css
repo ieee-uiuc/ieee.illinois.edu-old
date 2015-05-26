@@ -18,11 +18,6 @@
 	box-sizing: border-box;
 }
 
-/* Adding a display: flex to pure-g since they decided not to include a generic one, but they did include the webkit and ms specific one... */
-.pure-g {
-	display: flex;
-}
-
 body {
 	background-color: #f3f3f3;
 	color: rgb(68, 85, 92);
@@ -469,6 +464,9 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
+
+	/* Firefox vertical align fix since PureCSS grids are not flex boxes on Firefox */
+	display: flex;
 		
 	-ms-align-items: center;
 	-moz-align-items: center;
