@@ -4,7 +4,7 @@ var logo, nav, toggle, content;
 function toggleHorizontal()
 {
 	[].forEach.call(
-		$(".navbar-wrapper")[0].querySelectorAll('.custom-can-transform'),
+		$(".navbar-wrapper")[0].querySelectorAll('.menu-can-transform'),
 		function(el){
 			el.classList.toggle('pure-menu-horizontal');
 		}

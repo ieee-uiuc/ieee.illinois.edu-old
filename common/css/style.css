@@ -18,13 +18,18 @@
 	box-sizing: border-box;
 }
 
+/* Adding a display: flex to pure-g since they decided not to include a generic one, but they did include the webkit and ms specific one... */
+.pure-g {
+	display: flex;
+}
+
 body {
 	background-color: #f3f3f3;
 	color: rgb(68, 85, 92);
 }
 
 section .pure-g > div {
-	padding: 1.5% 3%;
+	padding: 2vh 3vw;
 }
 
 /* ------------->>> Scrollbar <<<--------------*/
@@ -188,7 +193,7 @@ a {
 /* ----------->>> Main Image and Page Title <<<------------*/
 
 /* Splash Image wrapper for scrollover effect */
-.splash-container {
+.splash-wrapper {
 	z-index: 1;
 	overflow: hidden;
 
@@ -199,10 +204,11 @@ a {
 	position: fixed !important;
 
 	/* Blue filter over image */
+	/* default image is of eceb-1 */
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/grainger.jpg');
+	),url('/common/img/splash/eceb-1.jpg');
 	background-repeat: no-repeat;
 	background-position: center center, center center;
 	background-size: cover, cover;
@@ -213,11 +219,19 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/eceb.jpg');
+	),url('/common/img/splash/eceb-1.jpg');
+}
+
+.splash-grainger
+{
+	background-image:linear-gradient(
+		rgba(20, 54, 70, 0.60),
+		rgba(20, 54, 70, 0.60)
+	),url('/common/img/splash/grainger.jpg');
 }
 
 .splash {
-	/* absolute center .splash within .splash-container */
+	/* absolute center .splash within .splash-wrapper */
 	width: 100%;
 
 	/* attempt at vertical center */
@@ -272,6 +286,7 @@ a {
 	min-height: 12%;
 	z-index: 2;
 	background: rgb(243,243,243);
+	/*overflow-x: hidden;*/
 }
 
 /* 6.2 is calculated by the aspect ratio of the hill */
@@ -320,7 +335,7 @@ a {
 
 .navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
-	height: 28em;
+	height: 26em;
 }
 
 /* Mobile menu fix */
@@ -413,9 +428,6 @@ a {
 .navbar-link {
 	font-size: 1.5em;
 	color: rgb(243, 243, 243);
-	padding-bottom: 0.5vh;
-	padding-left: 0.75vw;
-	padding-right: 0.75vw;
 }
 
 .navbar-link:hover,
@@ -457,12 +469,7 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
-
-	display: -ms-flexbox;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: flex;
-	
+		
 	-ms-align-items: center;
 	-moz-align-items: center;
 	-webkit-align-items: center;
@@ -471,16 +478,7 @@ footer {
 
 .footer-content {
 	padding: 1em;
-
-	display: -ms-inline-flexbox;
-	display: -moz-inline-flex;
-	display: -webkit-inline-flex;
-	display: inline-flex;
-	
-	-ms-align-items: center;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-  	align-items: center;
+	text-align: center;
 }
 
 .footer-content * {
@@ -592,6 +590,10 @@ you are welcome to flip this around to make it consistent.
 
 	.navbar-toggle {
 		display: inline;
+	}
+
+	.navbar-link {
+		padding: 1vh;
 	}
 
 	.navbar-menu {

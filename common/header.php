@@ -33,7 +33,7 @@
 </div>
 
 <div class="pure-u-1 pure-u-md-3-4 flex-nav">
-	<div class="pure-menu pure-menu-horizontal navbar-menu custom-can-transform">
+	<div class="pure-menu pure-menu-horizontal navbar-menu menu-can-transform">
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item ieee-menu-item">
 				<?php
