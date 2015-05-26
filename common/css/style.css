@@ -484,7 +484,6 @@ footer {
 
 .footer-content {
 	padding: 1em;
-	text-align: center;
 }
 
 .footer-content * {
@@ -559,6 +558,20 @@ you are welcome to flip this around to make it consistent.
 	.pure-offset-1-8 {
 		margin-left: 12.5%;
 		margin-right: 12.5%;
+	}
+
+	/* On desktop, the footer content should be aligned nicely */
+	/* This is assuming we have a three section setup */
+	.footer-content:nth-child(1) {
+		text-align: left;
+	}
+
+	.footer-content:nth-child(2) {
+		text-align: center;
+	}
+
+	.footer-content:nth-child(3) {
+		text-align: right;
 	}
 
 }
