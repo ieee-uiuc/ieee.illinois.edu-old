@@ -106,10 +106,10 @@ p {
 	text-align: justify;
 }
 
-/* Only those lists that are next to paragraphs should have larger fonts */
+/* Only those lists that are next to paragraphs should have paragraph-sized fonts */
 p ~ ol,
 p ~ ul {
-	font-size: 1.15em;
+	font-size: 1.25em;
 }
 
 h2, h3, h4, p {
