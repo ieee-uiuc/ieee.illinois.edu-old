@@ -4,7 +4,7 @@ var logo, nav, toggle, content;
 function toggleHorizontal()
 {
 	[].forEach.call(
-		$(".custom-wrapper")[0].querySelectorAll('.custom-can-transform'),
+		$(".navbar-wrapper")[0].querySelectorAll('.custom-can-transform'),
 		function(el){
 			el.classList.toggle('pure-menu-horizontal');
 		}
@@ -33,7 +33,7 @@ function readyToGo()
 {
 	// Now that all DOM content is loaded, fill in the global variables
 	logo = $(".logo");
-	nav = $(".custom-wrapper");
+	nav = $(".navbar-wrapper");
 	toggle = $("#toggle");
 	content = $(".content-wrapper");
 
@@ -177,7 +177,7 @@ function loadNews()
 			if (imageURL !== "")
 				picDiv = '<div class="pure-g"><div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
 			
-			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 style="text-decoration: underline">' + title + '</h3><p>' + description + '</p></div></div>'
+			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 class="news-title">' + title + '</h3><p>' + description + '</p></div></div>'
 
 			news.append(picDiv + contentDiv);
 
@@ -231,5 +231,5 @@ function loadFrontNews()
 }
 
 // whenever main.js is loaded, load in header and footer
-$(".custom-wrapper").load("/common/header.php", readyToGo);
+$(".navbar-wrapper").load("/common/header.php", readyToGo);
 $(".footer").load("/common/footer.html");

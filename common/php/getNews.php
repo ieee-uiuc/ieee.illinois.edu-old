@@ -12,8 +12,9 @@ if (!$con)
 // change query depending on the type of thing we want
 // the type is either news, or front page items
 
-//if ($_GET["type"] == "news")
 $query = "SELECT * FROM blog";
+
+// If the front page is requesting news, then only return those that should be only those
 if ($_GET["type"] == "front")
 	$query .= " WHERE front_page=1";
 

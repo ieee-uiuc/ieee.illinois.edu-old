@@ -28,12 +28,12 @@
 <div class="pure-u-1 pure-u-md-1-4">
 	<div class="pure-menu">
 		<a href="/" class="pure-menu-heading" style="width:50%;"><img class="logo" src="/common/img/logo.png"></a>
-		<a href="javascript:void(0)" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+		<a href="javascript:void(0)" class="navbar-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
 	</div>
 </div>
 
 <div class="pure-u-1 pure-u-md-3-4 flex-nav">
-	<div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
+	<div class="pure-menu pure-menu-horizontal navbar-menu custom-can-transform">
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item ieee-menu-item">
 				<?php

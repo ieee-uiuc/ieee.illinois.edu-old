@@ -306,7 +306,7 @@ a {
 //                                          //
 ////////////////////////////////////////////*/
 
-.custom-wrapper {
+.navbar-wrapper {
 	background-color: transparent;
 	-webkit-font-smoothing: antialiased;
 	overflow: hidden;
@@ -323,7 +323,7 @@ a {
 	user-select: none;
 }
 
-.custom-wrapper.open {
+.navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
 	height: 28em;
 }
@@ -333,7 +333,7 @@ a {
 	height: auto;
 }
 
-.custom-menu-3 {
+.navbar-menu {
 	padding: 0 1vh;
 	width: 100%;
 
@@ -347,7 +347,7 @@ a {
 	text-align: right;
 }
 
-.custom-toggle {
+.navbar-toggle {
 	width: 50px;
 	height: 50px;
 	position: absolute;
@@ -356,7 +356,7 @@ a {
 	display: none;
 }
 
-.custom-toggle .bar {
+.navbar-toggle .bar {
 	background-color: rgb(255,116,0);
 	display: block;
 	width: 50px;
@@ -373,7 +373,7 @@ a {
 	transition: all 0.5s;
 }
 
-.custom-toggle .bar:first-child {
+.navbar-toggle .bar:first-child {
 	-o-transform: translateY(-12px);
 	-webkit-transform: translateY(-12px);
 	-moz-transform: translateY(-12px);
@@ -381,7 +381,7 @@ a {
 	transform: translateY(-12px);
 }
 
-.custom-toggle.x .bar {
+.navbar-toggle.x .bar {
 	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -389,7 +389,7 @@ a {
 	transform: rotate(45deg);
 }
 
-.custom-toggle.x .bar:first-child {
+.navbar-toggle.x .bar:first-child {
 	-o-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
@@ -436,7 +436,7 @@ a {
 	border: 0;
 	color: rgb(255,116,0);
 	background-color: rgb(255,116,0)!important;
-	height: 0.3vh;
+	height: 0.5vh;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -518,6 +518,13 @@ footer {
 	overflow: scroll;
 }
 
+/* ----------->>> News <<<------------*/
+
+.news-title {
+	text-decoration: underline;
+	padding-top: 0;
+}
+
 /*////////////////////////////////////////////
 //                                          //
 //               Media Queries              //
@@ -540,7 +547,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.navbar-link {
-		padding: 0 0.75vw;
+		padding: 1vw;
 	}
 
 	.flex-nav {
@@ -579,15 +586,15 @@ you are welcome to flip this around to make it consistent.
 		font-size: 1em;
 	}
 
-	.custom-wrapper {
+	.navbar-wrapper {
 		height: 4em;
 	}
 
-	.custom-toggle {
+	.navbar-toggle {
 		display: inline;
 	}
 
-	.custom-menu-3 {
+	.navbar-menu {
 		text-align: left;
 
 		-o-transform: none;
