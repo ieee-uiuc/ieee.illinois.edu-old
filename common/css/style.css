@@ -131,8 +131,16 @@ a {
   	-webkit-tap-highlight-color: transparent;
 }
 
-.is-center {
+.left-align	{
+	text-align: left;
+}
+
+.center-align {
 	text-align: center;
+}
+
+.right-align {
+	text-align: right;
 }
 
 .orange-text {
