@@ -538,7 +538,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.navbar-link {
-		padding: 1vw;
+		padding: 1vw 0.65vw;
 	}
 
 	.flex-nav {
