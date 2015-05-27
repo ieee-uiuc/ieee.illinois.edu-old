@@ -233,3 +233,9 @@ function loadFrontNews()
 // whenever main.js is loaded, load in header and footer
 $(".navbar-wrapper").load("/common/header.php", readyToGo);
 $(".footer").load("/common/footer.html");
+
+/* displays the correct spark pdf in the viewer */
+function viewSpark(edition)
+{
+	$('#spark-viewer').html(edition);
+}
