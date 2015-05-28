@@ -484,8 +484,9 @@ footer {
 	text-align: center;
 }
 
-.footer-content * {
+.footer-content > * {
 	margin: auto;
+	padding: 0;
 }
 
 .footer-logo {
