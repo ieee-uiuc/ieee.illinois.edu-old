@@ -334,7 +334,7 @@ a {
 
 .navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
-	height: 26em;
+	height: auto;
 }
 
 /* Mobile menu fix */
