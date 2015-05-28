@@ -12,6 +12,8 @@
 //                                          //
 ////////////////////////////////////////////*/
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -48,18 +50,12 @@ section .pure-g > div {
 
 /* ----------->>> Text Decoration <<<------------*/
 
-/* The entire website should have the Raleway font, 
-*   but fall back to just sans-serif. 
-*/
-@font-face {
-	font-family: 'Raleway';
-	font-style: normal;
-	font-weight: 400;
-	  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2'), url(http://fonts.gstatic.com/s/raleway/v9/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
-}
+/* The entire website should have the Open Sans font, but fall back to just sans-serif. */
 
 * {
-	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Raleway', sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 }
 
 /* Text Selection should be orange */
@@ -78,7 +74,6 @@ section .pure-g > div {
 h1 {
 	color: #f3f3f3;
 	font-size: 7rem;
-	font-weight: 400;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -113,7 +108,6 @@ p ~ ul {
 }
 
 h2, h3, h4, p {
-	font-weight: 400;
 	margin: 0;
 }
 
