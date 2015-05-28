@@ -29,7 +29,7 @@ function toggleMenu()
 };
 
 // Called whenever page is loaded
-function readyToGo()
+function init()
 {
 	// Now that all DOM content is loaded, fill in the global variables
 	logo = $(".logo");
@@ -238,9 +238,12 @@ function loadFrontNews()
 
 }
 
-// whenever main.js is loaded, load in header and footer
-$(".navbar-wrapper").load("/common/header.php", readyToGo);
-$("#footer").load("/common/footer.html");
+// After page content is loaded, fill in header and footer, and call init();
+$(".navbar-wrapper").load("/common/header.php", function() {
+	$("#footer").load("/common/footer.html", function() {
+		init();
+	});
+});
 
 /* displays the correct spark pdf in the viewer */
 function viewSpark(edition)
