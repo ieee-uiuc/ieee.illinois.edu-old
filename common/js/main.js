@@ -2,21 +2,17 @@ var logo, nav, toggle, content;
 
 /* ------------->>> Navbar <<<--------------*/
 
-function toggleHorizontal()
-{
-	$('.menu-can-transform').toggleClass('pure-menu-horizontal');
-};
-
 function toggleMenu()
 {
 	// set timeout so that the panel has a chance to roll up before the menu switches states
 	if (nav.hasClass('open'))
 	{
-		setTimeout(toggleHorizontal, 500);
+		// this delay isn't actually doing anything, same with setTimeout
+		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
 	}
 	else
 	{
-		toggleHorizontal();
+		$('.menu-can-transform').removeClass('pure-menu-horizontal');
 	}
 
 	nav.toggleClass('open');
@@ -177,7 +173,7 @@ $(window).scroll(function()
 	if (nav.hasClass('open'))
 	{
 		nav.toggleClass('open');
-		setTimeout(toggleHorizontal, 500);
+		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
 		toggle.toggleClass('x');
 	}
 
