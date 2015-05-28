@@ -104,7 +104,6 @@ h4 {
 
 p {
 	font-size: 1.25rem;
-	text-align: justify;
 }
 
 /* Only those lists that are next to paragraphs should have paragraph-sized fonts */
@@ -168,6 +167,8 @@ a {
 	padding: 0.5em 2em;
 	border-radius: 5px;
 	margin: 0.5em;
+	text-align: center;
+	width: 90%;
 }
 
 .pure-button-md {
@@ -476,8 +477,8 @@ footer {
 	color: #f3f3f3;
 
 	/* Firefox vertical align fix since PureCSS grids are not flex boxes on Firefox */
-	display: flex;
-		
+	/*display: flex;*/
+
 	-ms-align-items: center;
 	-moz-align-items: center;
 	-webkit-align-items: center;
@@ -486,6 +487,7 @@ footer {
 
 .footer-content {
 	padding: 1em;
+	text-align: center;
 }
 
 .footer-content * {
@@ -516,6 +518,7 @@ footer {
 {
 	pointer-events: none;
 	overflow: scroll;
+	width: 100%!important;
 }
 
 /* ----------->>> News <<<------------*/
@@ -523,6 +526,13 @@ footer {
 .news-title {
 	text-decoration: underline;
 	padding-top: 0;
+}
+
+/* ----------->>> Spark <<<------------*/
+
+#spark-viewer object {
+	width: 100%;
+	height: 100vh;
 }
 
 /*////////////////////////////////////////////
@@ -557,9 +567,12 @@ you are welcome to flip this around to make it consistent.
 		bottom: 0;
 	}
 
+	.pure-offset-1-4 {
+		margin-left: 25%;
+	}
+
 	.pure-offset-1-8 {
 		margin-left: 12.5%;
-		margin-right: 12.5%;
 	}
 
 	/* On desktop, the footer content should be aligned nicely */
@@ -576,7 +589,14 @@ you are welcome to flip this around to make it consistent.
 		text-align: right;
 	}
 
+	/* Specific fix for Firefox mobile not working well with flex and PureCSS not including Firefox flex support. Chrome and IE are already included in this. */
+	footer {
+		display: flex;
+	}
+
 }
+
+/* Since our navbar now has so many options I'm changing the media query to 1024px for the toggle to show up */
 
 /* Mobile Specific */
 @media (max-width: 47.999em)
@@ -649,3 +669,5 @@ you are welcome to flip this around to make it consistent.
 	}
 
 }
+
+/* special fix for firefox mobile being dumb with flex box */

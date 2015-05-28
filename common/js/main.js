@@ -167,19 +167,27 @@ function loadNews()
 
 		$(data_arr).each(function(index, curr)
 		{
-
-			var title = curr.post_title;
-			var description = curr.post_description;
 			var imageURL = curr.post_image;
 
 			// only set the pic if url is present
-			var picDiv = '<div class="pure-g"><div class="pure-u-1 pure-u-md-1-4"></div>';
-			if (imageURL !== "")
-				picDiv = '<div class="pure-g"><div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
+			var div = '<div class="pure-g">';
 			
-			var contentDiv = '<div class="pure-u-1 pure-u-md-3-4"><h3 class="news-title">' + title + '</h3><p>' + description + '</p></div></div>'
+			var title = '<div class="pure-u-1"><h3 class="news-title">' + curr.post_title + '</h3></div>';
+			
+			
+			var pic = '';
+			var x = 4;
 
-			news.append(picDiv + contentDiv);
+			// if there is an image
+			if (imageURL !== "")
+			{
+				pic = '<div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
+				x = 3;
+			}
+
+			var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description + '</p></div>';
+
+			news.append(div + title + pic + desc);
 
 		});
 
@@ -232,10 +240,10 @@ function loadFrontNews()
 
 // whenever main.js is loaded, load in header and footer
 $(".navbar-wrapper").load("/common/header.php", readyToGo);
-$(".footer").load("/common/footer.html");
+$("#footer").load("/common/footer.html");
 
 /* displays the correct spark pdf in the viewer */
 function viewSpark(edition)
 {
-	$('#spark-viewer').html(edition);
+	$('#spark-viewer').html('<object data="Spark - sp10.pdf" type="application/pdf"><p>Alternative text - include a link <a href="Spark - sp10.pdf">to the PDF!</a></p></object>');
 }
