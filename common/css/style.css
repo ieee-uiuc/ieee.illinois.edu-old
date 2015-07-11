@@ -395,7 +395,7 @@ a {
 }
 
 .logo {
-	max-height: 85px;
+	max-height: 4rem;
 
 	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -405,7 +405,7 @@ a {
 }
 
 .small-logo {
-	max-height: 50px;
+	max-height: 3rem;
 }
 
 .solid-nav {
@@ -631,7 +631,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.logo {
-		max-height: 50px;
+		max-height: 3rem;
 	}
 
 	.pure-hidden {
