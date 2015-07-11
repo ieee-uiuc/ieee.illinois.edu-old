@@ -53,7 +53,6 @@ section .pure-g > div {
 /* The entire website should have the Open Sans font, but fall back to just sans-serif. */
 
 * {
-	/*font-family: 'Raleway', sans-serif;*/
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 }
@@ -468,7 +467,7 @@ footer {
 }
 
 .footer-content {
-	padding: 1em;
+	padding: 0.75rem;
 	text-align: center;
 }
 
@@ -479,6 +478,7 @@ footer {
 
 .footer-logo {
 	height: 48px;
+	margin: auto;
 }
 
 /*////////////////////////////////////////////
