@@ -125,13 +125,13 @@ function loadFrontNews()
 		// if it errored out, put in the error string
 		if (data.indexOf("error: ") >= 0)
 		{
-			news.append(err_str);
+			slides.append(err_str);
 			return;
 		}
 
 		else if (data == "none")
 		{
-			news.append(no_posts_str);
+			slides.append(no_posts_str);
 			return;
 		}
 
