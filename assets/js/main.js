@@ -43,7 +43,7 @@ function submitJoin()
 
 	// Send it over, and fill the response the response
 	$.ajax({
-	  url: "/common/php/join.php",
+	  url: "/assets/php/join.php",
 	  type: "POST",
 	  data: fd,
 	  processData: false,
@@ -70,7 +70,7 @@ function loadNews()
 	var err_str = '<h4>Could not load news items. Please try refreshing the page.</h4>';
 	var no_posts_str = '<h4>There are no posts to display.</h4>';
 
-	$.get( "/common/php/getNews.php?type=news", function( data )
+	$.get( "/assets/php/getNews.php?type=news", function( data )
 	{
 		// if it errored out, put in the error string
 		if (data.indexOf("error: ") >= 0)
@@ -120,7 +120,7 @@ function loadFrontNews()
 	var err_str = '<li><h3>Could not load news items. Please try refreshing the page.</h3></li>';
 	var no_posts_str = '<li><h3>There are no posts to display.</h3><li>';
 
-	$.get( "/common/php/getNews.php?type=front", function( data )
+	$.get( "/assets/php/getNews.php?type=front", function( data )
 	{
 		// if it errored out, put in the error string
 		if (data.indexOf("error: ") >= 0)
@@ -194,8 +194,8 @@ $(window).scroll(function()
 });
 
 // After page content is loaded, fill in header and footer, then do initial things;
-$(".navbar-wrapper").load("/common/header.php", function() {
-	$("#footer").load("/common/footer.html", function() {
+$(".navbar-wrapper").load("/assets/header.php", function() {
+	$("#footer").load("/assets/footer.html", function() {
 		// Now that all DOM content is loaded, fill in the global variables
 		logo = $(".logo");
 		nav = $(".navbar-wrapper");

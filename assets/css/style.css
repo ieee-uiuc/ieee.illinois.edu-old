@@ -191,7 +191,7 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/eceb-1.jpg');
+	),url('/assets/img/splash/eceb-1.jpg');
 	background-repeat: no-repeat;
 	background-position: center center, center center;
 	background-size: cover, cover;
@@ -202,7 +202,7 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/eceb-1.jpg');
+	),url('/assets/img/splash/eceb-1.jpg');
 }
 
 .splash-grainger
@@ -210,7 +210,7 @@ a {
 	background-image:linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/common/img/splash/grainger.jpg');
+	),url('/assets/img/splash/grainger.jpg');
 }
 
 .splash {
@@ -286,7 +286,7 @@ a {
 
 /* lightbulb img version
 .footer-ribbon {
-		background:url('/common/img/footer.png'), rgb(68, 85, 92);
+		background:url('/assets/img/footer.png'), rgb(68, 85, 92);
 		background-repeat: no-repeat;
 		background-position: 40% center, center center;
 		background-size: contain, cover;

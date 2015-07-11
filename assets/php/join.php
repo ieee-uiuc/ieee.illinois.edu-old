@@ -3,7 +3,7 @@
 // the user data variable names match the "name" attributes in the html join page
 
 // Include the php mailer
-require_once(__DIR__ . "/../common/php/PHPMailer.php");
+require_once(__DIR__ . "/../assets/php/PHPMailer.php");
 
 // Save all the user information into local variables
 parse_str($_POST["userData"]);
