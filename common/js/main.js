@@ -43,7 +43,7 @@ function submitJoin()
 
 	// Send it over, and fill the response the response
 	$.ajax({
-	  url: "join.php",
+	  url: "/common/php/join.php",
 	  type: "POST",
 	  data: fd,
 	  processData: false,
