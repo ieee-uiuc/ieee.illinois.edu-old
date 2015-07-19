@@ -1,0 +1,62 @@
+{
+	"Technical Branch": [
+		{
+			"name": "Projects Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"name": "Workshops Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"name": "JSDC Team",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	],
+
+	"Professional Branch": [
+		{
+			"name": "Corporate Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"name": "Networking Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"name": "External Relations Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	],
+
+	"Membership Branch": [
+		{
+			"name": "Social Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"name": "SPARK Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"name": "Awards Committee",
+			"image-url": "hello.jpg",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	]
+
+}

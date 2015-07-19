@@ -164,6 +164,73 @@ function viewSpark(edition)
 	$('#spark-viewer').html('<object data="Spark - sp10.pdf" type="application/pdf"><p>Alternative text - include a link <a href="Spark - sp10.pdf">to the PDF!</a></p></object>');
 }
 
+/* ------------->>> About <<<--------------*/
+
+function loadCommittees()
+{
+	var committees = $('#committees');
+
+	// for each thing in committees.json, make a section, alternating the color
+	$.getJSON( "/about/committees/committees.json", function(data, status, jqXHR) {
+		var highlight = false;
+
+		$.each( data, function( branch, subcommittees )
+		{
+
+			var append = '<section';
+
+			if (highlight)
+				append += ' class="highlight"';
+
+			append += '><h2>' + branch + '</h2><div class="pure-g">'
+			$.each(subcommittees, function(key, committee) 
+			{
+				append += '<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 center-align"><h3 class="orange-text" id="projects">' + committee.name + '</h3><p>' + committee.description + '</p></div>';
+			});
+			append += '</div></section>';
+			committees.append(append);
+
+			// Alternate highlight
+			highlight = !highlight;
+
+		});
+	});
+}
+
+function loadExecBoard()
+{
+	var execBoard = $('#exec-board');
+
+	// for each thing in execBoard.json, make a section, alternating the color
+	$.getJSON( "/about/exec-board/exec-board.json", function(data, status, jqXHR) {
+		var highlight = false;
+
+		$.each( data, function( branch, branchMembers )
+		{
+
+			var append = '<section';
+
+			if (highlight)
+				append += ' class="highlight"';
+
+			append += '><h2>' + branch + '</h2><div class="pure-g">'
+			$.each(branchMembers, function(key, member) 
+			{
+				// append += '<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 center-align"><img class="headshot pure-img" src="' + member.imageUrl + '"></img><h3 class="orange-text" id="projects">' + member.name + '</h3><p>' + member.description + '</p></div>';
+
+				append += '<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 center-align"><img class="headshot pure-img" src="' + member.imageUrl + '"></img><h3>' + member.name+ '</h3><h4>' + member.title + '</h4><a href="' + member.email + '">ieee-president@illinois.edu</a><p>' + member.description + '</p></div>';
+			});
+			append += '</div></section>';
+			execBoard.append(append);
+
+			// Alternate highlight
+			highlight = !highlight;
+
+		});
+	});
+}
+
+
 /* ------------->>> Global <<<--------------*/
 
 // jQuery to make the navbar solid color on scroll

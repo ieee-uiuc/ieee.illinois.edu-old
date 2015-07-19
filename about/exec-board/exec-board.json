@@ -1,0 +1,138 @@
+{
+	"Administrative": [
+		{
+			"title": "President",
+			"name": "Anselmo Shim",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"title": "Secretary/Treasurer",
+			"name": "Sunny Park",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-secretary@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "Technical Vice President",
+			"name": "Anit Gandhi",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-technical@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "Professional Vice President",
+			"name": "Zhengbang Chen",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-professional@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "Membership Services Vice President",
+			"name": "Elena Lin",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-membership@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	],
+
+	"Technical Branch": [
+		{
+			"title": "President",
+			"name": "Rahul Shah",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"title": "President",
+			"name": "Rohan Mathur",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "President",
+			"name": "Dhruv Kanwal",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "President",
+			"name": "Caleb Albers",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	],
+
+	"Professional Branch": [
+		{
+			"title": "President",
+			"name": "Corporate Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"title": "President",
+			"name": "Networking Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "President",
+			"name": "External Relations Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	],
+
+	"Membership Branch": [
+		{
+			"title": "President",
+			"name": "Social Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}, 
+
+		{
+			"title": "President",
+			"name": "SPARK Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "President",
+			"name": "Awards Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		},
+
+		{
+			"title": "President",
+			"name": "Awards Committee",
+			"imageUrl": "bs.jpg",
+			"email": "ieee-president@illinois.edu",
+			"description": "The Projects Committee allows you get involved by working on your own projects, potentially getting funding for them, or finding others to work on projects together. We work with other organizations like iRobotics and ECE Pulse as well."
+		}
+	]
+
+}
