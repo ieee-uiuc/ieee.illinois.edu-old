@@ -8,7 +8,10 @@ function toggleMenu()
 	if (nav.hasClass('open'))
 	{
 		// this delay isn't actually doing anything, same with setTimeout
-		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
+		// $('.menu-can-transform').addClass('pure-menu-horizontal');
+		setTimeout( function() {
+			$('.menu-can-transform').addClass('pure-menu-horizontal');
+		}, 500);
 	}
 	else
 	{
@@ -18,6 +21,32 @@ function toggleMenu()
 	nav.toggleClass('open');
 	toggle.toggleClass('x');
 };
+
+// Makes the navbar solid
+function solidNav() {
+	// if the menu is open and you scroll, close the menu
+	if (nav.hasClass('open'))
+	{
+		nav.toggleClass('open');
+		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
+		toggle.toggleClass('x');
+	}
+
+	// get the computed height of the navbar
+	var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
+
+	// On scroll, make the navbar solid, and the logo smaller
+	if (nav.offset().top > content.offset().top-navHeight)
+	{
+		nav.addClass("solid-nav");
+		logo.addClass("small-logo");
+	}
+	else
+	{
+		nav.removeClass("solid-nav");
+		logo.removeClass("small-logo");		
+	}
+}
 
 /* ------------->>> Join Page <<<--------------*/
 
@@ -50,10 +79,10 @@ function submitJoin()
 	  contentType: false,
 	  success: function(data, textStatus, jqXHR)
 	  {
-	  	$('#join_form').fadeOut("slow", function(){
-		    var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + data + "</div></div>").hide();
-		    $(this).replaceWith(div);
-		    $('#join_results').fadeIn("slow");
+		$('#join_form').fadeOut("slow", function(){
+			var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + data + "</div></div>").hide();
+			$(this).replaceWith(div);
+			$('#join_results').fadeIn("slow");
 		});
 	  }
 	});
@@ -149,10 +178,10 @@ function loadFrontNews()
 
 		// now that it's all loaded, call the flexslider stuff
 		$('.flexslider').flexslider({
-	    	slideshowSpeed : 7500,
-	    	animation : "slide",
-	    	maxItems : 5,
-	    });
+			slideshowSpeed : 7500,
+			animation : "slide",
+			maxItems : 5,
+		});
 	});
 }
 
@@ -166,56 +195,47 @@ function viewSpark(edition)
 
 /* ------------->>> Global <<<--------------*/
 
-// jQuery to make the navbar solid color on scroll
-$(window).scroll(function()
-{
-	// if the menu is open and you scroll, close the menu
-	if (nav.hasClass('open'))
-	{
-		nav.toggleClass('open');
-		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
-		toggle.toggleClass('x');
-	}
+// After page content is loaded, fill in header and footer, then do initial things
+$(document).ready(function() {
+	$(".navbar-wrapper").load("/assets/header.php", function() {
+		$("#footer").load("/assets/footer.html", function() {
+			// Now that all DOM content is loaded, fill in the global variables
+			logo = $(".logo");
+			nav = $(".navbar-wrapper");
+			toggle = $("#toggle");
+			content = $(".content-wrapper");
 
-	// get the computed height of the navbar
-	var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
+			// Bind the hamburger toggle to the menu toggle function
+			toggle.click(toggleMenu);
 
-	// On scroll, make the navbar solid, and the logo smaller
-	if (nav.offset().top > content.offset().top-navHeight)
-	{
-		nav.addClass("solid-nav");
-		logo.addClass("small-logo");
-	}
-	else
-	{
-		nav.removeClass("solid-nav");
-		logo.removeClass("small-logo");		
-	}
-});
+			// If the window resizes or changes orientation and menu is open, close the menu
+			window.addEventListener( ('onorientationchange' in window) ? 'orientationchange':'resize' , function(){
+				if (nav.hasClass('open'))
+				{
+					toggleMenu();
+				}
+			});
 
-// After page content is loaded, fill in header and footer, then do initial things;
-$(".navbar-wrapper").load("/assets/header.php", function() {
-	$("#footer").load("/assets/footer.html", function() {
-		// Now that all DOM content is loaded, fill in the global variables
-		logo = $(".logo");
-		nav = $(".navbar-wrapper");
-		toggle = $("#toggle");
-		content = $(".content-wrapper");
+			$('#twitter-wrapper').click(function () {
+				$('#twitter-wrapper iframe').css("pointer-events", "auto");
+			});
 
-		// Bind the hamburger toggle to the menu toggle function
-		toggle.click(toggleMenu);
+			// Run the solid nav function in case we've refreshed to a non-top part of the screen
+			solidNav();
 
-		// If the window resizes or changes orientation and menu is open, close the menu
-		window.addEventListener( ('onorientationchange' in window) ? 'orientationchange':'resize' , function(){
-			if (nav.hasClass('open'))
-			{
-				toggleMenu();
-			}
-		});
-
-		$('#twitter-wrapper').click(function () {
-		    $('#twitter-wrapper iframe').css("pointer-events", "auto");
+			// Attach the solid nav function to the scroll event
+			$(window).scroll(solidNav);
 		});
 	});
 });
 
+
+// Smooth anchor scrolling animation, with the -50 offset to prevent hiding behind the navbar
+$(function(){
+	if (location.hash) {
+		$('html, body').animate({
+			scrollTop: $(location.hash).offset().top - 50
+		}, 2000);
+		return false;
+	}
+});

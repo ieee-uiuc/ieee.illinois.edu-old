@@ -318,7 +318,7 @@ a {
 
 .navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
-	height: auto;
+	max-height: initial;
 }
 
 /* Mobile menu fix */
@@ -609,7 +609,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.navbar-wrapper {
-		height: 4em;
+		max-height: 4em;
 	}
 
 	.navbar-toggle {
