@@ -235,7 +235,7 @@ $(function(){
 	if (location.hash) {
 		$('html, body').animate({
 			scrollTop: $(location.hash).offset().top - 50
-		}, 2000);
+		}, 1000);
 		return false;
 	}
 });
