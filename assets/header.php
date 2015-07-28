@@ -40,7 +40,7 @@
 <div class="pure-u-1 pure-u-md-1-4">
 	<div class="pure-menu">
 		<a href="/" class="pure-menu-heading" style="width:50%;"><img class="logo" src="/assets/img/logo.png"></a>
-		<a href="javascript:void(0)" class="navbar-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+		<div class="navbar-toggle" id="toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
 	</div>
 </div>
 

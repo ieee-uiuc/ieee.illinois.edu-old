@@ -340,6 +340,7 @@ a {
 	text-align: right;
 }
 
+/* ----------->>> Hamburger Icon <<<------------*/
 .navbar-toggle {
 	width: 50px;
 	height: 50px;
@@ -369,7 +370,7 @@ a {
 	transition: all 0.5s;
 }
 
-.navbar-toggle .bar:first-child {
+.navbar-toggle .bar:nth-child(1) {
 	-o-transform: translateY(-12px);
 	-webkit-transform: translateY(-12px);
 	-moz-transform: translateY(-12px);
@@ -377,7 +378,15 @@ a {
 	transform: translateY(-12px);
 }
 
-.navbar-toggle.x .bar {
+.navbar-toggle .bar:nth-child(3) {
+	-o-transform: translateY(12px);
+	-webkit-transform: translateY(12px);
+	-moz-transform: translateY(12px);
+	-ms-transform: translateY(12px);
+	transform: translateY(12px);
+}
+
+.navbar-toggle.x .bar:nth-child(1) {
 	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -385,7 +394,12 @@ a {
 	transform: rotate(45deg);
 }
 
-.navbar-toggle.x .bar:first-child {
+.navbar-toggle.x .bar:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+.navbar-toggle.x .bar:nth-child(3) {
 	-o-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
