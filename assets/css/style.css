@@ -348,6 +348,7 @@ a {
 	width: 3rem;
 	position: absolute;
 	height: 1.175rem; /* Based on below values of the icon */
+	top: 1.8125rem;
 	right: 1rem;
 
 	/* By default on desktop, don't display it */
@@ -605,28 +606,28 @@ you are welcome to flip this around to make it consistent.
 	/* Make fonts smaller on mobile
 	/* h1 is to be used for the title of the page */
 	h1 {
-		font-size: 3.5em;
+		font-size: 3.5rem;
 	}
 
 	/* h2 is to be used for sub-headings */
 	h2 {
-		font-size: 2.5em;
+		font-size: 2.5rem;
 	}
 
 	h3 {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 	}
 
 	h4 {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 	}
 
 	p, a, ul, li {
-		font-size: 1em;
+		font-size: 1rem;
 	}
 
 	.navbar-wrapper {
-		max-height: 4em;
+		max-height: 4rem;
 	}
 
 	.navbar-toggle {
