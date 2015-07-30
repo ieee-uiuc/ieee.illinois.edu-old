@@ -32,11 +32,13 @@ function solidNav() {
 		toggle.toggleClass('x');
 	}
 
+	var navBottom = $('#navBottom');
+
 	// get the computed height of the navbar
-	var navHeight = parseFloat(window.getComputedStyle(nav[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
+	var navHeight = parseFloat(window.getComputedStyle(navBottom[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
 
 	// On scroll, make the navbar solid, and the logo smaller
-	if (nav.offset().top > content.offset().top-navHeight)
+	if (navBottom.offset().top > content.offset().top-navHeight)
 	{
 		nav.addClass("solid-nav");
 		logo.addClass("small-logo");

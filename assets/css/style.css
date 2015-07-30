@@ -342,64 +342,72 @@ a {
 }
 
 /* ----------->>> Hamburger Icon <<<------------*/
-/* Since navbar-wrapper height is 4em, and this height is 2em, the top offset should be 1em */
+
 .navbar-toggle {
-	width: 3em;
+	width: 3rem;
 	position: absolute;
-	height: 2em;
-	top: 1em;
-	right: 1em;
+	height: 2rem;
+	top: 1.75em; /* Need to center this better */
+	right: 1rem;
+
+	/* By default on desktop, don't display it */
 	display: none;
+
 	/* This disables that annoying fill on mobile links */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
   	-webkit-tap-highlight-color: transparent;
 }
 
-.navbar-toggle .bar {
-	background-color: rgb(255,116,0);
-	display: block;
-	width: 3em;
-	height: 6px;
-	border-radius: 3em;
-	position: absolute;
-
-	-o-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	transition: all 0.5s;
+/* Animated toggle icon */
+.toggle-icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+  background-color: rgb(255,116,0);
+  border-radius: 3rem;
+  height: .375rem;
+  width: 3rem;
 }
 
-/* Move 2nd bar down 13px */
-.navbar-toggle .bar:nth-child(2) {
-	top: 13px;
+.toggle-icon:before,
+.toggle-icon:after {
+  border-radius: 3rem;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: rgb(255,116,0);
+  position: absolute;
+  display: block;
+  content: '';
+}
+.toggle-icon:before {
+  top: -.8rem; 
+}
+.toggle-icon:after {
+  top: .8rem;
 }
 
-/* Move 3rd bar down 26 px */
-.navbar-toggle .bar:nth-child(3) {
-	top: 26px;
+.toggle-icon,
+.toggle-icon:before,
+.toggle-icon:after {
+  transition: all .5s ease-in-out;
 }
 
-.navbar-toggle.x .bar:nth-child(1) {
-	top: 13px;
-	-o-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
+.navbar-toggle.x .toggle-icon {
+  background-color: transparent;
+  transform: rotate(45deg) translate(0%, -50%);
 }
 
-.navbar-toggle.x .bar:nth-child(2) {
-	opacity: 0;
+.navbar-toggle.x .toggle-icon:before {
+  transform: rotate(90deg);
+  top: 0;
 }
 
-.navbar-toggle.x .bar:nth-child(3) {
-	top: 13px;
-	-o-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+.navbar-toggle.x .toggle-icon:after {
+  transform: rotate(-180deg);
+  top: 0;
 }
 
 .logo {
