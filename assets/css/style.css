@@ -361,54 +361,70 @@ a {
 
 /* Animated toggle icon */
 .toggle-icon {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  color: inherit;
-  background-color: rgb(255,116,0);
-  border-radius: 3rem;
-  height: .375rem;
-  width: 3rem;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	color: inherit;
+	background-color: rgb(255,116,0);
+	border-radius: 3rem;
+	height: .375rem;
+	width: 3rem;
 }
 
 .toggle-icon:before,
 .toggle-icon:after {
-  border-radius: 3rem;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  background-color: rgb(255,116,0);
-  position: absolute;
-  display: block;
-  content: '';
+	border-radius: 3rem;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: rgb(255,116,0);
+	position: absolute;
+	display: block;
+	content: '';
 }
 .toggle-icon:before {
-  top: -.8rem; 
+	top: -.8rem; 
 }
 .toggle-icon:after {
-  top: .8rem;
+	top: .8rem;
 }
 
 .toggle-icon,
 .toggle-icon:before,
 .toggle-icon:after {
-  transition: all .5s ease-in-out;
+	-o-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .navbar-toggle.x .toggle-icon {
-  background-color: transparent;
-  transform: rotate(45deg) translate(0%, -50%);
+	background-color: transparent;
+	-o-transform: rotate(45deg) translate(0%, -50%);
+	-webkit-transform: rotate(45deg) translate(0%, -50%);
+	-moz-transform: rotate(45deg) translate(0%, -50%);
+	-ms-transform: rotate(45deg) translate(0%, -50%);
+	transform: rotate(45deg) translate(0%, -50%);
 }
 
 .navbar-toggle.x .toggle-icon:before {
-  transform: rotate(90deg);
-  top: 0;
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	top: 0;
 }
 
 .navbar-toggle.x .toggle-icon:after {
-  transform: rotate(-180deg);
-  top: 0;
+	-o-transform: rotate(-180deg);
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+	top: 0;
 }
 
 .logo {
@@ -670,5 +686,3 @@ you are welcome to flip this around to make it consistent.
 	}
 
 }
-
-/* special fix for firefox mobile being dumb with flex box */
