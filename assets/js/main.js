@@ -7,8 +7,6 @@ function toggleMenu()
 	// set timeout so that the panel has a chance to roll up before the menu switches states
 	if (nav.hasClass('open'))
 	{
-		// this delay isn't actually doing anything, same with setTimeout
-		// $('.menu-can-transform').addClass('pure-menu-horizontal');
 		setTimeout( function() {
 			$('.menu-can-transform').addClass('pure-menu-horizontal');
 		}, 500);
@@ -27,8 +25,10 @@ function solidNav() {
 	// if the menu is open and you scroll, close the menu
 	if (nav.hasClass('open'))
 	{
+		setTimeout( function() {
+			$('.menu-can-transform').addClass('pure-menu-horizontal');
+		}, 500);
 		nav.toggleClass('open');
-		$('.menu-can-transform').delay(500).addClass('pure-menu-horizontal');
 		toggle.toggleClass('x');
 	}
 

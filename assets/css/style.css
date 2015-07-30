@@ -316,9 +316,10 @@ a {
 	user-select: none;
 }
 
+/* 35em is more than ever necessary, but content will only fill as necessary. This allows us to use the animation */
 .navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
-	max-height: initial;
+	max-height: 35em;
 }
 
 /* Mobile menu fix */
@@ -341,12 +342,13 @@ a {
 }
 
 /* ----------->>> Hamburger Icon <<<------------*/
+/* Since navbar-wrapper height is 4em, and this height is 2em, the top offset should be 1em */
 .navbar-toggle {
-	width: 50px;
-	height: 50px;
+	width: 3em;
 	position: absolute;
-	top: 0.75em;
-	right: 0;
+	height: 2em;
+	top: 1em;
+	right: 1em;
 	display: none;
 	/* This disables that annoying fill on mobile links */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -356,12 +358,10 @@ a {
 .navbar-toggle .bar {
 	background-color: rgb(255,116,0);
 	display: block;
-	width: 50px;
-	height: 5px;
-	border-radius: 50px;
+	width: 3em;
+	height: 6px;
+	border-radius: 3em;
 	position: absolute;
-	top: 18px;
-	right: 7px;
 
 	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -370,23 +370,18 @@ a {
 	transition: all 0.5s;
 }
 
-.navbar-toggle .bar:nth-child(1) {
-	-o-transform: translateY(-12px);
-	-webkit-transform: translateY(-12px);
-	-moz-transform: translateY(-12px);
-	-ms-transform: translateY(-12px);
-	transform: translateY(-12px);
+/* Move 2nd bar down 13px */
+.navbar-toggle .bar:nth-child(2) {
+	top: 13px;
 }
 
+/* Move 3rd bar down 26 px */
 .navbar-toggle .bar:nth-child(3) {
-	-o-transform: translateY(12px);
-	-webkit-transform: translateY(12px);
-	-moz-transform: translateY(12px);
-	-ms-transform: translateY(12px);
-	transform: translateY(12px);
+	top: 26px;
 }
 
 .navbar-toggle.x .bar:nth-child(1) {
+	top: 13px;
 	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -395,11 +390,11 @@ a {
 }
 
 .navbar-toggle.x .bar:nth-child(2) {
-	width: 0%;
 	opacity: 0;
 }
 
 .navbar-toggle.x .bar:nth-child(3) {
+	top: 13px;
 	-o-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
