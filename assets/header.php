@@ -37,14 +37,14 @@
 
 ?>
 
-<div class="pure-u-1 pure-u-md-1-4">
+<div class="pure-u-1 pure-u-lg-1-4">
 	<div id="navBottom">
 		<a href="/" class="pure-menu-heading" style="width:50%;"><img class="logo" src="/assets/img/logo.png"></a>
 		<div class="navbar-toggle" id="toggle"><span class="toggle-icon"></span></div>
 	</div>
 </div>
 
-<div class="pure-u-1 pure-u-md-3-4 flex-nav">
+<div class="pure-u-1 pure-u-lg-3-4 flex-nav">
 	<div class="pure-menu-horizontal navbar-menu menu-can-transform">
 		<ul class="pure-menu-list">
 			<?php 

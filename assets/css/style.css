@@ -29,6 +29,10 @@ section .pure-g > div {
 	padding: 2vh 3vw;
 }
 
+.pure-hidden {
+	display: none;
+}
+
 /* ------------->>> Scrollbar <<<--------------*/
 
 ::-webkit-scrollbar
@@ -330,14 +334,6 @@ a {
 .navbar-menu {
 	padding: 0 1vh;
 	width: 100%;
-
-	/* Match the transform animation with the rest */
-	-o-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	transition: all 0.5s;
-
 	text-align: right;
 }
 
@@ -656,20 +652,10 @@ you are welcome to flip this around to make it consistent.
 
 	.navbar-menu {
 		text-align: left;
-
-		-o-transform: none;
-		-webkit-transform: none;
-		-moz-transform: none;
-		-ms-transform: none;
-		transform: none;
 	}
 
 	.logo {
 		max-height: 3rem;
-	}
-
-	.pure-hidden {
-		display: none;
 	}
 
 	.splash-head 
@@ -685,4 +671,40 @@ you are welcome to flip this around to make it consistent.
 		width: 100%;
 	}
 
+}
+
+/* 10inch tablet portrait Specific */
+@media (min-width: 48em) and (orientation: portrait) {
+	.navbar-wrapper {
+		max-height: 4rem;
+	}
+
+	.navbar-toggle {
+		display: inline;
+	}
+
+	.navbar-link {
+		padding: 1vh;
+	}
+
+	.logo {
+		max-height: 3rem;
+	}
+
+	.splash-head 
+	{
+		width: 95%;
+	}
+
+	input[type="text"] {
+		width: 100%;
+	}
+
+	.flex-nav {
+		position: relative;
+	}
+
+	.navbar-menu {
+		text-align: left;
+	}
 }
