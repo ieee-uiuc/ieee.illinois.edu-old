@@ -241,3 +241,11 @@ $(function(){
 		return false;
 	}
 });
+
+// Close the nav on mobile (or small desktop) if you click outside of it and it's already open
+$(document).on("mouseup touchend", function (e) {
+    if ( nav.hasClass('open') && !nav.is(e.target) && nav.has(e.target).length === 0 ) 
+    {
+        toggleMenu();
+    }
+});
