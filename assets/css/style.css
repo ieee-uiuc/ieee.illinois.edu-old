@@ -35,20 +35,17 @@ section .pure-g > div {
 
 /* ------------->>> Scrollbar <<<--------------*/
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
 	width: 12px;
 	height: 12px;
 	background:transparent;
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track {
 	background: rgb(243,243,243);
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
 	background: rgb(255, 116, 0);
 }
 
@@ -66,6 +63,7 @@ section .pure-g > div {
 	background: #ff7400; /* Gecko Browsers */
 	color: #F3F3F3;
 }
+
 ::selection {
 	background: #ff7400; /* WebKit/Blink Browsers */
 	color: #F3F3F3;
@@ -226,7 +224,6 @@ a {
 	top: 50%;
 	-ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
     transform: translateY(-50%);
 
 	/*
@@ -273,7 +270,6 @@ a {
 	min-height: 12%;
 	z-index: 2;
 	background: rgb(243,243,243);
-	/*overflow-x: hidden;*/
 }
 
 /* 6.2 is calculated by the aspect ratio of the hill */
@@ -283,19 +279,9 @@ a {
 	margin-bottom: -6.15vw;
 
 	-webkit-transform: translateY(-6.15vw);
-	-moz-transform: translateY(-6.15vw);
 	-ms-transform: translateY(-6.15vw);
 	transform: translateY(-6.15vw);
 }
-
-/* lightbulb img version
-.footer-ribbon {
-		background:url('/assets/img/footer.png'), rgb(68, 85, 92);
-		background-repeat: no-repeat;
-		background-position: 40% center, center center;
-		background-size: contain, cover;
-}
-*/
 
 /*////////////////////////////////////////////
 //                                          //
@@ -309,9 +295,6 @@ a {
 	overflow: hidden;
 	width: 100%;
 
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 
 	-webkit-user-select: none;
@@ -389,35 +372,25 @@ a {
 .toggle-icon,
 .toggle-icon:before,
 .toggle-icon:after {
-	-o-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 }
 
 .navbar-toggle.x .toggle-icon {
 	background-color: transparent;
-	-o-transform: rotate(45deg) translate(0%, -50%);
 	-webkit-transform: rotate(45deg) translate(0%, -50%);
-	-moz-transform: rotate(45deg) translate(0%, -50%);
 	-ms-transform: rotate(45deg) translate(0%, -50%);
 	transform: rotate(45deg) translate(0%, -50%);
 }
 
 .navbar-toggle.x .toggle-icon:before {
-	-o-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 	top: 0;
 }
 
 .navbar-toggle.x .toggle-icon:after {
-	-o-transform: rotate(-180deg);
 	-webkit-transform: rotate(-180deg);
-	-moz-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);
 	transform: rotate(-180deg);
 	top: 0;
@@ -426,10 +399,6 @@ a {
 .logo {
 	max-height: 4rem;
 
-	-o-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 }
 
@@ -486,9 +455,6 @@ a {
 footer {
 	background-color: rgb(20, 54, 70);
 	color: #f3f3f3;
-
-	/* Firefox vertical align fix since PureCSS grids are not flex boxes on Firefox */
-	/*display: flex;*/
 
 	-ms-align-items: center;
 	-moz-align-items: center;
@@ -562,8 +528,7 @@ you are welcome to flip this around to make it consistent.
 */
 
 /* Tablet/Desktop Specific */
-@media (min-width: 48em)
-{
+@media (min-width: 48em) {
 	/*Force the file input to fit on desktops */
 	input[type="file"] {
 		width: 50%;
@@ -574,7 +539,9 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.flex-nav {
-		/* stretch to fill height to fix on firefox */
+		/* Firefox Desktop: stretch to fill height and center. This is due to incomplete flex support. */
+		/* On MS Edge, this makes the navbar go off to the left because of the position: absolute */
+		/* Hopefully a day will come where we can remove this class */
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -602,18 +569,12 @@ you are welcome to flip this around to make it consistent.
 		text-align: right;
 	}
 
-	/* Specific fix for Firefox mobile not working well with flex and PureCSS not including Firefox flex support. Chrome and IE are already included in this. */
-	footer {
-		display: flex;
-	}
-
 }
 
 /* Since our navbar now has so many options I'm changing the media query to 1024px for the toggle to show up */
 
 /* Mobile Specific */
-@media (max-width: 47.999em)
-{
+@media (max-width: 47.999em) {
 
 	/* Make fonts smaller on mobile
 	/* h1 is to be used for the title of the page */
