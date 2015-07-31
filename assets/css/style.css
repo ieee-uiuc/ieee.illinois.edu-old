@@ -529,6 +529,7 @@ you are welcome to flip this around to make it consistent.
 */
 
 /* Tablet/Desktop Specific */
+/* Note that this corresponds with pure-u-md */
 @media (min-width: 48em) {
 	/*Force the file input to fit on desktops */
 	input[type="file"] {

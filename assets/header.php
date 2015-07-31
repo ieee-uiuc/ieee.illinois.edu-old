@@ -39,7 +39,7 @@
 
 <div class="pure-u-1 pure-u-lg-1-4">
 	<div id="navBottom">
-		<a href="/" class="pure-menu-heading" style="width:50%;"><img class="logo" src="/assets/img/logo.png"></a>
+		<a href="/" class="pure-menu-heading"><img class="logo" src="/assets/img/logo.png"></a>
 		<div class="navbar-toggle" id="toggle"><span class="toggle-icon"></span></div>
 	</div>
 </div>
