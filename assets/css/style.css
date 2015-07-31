@@ -307,6 +307,7 @@ a {
 .navbar-wrapper.open {
 	background-color: rgb(20, 54, 70);
 	max-height: 35em;
+	padding-bottom: 1em;
 }
 
 /* Mobile menu fix */
@@ -536,6 +537,7 @@ you are welcome to flip this around to make it consistent.
 
 	.navbar-link {
 		padding: 1vw 0.65vw;
+		line-height: 1;
 	}
 
 	.flex-nav {
