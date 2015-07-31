@@ -2,17 +2,14 @@ var logo, nav, toggle, content;
 
 /* ------------->>> Navbar <<<--------------*/
 
-function toggleMenu()
-{
+function toggleMenu() {
 	// set timeout so that the panel has a chance to roll up before the menu switches states
-	if (nav.hasClass('open'))
-	{
+	if (nav.hasClass('open')) {
 		setTimeout( function() {
 			$('.menu-can-transform').addClass('pure-menu-horizontal');
 		}, 500);
 	}
-	else
-	{
+	else {
 		$('.menu-can-transform').removeClass('pure-menu-horizontal');
 	}
 
@@ -23,8 +20,7 @@ function toggleMenu()
 // Makes the navbar solid
 function solidNav() {
 	// if the menu is open and you scroll, close the menu
-	if (nav.hasClass('open'))
-	{
+	if (nav.hasClass('open')) {
 		setTimeout( function() {
 			$('.menu-can-transform').addClass('pure-menu-horizontal');
 		}, 500);
@@ -38,13 +34,11 @@ function solidNav() {
 	var navHeight = parseFloat(window.getComputedStyle(navBottom[0]).getPropertyValue("height").replace(/[^0-9\,\.\-]/g, ''));
 
 	// On scroll, make the navbar solid, and the logo smaller
-	if (navBottom.offset().top > content.offset().top-navHeight)
-	{
+	if (navBottom.offset().top > content.offset().top-navHeight) {
 		nav.addClass("solid-nav");
 		logo.addClass("small-logo");
 	}
-	else
-	{
+	else {
 		nav.removeClass("solid-nav");
 		logo.removeClass("small-logo");		
 	}
@@ -53,14 +47,12 @@ function solidNav() {
 /* ------------->>> Join Page <<<--------------*/
 
 // Sets the email input box's default value to the netid@illinois.edu
-function setEmail()
-{
+function setEmail() {
 	$("[name='member_email']").val( $("[name='member_netid']").val() + "@illinois.edu" );
 }
 
 // Collects the join form info, including the resume file and submits it
-function submitJoin()
-{
+function submitJoin() {
 	// Gather the form data and serialize it
 	var userData = $("#join_form .pure-u-1 .pure-form .pure-control-group input").serialize();
 
@@ -79,9 +71,8 @@ function submitJoin()
 	  data: fd,
 	  processData: false,
 	  contentType: false,
-	  success: function(data, textStatus, jqXHR)
-	  {
-		$('#join_form').fadeOut("slow", function(){
+	  success: function(data, textStatus, jqXHR) {
+		$('#join_form').fadeOut("slow", function() {
 			var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + data + "</div></div>").hide();
 			$(this).replaceWith(div);
 			$('#join_results').fadeIn("slow");
@@ -95,23 +86,19 @@ function submitJoin()
 // Note: data from getNews.php comes in as a string, holding either "error: <error code>" or json
 
 // Load all news items
-function loadNews()
-{
+function loadNews() {
 	var news = $("#news-container");
 	var err_str = '<h4>Could not load news items. Please try refreshing the page.</h4>';
 	var no_posts_str = '<h4>There are no posts to display.</h4>';
 
-	$.get( "/assets/php/getNews.php?type=news", function( data )
-	{
+	$.get( "/assets/php/getNews.php?type=news", function( data ) {
 		// if it errored out, put in the error string
-		if (data.indexOf("error: ") >= 0)
-		{
+		if (data.indexOf("error: ") >= 0) {
 			news.append(err_str);
 			return;
 		}
 
-		else if (data == "none")
-		{
+		else if (data == "none") {
 			news.append(no_posts_str);
 			return;
 		}
@@ -119,8 +106,7 @@ function loadNews()
 		// else if it was a json output
 		var data_arr = $.parseJSON(data);
 
-		$(data_arr).each(function(index, curr)
-		{
+		$(data_arr).each(function(index, curr) {
 			var imageURL = curr.post_image;
 
 			// only set the pic if url is present
@@ -145,23 +131,19 @@ function loadNews()
 }
 
 // Load front page news items only
-function loadFrontNews()
-{
+function loadFrontNews() {
 	var slides = $(".slides");
 	var err_str = '<li><h3>Could not load news items. Please try refreshing the page.</h3></li>';
 	var no_posts_str = '<li><h3>There are no posts to display.</h3><li>';
 
-	$.get( "/assets/php/getNews.php?type=front", function( data )
-	{
+	$.get( "/assets/php/getNews.php?type=front", function( data ) {
 		// if it errored out, put in the error string
-		if (data.indexOf("error: ") >= 0)
-		{
+		if (data.indexOf("error: ") >= 0) {
 			slides.append(err_str);
 			return;
 		}
 
-		else if (data == "none")
-		{
+		else if (data == "none") {
 			slides.append(no_posts_str);
 			return;
 		}
@@ -169,8 +151,7 @@ function loadFrontNews()
 		// else if it was a json output
 		var data_arr = $.parseJSON(data);
 
-		$(data_arr).each(function(index, curr)
-		{
+		$(data_arr).each(function(index, curr) {
 			var title = curr.post_title;
 			var description = curr.post_description;
 			var imageURL = curr.post_image;
@@ -190,8 +171,7 @@ function loadFrontNews()
 /* ------------->>> Spark <<<--------------*/
 
 /* Displays the correct spark pdf in the viewer */
-function viewSpark(edition)
-{
+function viewSpark(edition) {
 	$('#spark-viewer').html('<object data="Spark - sp10.pdf" type="application/pdf"><p>Alternative text - include a link <a href="Spark - sp10.pdf">to the PDF!</a></p></object>');
 }
 
@@ -211,9 +191,8 @@ $(document).ready(function() {
 			toggle.click(toggleMenu);
 
 			// If the window resizes or changes orientation and menu is open, close the menu
-			window.addEventListener( ('onorientationchange' in window) ? 'orientationchange':'resize' , function(){
-				if (nav.hasClass('open'))
-				{
+			window.addEventListener( ('onorientationchange' in window) ? 'orientationchange':'resize' , function() {
+				if (nav.hasClass('open')) {
 					toggleMenu();
 				}
 			});
@@ -231,9 +210,8 @@ $(document).ready(function() {
 	});
 });
 
-
 // Smooth anchor scrolling animation, with the -50 offset to prevent hiding behind the navbar
-$(function(){
+$(function() {
 	if (location.hash) {
 		$('html, body').animate({
 			scrollTop: $(location.hash).offset().top - 50
