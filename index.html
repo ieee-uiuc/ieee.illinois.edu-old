@@ -6,12 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 
-<!-- CSS and JS frameworks from CDNs -->
+<!-- CSS frameworks from CDNs -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/flexslider.min.css" type="text/css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider.min.js"></script>
 
 <!-- IEEE UIUC Style -->
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -20,14 +18,6 @@
 <link rel="icon" href="/favicon.png" />
 
 <title>IEEE UIUC</title>
-
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-
-  	loadFrontNews();
-
-  });
-</script>
 
 </head>
 
@@ -114,7 +104,15 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider.min.js"></script>
 <script src="/assets/js/main.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+  	loadFrontNews();
+  });
+</script>
 
 </body>
 
