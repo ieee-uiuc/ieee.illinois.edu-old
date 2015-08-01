@@ -188,31 +188,35 @@ a {
 	left: 0;
 	position: fixed !important;
 
-	/* Blue filter over image */
 	/* default image is of eceb-1 */
-	background-image:linear-gradient(
+	background-image: url('/assets/img/splash/eceb-1.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.splash-wrapper::before {
+	content: "";
+
+	width: 100%;
+	height: 100%;
+	position: fixed !important;
+
+	/* Blue filter over image */
+	background-image: linear-gradient(
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
-	),url('/assets/img/splash/eceb-1.jpg');
-	background-repeat: no-repeat;
-	background-position: center center, center center;
-	background-size: cover, cover;
+	);
 }
 
 .splash-eceb-1
 {
-	background-image:linear-gradient(
-		rgba(20, 54, 70, 0.60),
-		rgba(20, 54, 70, 0.60)
-	),url('/assets/img/splash/eceb-1.jpg');
+	background-image: url('/assets/img/splash/eceb-1.jpg');
 }
 
 .splash-grainger
 {
-	background-image:linear-gradient(
-		rgba(20, 54, 70, 0.60),
-		rgba(20, 54, 70, 0.60)
-	),url('/assets/img/splash/grainger.jpg');
+	background-image: url('/assets/img/splash/grainger.jpg');
 }
 
 .splash {
