@@ -188,8 +188,6 @@ a {
 	left: 0;
 	position: fixed !important;
 
-	/* default image is of eceb-1 */
-	background-image: url('/assets/img/splash/eceb-1.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -207,16 +205,6 @@ a {
 		rgba(20, 54, 70, 0.60),
 		rgba(20, 54, 70, 0.60)
 	);
-}
-
-.splash-eceb-1
-{
-	background-image: url('/assets/img/splash/eceb-1.jpg');
-}
-
-.splash-grainger
-{
-	background-image: url('/assets/img/splash/grainger.jpg');
 }
 
 .splash {

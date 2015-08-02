@@ -177,8 +177,34 @@ function viewSpark(edition) {
 
 /* ------------->>> Global <<<--------------*/
 
-// After page content is loaded, fill in header and footer, then do initial things
+function pickSplash() {
+	var path = window.location.pathname;
+
+	// Maps page (by URL path) to a specific image
+	// Make sure to use the trailing slash!
+	var splashURLs = {
+		'/' : 'eceb.jpg',
+		'/about/' : 'grainger.jpg',
+		'/about/exec-board/': 'exec-board.jpg',
+		'/news/' : 'quad.jpg',
+		'/projects/' : 'grainger-2.jpg',
+		'/awards/' : 'foellinger.jpg'
+		
+	}
+
+	var splash = splashURLs[path];
+
+	// Get the URL, default to eceb.jpg
+	if (splash === undefined) {
+		splash = "eceb.jpg";
+	}
+
+	$('.splash-wrapper').css('background-image', 'url("/assets/img/splash/' + splash + '")');
+}
+
+// After page content is loaded
 $(document).ready(function() {
+	// Load header and footer
 	$(".navbar-wrapper").load("/assets/header.php", function() {
 		$("#footer").load("/assets/footer.html", function() {
 			// Now that all DOM content is loaded, fill in the global variables
@@ -197,9 +223,6 @@ $(document).ready(function() {
 				}
 			});
 
-			$('#twitter-wrapper').click(function () {
-				$('#twitter-wrapper iframe').css("pointer-events", "auto");
-			});
 
 			// Run the solid nav function in case we've refreshed to a non-top part of the screen
 			solidNav();
@@ -207,6 +230,14 @@ $(document).ready(function() {
 			// Attach the solid nav function to the scroll event
 			$(window).scroll(solidNav);
 		});
+	});
+
+	// Pick a splash image
+	pickSplash();
+
+	// Twitter box styling
+	$('#twitter-wrapper').click(function () {
+		$('#twitter-wrapper iframe').css("pointer-events", "auto");
 	});
 });
 
