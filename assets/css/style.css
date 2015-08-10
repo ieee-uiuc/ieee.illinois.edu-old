@@ -21,7 +21,7 @@
 }
 
 body {
-	background-color: #f3f3f3;
+	background-color: rgb(243,243,243);
 	color: rgb(68, 85, 92);
 }
 
@@ -60,20 +60,20 @@ section .pure-g > div {
 
 /* Text Selection should be orange */
 ::-moz-selection {
-	background: #ff7400; /* Gecko Browsers */
-	color: #F3F3F3;
+	background: rgb(255, 116, 0); /* Gecko Browsers */
+	color: rgb(243, 243, 243);
 }
 
 ::selection {
-	background: #ff7400; /* WebKit/Blink Browsers */
-	color: #F3F3F3;
+	background: rgb(255, 116, 0); /* WebKit/Blink Browsers */
+	color: rgb(243, 243, 243);
 }
 
 /* ----------->>> Text Sizes <<<------------*/
 
 /* h1 is to be used for the title of the page */
 h1 {
-	color: #f3f3f3;
+	color: rgb(243, 243, 243);
 	font-size: 7rem;
 
 	-webkit-user-select: none;
@@ -134,8 +134,8 @@ a {
 /* ----------->>> Highlight Section <<<------------*/
 
 .highlight {
-	background-color: #44555c;
-	color: #f3f3f3;
+	background-color: rgb(68, 85, 92);
+	color: rgb(243, 243, 243);
 }
 
 /* ----------->>> Buttons <<<------------*/
@@ -447,7 +447,7 @@ a {
 
 footer {
 	background-color: rgb(20, 54, 70);
-	color: #f3f3f3;
+	color: rgb(243,243,243);
 
 	-ms-align-items: center;
 	-moz-align-items: center;

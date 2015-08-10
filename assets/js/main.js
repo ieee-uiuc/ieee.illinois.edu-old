@@ -83,81 +83,93 @@ function submitJoin() {
 
 /* ------------->>> News <<<--------------*/
 
-// Note: data from getNews.php comes in as a string, holding either "error: <error code>" or json
-
 // Load all news items
 function loadNews() {
 	var news = $("#news-container");
-	var err_str = '<h4>Could not load news items. Please try refreshing the page.</h4>';
 	var no_posts_str = '<h4>There are no posts to display.</h4>';
 
 	$.get( "/assets/php/getNews.php?type=news", function( data ) {
-		// if it errored out, put in the error string
-		if (data.indexOf("error: ") >= 0) {
-			news.append(err_str);
-			return;
+		try {
+			data = $.parseJSON(data);
 		}
-
-		else if (data == "none") {
+		
+		catch(e) {
 			news.append(no_posts_str);
 			return;
 		}
 
-		// else if it was a json output
-		var data_arr = $.parseJSON(data);
+		// if it errored out, put in the error string
+		if (!data.success) {
+			news.append('<h4>' + data.message + '</h4>');
+		}
 
-		$(data_arr).each(function(index, curr) {
-			var imageURL = curr.post_image;
+		// If no posts found
+		else if (!data.numResults) {
+			news.append(no_posts_str);
+		}
 
-			// only set the pic if url is present
-			var div = '<div class="pure-g">';
-			var title = '<div class="pure-u-1"><h3 class="news-title">' + curr.post_title + '</h3></div>';
-			
-			var pic = '';
-			var x = 4;
+		// Otherwise, draw all the posts
+		else {
+			$(data.results).each(function(index, curr) {
+				var imageURL = curr.post_image;
 
-			// if there is an image, add it and set the description size to 3/4ths width
-			if (imageURL !== "")
-			{
-				pic = '<div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
-				x = 3;
-			}
+				// only set the pic if url is present
+				var div = '<div class="pure-u-1"><div class="pure-g">';
+				var title = '<div class="pure-u-1"><h3 class="news-title">' + curr.post_title + '</h3></div>';
+				
+				var pic = '';
+				var x = 4;
 
-			var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description + '</p></div>';
+				// if there is an image, add it and set the description size to 3/4ths width
+				if (imageURL !== "")
+				{
+					pic = '<div class="pure-u-1 pure-u-md-1-4"><img class="pure-img" src="' + imageURL + '"></div>';
+					x = 3;
+				}
 
-			news.append(div + title + pic + desc);
-		});
+				var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description + '</p></div></div><hr></div>';
+
+				news.append(div + title + pic + desc);
+			});
+		}
 	});
 }
 
 // Load front page news items only
 function loadFrontNews() {
 	var slides = $(".slides");
-	var err_str = '<li><h3>Could not load news items. Please try refreshing the page.</h3></li>';
 	var no_posts_str = '<li><h3>There are no posts to display.</h3><li>';
 
 	$.get( "/assets/php/getNews.php?type=front", function( data ) {
+		try {
+			data = $.parseJSON(data);
+		}
+		
+		catch(e) {
+			news.append(no_posts_str);
+			return;
+		}
+
 		// if it errored out, put in the error string
-		if (data.indexOf("error: ") >= 0) {
-			slides.append(err_str);
-			return;
+		if (!data.success) {
+			news.append('<h4>' + data.message + '</h4>');
 		}
 
-		else if (data == "none") {
-			slides.append(no_posts_str);
-			return;
+		// If no posts found
+		else if (!data.numResults) {
+			news.append(no_posts_str);
 		}
 
-		// else if it was a json output
-		var data_arr = $.parseJSON(data);
+		// Otherwise, draw all the posts
+		else {
+			$(data.results).each(function(index, curr) {
+				var title = curr.post_title;
+				var description = curr.post_description;
+				var imageURL = curr.post_image;
 
-		$(data_arr).each(function(index, curr) {
-			var title = curr.post_title;
-			var description = curr.post_description;
-			var imageURL = curr.post_image;
-
-			slides.append('<li><h3>' + title + '</h3>' + '<h4>' + description + '</h4></li>');
-		});
+				slides.append('<li><h3>' + title + '</h3>' + '<h4>' + description + '</h4></li>');
+			});
+		}
 
 		// now that it's all loaded, call the flexslider stuff
 		$('.flexslider').flexslider({

@@ -6,13 +6,17 @@ require_once("mysql_credentials.php");
 $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db);
 if (!$con)
 {
-	die("error: db connection");
+	$ret = array("success" => false,
+				 "message" => "<h4>Could not load news items. Please try refreshing the page.</h4>",
+				 "error" => "Database connection error."
+				 );
+	die(json_encode($ret));
 }
 
 // change query depending on the type of thing we want
 // the type is either news, or front page items
 
-$query = "SELECT * FROM blog";
+$query = "SELECT * FROM news";
 
 // If the front page is requesting news, then only return those that should be only those
 if ($_GET["type"] == "front")
@@ -20,19 +24,33 @@ if ($_GET["type"] == "front")
 
 $result = mysqli_query($con, $query);
 
-// check if the query failed
+// If the query failed, we're done
 if (!$result)
 {
-	die("error: query failed");
+	$ret = array("success" => false,
+				 "message" => "Could not load news items. Please try refreshing the page.",
+				 "error" => "Query failed."
+				 );
 }
 
-// If there are no posts to display, die outputting "none".
-if (mysqli_num_rows($result) == 0)
-{
-	die("none");
+else {
+	$numResults = mysqli_num_rows($result);
+	$results = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	/* Strip any html from the descriptions except for <a> tags and line breaks */
+	foreach ($results as $key => $post) {
+		$results[$key]["post_description"] = strip_tags($post["post_description"], "<a></a>");
+	}
+
+	$ret = array("success" => true,
+				 "message" => "Posts found.",
+				 "numResults" => $numResults,
+				 "results" => $results
+				);
 }
 
-echo json_encode(mysqli_fetch_all($result, MYSQLI_ASSOC));
+// Respond with the output
+echo json_encode($ret);
 
 // Close the connection
 mysqli_close($con);
