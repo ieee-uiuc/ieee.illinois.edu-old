@@ -38,32 +38,32 @@
     <h2>Signup Form</h2>
     <form action="javascript:submitJoin()" class="pure-g" id="join_form">
 
-        <div class="pure-u-1 pure-u-md-1-2">
+        <div class="pure-u-1 pure-offset-1-8">
           <div class="pure-form pure-form-aligned">
             <h3>Sign up now!</h3>
             <div class="pure-control-group">
                 <label for="name">Name</label>
-                <input name="member_name" type="text" placeholder="First Last" required autofocus>
+                <input class="pure-input-rounded" name="member_name" type="text" placeholder="First Last" required autofocus>
             </div>
 
             <div class="pure-control-group">
                 <label for="netid">NetID</label>
-                <input name="member_netid" type="text" placeholder="NetID" maxlength="8" onchange="setEmail()" required>
+                <input class="pure-input-rounded" name="member_netid" type="text" placeholder="NetID" maxlength="8" onchange="setEmail()" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="uin">UIN</label>
-                <input name="member_uin" type="text" placeholder="9 Digits" pattern="[0-9]{9}" required>
+                <input class="pure-input-rounded" name="member_uin" type="text" placeholder="9 Digits" pattern="[0-9]{9}" title="9 digits!" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="email">Email Address</label>
-                <input name="member_email" type="email" placeholder="Email Address" required>
+                <input class="pure-input-rounded" name="member_email" type="email" placeholder="Email Address" required>
             </div>
 
             <div class="pure-control-group">
                 <label for="national">National Member ID</label>
-                <input name="member_national" type="text" placeholder="From IEEE National">
+                <input class="pure-input-rounded" name="member_national" type="text" placeholder="From IEEE National">
             </div>
 
             <div class="pure-control-group">
@@ -72,13 +72,14 @@
             </div>
 
             <div class="pure-control-group">
-                <input name="announce" type="checkbox" checked>Announce (Weekly Newsletter)
+            <label for="announce">Announce (Weekly Newsletter)</label>
+                <input name="announce" type="checkbox" checked>
             </div>
 
           </div>
         </div>
 
-        <div class="pure-u-1 pure-u-md-1-2">
+        <div class="pure-u-1 pure-offset-1-8">
           <div class="pure-form pure-form-aligned">
             <h3>Which <a href="/about/committees/">committees</a> would you like join/receive emails from?</h3>
             <div class="pure-control-group">
@@ -95,7 +96,7 @@
           </div>
         </div>
 
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-md-1-2 pure-offset-1-4">
+        <div class="pure-u-1 pure-offset-1-8">
           <div class="pure-form pure-form-aligned">
             <h3>Which <a href="/about/TAGs">TAGs</a> would you like to join/receive emails from?</h3>
             <div class="pure-control-group">
