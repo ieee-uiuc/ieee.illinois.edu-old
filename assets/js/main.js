@@ -148,18 +148,18 @@ function loadFrontNews() {
 		}
 		
 		catch(e) {
-			news.append(no_posts_str);
+			slides.append(no_posts_str);
 			return;
 		}
 
 		// if it errored out, put in the error string
 		if (!data.success) {
-			news.append('<h4>' + data.message + '</h4>');
+			slides.append('<h4>' + data.message + '</h4>');
 		}
 
 		// If no posts found
 		else if (!data.numResults) {
-			news.append(no_posts_str);
+			slides.append(no_posts_str);
 		}
 
 		// Otherwise, draw all the posts
