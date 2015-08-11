@@ -53,6 +53,8 @@ function setEmail() {
 
 // Collects the join form info, including the resume file and submits it
 function submitJoin() {
+	alert("Sorry the join form is not ready yet. Please check back soon!");
+	return;
 	// Gather the form data and serialize it
 	var userData = $("#join_form .pure-u-1 .pure-form .pure-control-group input").serialize();
 
