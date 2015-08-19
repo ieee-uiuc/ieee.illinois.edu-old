@@ -129,7 +129,7 @@ function loadNews() {
 					x = 3;
 				}
 
-				var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description + '</p></div></div><hr></div>';
+				var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description.replace(/\n/g,"<br>") + '</p></div></div><hr></div>';
 
 				news.append(div + title + pic + desc);
 			});
@@ -165,11 +165,7 @@ function loadFrontNews() {
 		// Otherwise, draw all the posts
 		else {
 			$(data.results).each(function(index, curr) {
-				var title = curr.post_title;
-				var description = curr.post_description;
-				var imageURL = curr.post_image;
-
-				slides.append('<li><h3>' + title + '</h3>' + '<h4>' + description + '</h4></li>');
+				slides.append('<li><h3>' + curr.post_title + '</h3>' + '<h4>' + curr.post_description.replace(/\n/g,"<br>") + '</h4></li>');
 			});
 		}
 

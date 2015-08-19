@@ -39,7 +39,7 @@ else {
 
 	/* Strip any html from the descriptions except for <a> tags and line breaks */
 	foreach ($results as $key => $post) {
-		$results[$key]["post_description"] = strip_tags($post["post_description"], "<a></a>");
+		$results[$key]["post_description"] = strip_tags($post["post_description"], "<a></a><br><br/>");
 	}
 
 	$ret = array("success" => true,
