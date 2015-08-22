@@ -49,6 +49,9 @@ else {
 				);
 }
 
+// Reverse the array so it's from newest to oldest
+$ret = array_reverse($ret, true);
+
 // Respond with the output
 echo json_encode($ret);
 
