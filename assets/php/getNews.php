@@ -42,13 +42,15 @@ else {
 		$results[$key]["post_description"] = strip_tags($post["post_description"], "<a></a><br><br/>");
 	}
 
-	// Reverse results array so it's from newest to oldest
 	$ret = array("success" => true,
 				 "message" => "Posts found.",
 				 "numResults" => $numResults,
-				 "results" => array_reverse($results, true)
+				 "results" => $results
 				);
 }
+
+// Reverse the array so it's from newest to oldest
+$ret = array_reverse($ret, true);
 
 // Respond with the output
 echo json_encode($ret);
