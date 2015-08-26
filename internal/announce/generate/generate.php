@@ -70,6 +70,7 @@ include 'announce-template-bottom.html';
 file_put_contents($file_name, ob_get_clean(), FILE_APPEND);
 
 // Mail the item out to ieee-announce@lists.illinois.edu
+$mail = new PHPMailer;
 $mail->From = "ieee-publicity@illinois.edu";
 $mail->FromName = "IEEE UIUC Announce Newsletter";
 $mail->addAddress("anitgandhi@gmail.com");
