@@ -43,7 +43,7 @@ mysqli_close($con);
 
 /* Strip any html from the descriptions except for <a> tags and line breaks */
 foreach ($posts as $key => $post) {
-	$posts[$key]["post_description"] = strip_tags($post["post_description"], "<a></a><br><br/>");
+	$posts[$key]["post_description"] = nl2br(strip_tags($post["post_description"], "<a></a><br><br/>"));
 }
 
 // Reverse the $posts array so it's newest to oldest
