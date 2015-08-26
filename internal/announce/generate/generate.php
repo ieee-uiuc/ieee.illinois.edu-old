@@ -1,6 +1,6 @@
 <?php 
 
-require_once("mysql_credentials.php");
+require_once("./../../../assets/php/mysql_credentials.php");
 
 $curr_date = date('F j, Y');
 $file_name = $curr_date . '.html';
