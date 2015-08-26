@@ -1,6 +1,7 @@
 <?php 
 
 require_once("./../../../assets/php/mysql_credentials.php");
+require_once("./../../../assets/php/PHPMailer.php");
 
 $curr_date = date('F j, Y');
 $file_name = $curr_date . '.html';
@@ -67,6 +68,18 @@ foreach ($posts as $key => $post) {
 ob_start();
 include 'announce-template-bottom.html';
 file_put_contents($file_name, ob_get_clean(), FILE_APPEND);
+
+// Mail the item out to ieee-announce@lists.illinois.edu
+$mail->From = "ieee-publicity@illinois.edu";
+$mail->FromName = "IEEE UIUC Announce Newsletter";
+$mail->addAddress("anitgandhi@gmail.com");
+
+$mail->Subject = "IEEE UIUC Announce - " . $curr_date;
+$mail->Body = file_get_contents($file_name);
+$mail->isHTML(true);
+
+// Send the mail, saving the status messsage
+$mail_success = $mail->send();
 
 readfile($file_name);
 
