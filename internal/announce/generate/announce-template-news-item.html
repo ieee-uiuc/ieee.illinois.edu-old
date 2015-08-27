@@ -1,9 +1,11 @@
 				
 			<!-- Begin News Item -->
 			<div>
-				<div style="text-align:center">
-					<img src="<?php echo $post_image_url ?>" style="width:100%;max-width:100%">
-				</div>
+				<?php
+					if ($post_image_url !== '') {
+						echo '<div style="text-align:center"><img src="' . $post_image_url . '" style="width:100%;max-width:100%"></div>';
+					}
+				?>
 				<div>
 					<h2 style="font-family:sans-serif;font-weight:200;"><?php echo $post_title ?></h2>
 					<p style="font-family:sans-serif;font-weight:200;"><?php echo $post_description ?></p>
