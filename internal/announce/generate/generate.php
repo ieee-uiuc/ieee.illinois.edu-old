@@ -55,8 +55,6 @@ $posts = array_reverse($posts);
 // News Items part
 $button_html = '<a style="color: #F3F3F3;background-color: #FF7400;padding: 10px 16px;cursor: pointer;display: inline-block;font-family:sans-serif;font-weight:200;">Clickity Click</a>';
 
-// TODO : only insert image if the url is present
-// TODO : image sizing especially on mobile
 foreach ($posts as $key => $post) {
 	$post_image_url = $post['post_image'];
 	$post_title = $post['post_title'];
