@@ -74,7 +74,7 @@ file_put_contents($file_name, ob_get_clean(), FILE_APPEND);
 $mail = new PHPMailer;
 $mail->From = "ieee-publicity@illinois.edu";
 $mail->FromName = "IEEE UIUC Announce Newsletter";
-$mail->addAddress("anitgandhi@gmail.com");
+$mail->addAddress("ieee-announce@lists.illinois.edu");
 
 $mail->Subject = "IEEE UIUC Announce - " . $curr_date;
 $mail->Body = file_get_contents($file_name);
