@@ -46,11 +46,11 @@ mysqli_close($con);
 
 /* Strip any html from the descriptions except for <a> tags and line breaks */
 foreach ($posts as $key => $post) {
-	$posts[$key]["post_description"] = nl2br(strip_tags($post["post_description"], "<a></a><br><br/>"));
+	$posts[$key]["post_description"] = str_replace( "\n", '<br /><br />', strip_tags($post["post_description"], "<a></a><br><br/>") );
 }
 
 // Reverse the $posts array so it's newest to oldest
-$posts = array_reverse($posts);
+// $posts = array_reverse($posts);
 
 // News Items part
 $button_html = '<a style="color: #F3F3F3;background-color: #FF7400;padding: 10px 16px;cursor: pointer;display: inline-block;font-family:sans-serif;font-weight:200;">Clickity Click</a>';
