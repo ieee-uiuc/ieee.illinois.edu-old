@@ -44,6 +44,40 @@ function solidNav() {
 	}
 }
 
+function validateInternal(password) {
+	// Need to change this to an asynchronous method that still returns from validateInternal
+
+	var data = $.ajax({
+	  url: "/internal/validate.php",
+	  type: "POST",
+	  data: {"password" : password},
+	  async: false,
+	}).responseText;
+
+
+	if (data === "allowed")
+		return true;
+	else
+		return false;
+}
+
+/* ------------->>> Announce <<<--------------*/
+function showGeneratedAnnounce() {
+	var attempted = $('#internalPassword').val();
+	var allowed = validateInternal(attempted);
+
+	if (allowed) {
+		$('#generatedAnnounce').append('<h3>Here is the generated Announce file. Either download or send.</h3>');
+		$('#generatedAnnounce').append('<iframe style="width:100%; height:100%" src="generate.php"></iframe>');
+	}
+	else {
+		$('#generatedAnnounce').append('<h3>Incorrect password. Please try again.</h3>');
+	}
+
+	
+}
+
+
 /* ------------->>> Join Page <<<--------------*/
 
 // Sets the email input box's default value to the netid@illinois.edu

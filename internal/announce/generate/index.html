@@ -39,10 +39,21 @@
     <div class="pure-g">
 
       <div class="pure-u-1">
-        <p>Ask for date, show all the requests since then with checkboxes.</p>
-      <p>Publicity chair checks the ones they want, press submit, and a PHP script will generate the latest Announce.</p>
-      <p>They can look it over, and if everything is ok, they can press send and it will send it out to everyone</p>
-      <p>If it's not ok, somehow they need to have the option edit it.</p>
+
+        <form action="javascript:showGeneratedAnnounce()" class="pure-form pure-g">
+          <div class="pure-u-md-1-4">
+            <label>Password: </label>
+            <input type="password" class="pure-input-rounded" id="internalPassword" required placeholder="Password">
+          </div>
+          <div class="pure-u-md-1-4 center-align">
+            <input type="submit" class="pure-button pure-button-md" value="Generate!"> 
+          </div>
+        </form>
+
+        
+      </div>
+
+      <div class="pure-u-1" id="generatedAnnounce">
       </div>
     </div>
   </section>

@@ -1,5 +1,7 @@
 <?php 
 
+// TODO: make three methods for generate, send, and download, where the method is passed in via query
+
 require_once("./../../../assets/php/mysql_credentials.php");
 require_once("./../../../assets/php/PHPMailer.php");
 
@@ -54,6 +56,7 @@ $posts = array_reverse($posts);
 $button_html = '<a style="color: #F3F3F3;background-color: #FF7400;padding: 10px 16px;cursor: pointer;display: inline-block;font-family:sans-serif;font-weight:200;">Clickity Click</a>';
 
 // TODO : only insert image if the url is present
+// TODO : image sizing especially on mobile
 foreach ($posts as $key => $post) {
 	$post_image_url = $post['post_image'];
 	$post_title = $post['post_title'];
