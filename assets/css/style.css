@@ -504,6 +504,23 @@ footer {
 	padding-top: 0;
 }
 
+/* Calendar stuff */
+
+/* On desktop/tablet, show month view */
+@media (min-width: 48em) {
+	.mobileCalendar {
+		display: none;
+	}
+}
+
+/* On phone, show agenda view */
+/* On desktop/tablet, show month view */
+@media (max-width: 47.999em) {
+	.desktopCalendar {
+		display: none;
+	}
+}
+
 /* ----------->>> Spark <<<------------*/
 
 #spark-viewer object {
