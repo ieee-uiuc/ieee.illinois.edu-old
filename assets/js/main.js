@@ -87,8 +87,6 @@ function setEmail() {
 
 // Collects the join form info, including the resume file and submits it
 function submitJoin() {
-	alert("Sorry the join form is not ready yet. Please check back soon!");
-	return;
 	// Gather the form data and serialize it
 	var userData = $("#join_form .pure-u-1 .pure-form .pure-control-group input").serialize();
 
@@ -108,8 +106,10 @@ function submitJoin() {
 	  processData: false,
 	  contentType: false,
 	  success: function(data, textStatus, jqXHR) {
+	  	response = JSON.parse(data);
+
 		$('#join_form').fadeOut("slow", function() {
-			var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + data + "</div></div>").hide();
+			var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + response.message + "</div></div>").hide();
 			$(this).replaceWith(div);
 			$('#join_results').fadeIn("slow");
 		});
