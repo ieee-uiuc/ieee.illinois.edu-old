@@ -1,0 +1,202 @@
+<?php
+
+/* This script should do one of three things, after checking if the user already exists
+
+1. Store the new user's data and send their resume, responding with "Thank you for becoming a member. You've joined the following mailing lists: <list the mailing lists they are a member of>"
+2. Update an existing user's data and resume
+3. Or, do nothing 
+
+*/
+
+/*
+Description: Subscribes to a CITES Sympa mailing list
+Return: 0 if the email was already subscribed or if it just subscribed, -1 if subscription failed
+TODO: convert this to a more asynchronous or parallel way
+*/
+function subscribe($mailingList, $subscribeEmail) {
+	include_once('../assets/php/simple_html_dom.php');
+
+	// Build Sympa POST request
+	$url = "https://lists.illinois.edu/lists";
+
+	$fields = array('email' => $subscribeEmail,
+					'list' => $mailingList,
+					'action' => 'subrequest');
+
+	$query = http_build_query($fields);
+
+	// Send request, saving into $response
+	$ch = curl_init();
+
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $query);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+	$response = curl_exec ($ch);
+	curl_close ($ch);
+
+	$dom = str_get_html( $response );
+	$sympa_response = $dom->find('.ContentBlock')[0]->plaintext;
+
+	// Check if they're already subscribed or if they successfully subscribed justnow
+	if ( (strpos($sympa_response, "You are already subscribed") !== false) || (strpos($sympa_response, "You've made a subscription request") !== false) ) {
+		return 0;
+	}
+
+	return -1;
+}
+
+function subscribeMultiple($committees, $tags, $subscribeEmail) {
+	// Subscribe the user to their choices of committees
+	foreach ($committees as $key => $value) {
+		subscribe($value, $subscribeEmail);
+	}
+
+	// Subscribe the user to their choices of TAGs
+	foreach ($tags as $key => $value) {
+		subscribe($value, $subscribeEmail);
+	}
+}
+
+/*
+Description: Sends the user's resume to our database in Google Drive
+Return: true if mail sent successfully, false if not
+*/
+function sendResume($resumeName) {
+	// Send resume if present
+	if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
+		include_once('../assets/php/PHPMailer.php');
+
+	    // Set up the mailing information
+		$mail = new PHPMailer;
+
+		$mail->From = "resume@ieee.illinois.edu";
+		$mail->FromName = "IEEE UIUC Resume Mailer";
+		$mail->addAddress("ieee.uiuc@gmail.com");
+
+		$mail->isHTML(true);
+		$mail->Subject = "{$member_name}'s Resume";
+		$mail->Body = "Here is the resume of <b>{$member_name}</b>";
+
+	    $mail->AddAttachment($_FILES['resume']['tmp_name'], $resumeName);
+
+	    // Send the mail, saving the status messsage
+	    return $mail->send();
+	}
+}
+
+/* BEGIN PROCESSING */
+
+// If the request type isn't POST or the userData isn't given, exit saying it failed
+if ( ($_SERVER['REQUEST_METHOD'] != 'POST') || !(isset($_POST["userData"])) ) {
+	$ret = array("success" => false,
+				 "message" => "Sorry, we couldn't process your request. Please try again.",
+				 "error" => "Bad request method or no data provided"
+				 );
+	die(json_encode($ret));
+}
+
+// Include MySQL credentials and connect
+require_once("../assets/php/mysql_credentials.php");
+
+$con = new mysqli($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db);
+
+// Check connection
+if ($con->connect_error) {
+    $ret = array("success" => false,
+				 "message" => "<h4>Could not submit form. Please try again later.</h4>",
+				 "error" => "Database connection error."
+				 );
+	die(json_encode($ret));
+}
+
+// Save all the user information into local variables, which match the input tag name attributes
+$userData = array();
+parse_str($_POST["userData"], $userData);
+
+// Following "<Name> - <NetID> - Resume" naming scheme
+if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
+	$resumeName = $userData["member_name"] . " - " . $userData["member_netid"] . " - " . "Resume";
+}
+else {
+	$resumeName = '';
+}
+
+// Since National ID is optional, if it's not set, set it to empty string
+if (!isset($userData["member_national_id"])) {
+	$userData["member_national_id"] = 0;
+}
+
+// Check if the member exists already based on the NetID primary key
+$stmt = $con->prepare("SELECT * FROM members WHERE member_netid=?");
+$stmt->bind_param('s', $userData["member_netid"]);
+$stmt->execute();
+$result = $stmt->get_result();
+
+var_dump($result);
+
+// $result->num_rows supposedly holds null, but when you var_dump it, it says int 1
+var_dump($result->num_rows);
+
+$exists = false;
+if ($result->num_rows) {
+	$exists = true;
+}
+
+$stmt->close();
+
+// For existing users: Update Email, National ID, Resume Name | WHERE=netid
+// Both NetID AND UIN are checked to reduce the chance of someone overwriting someone else's data
+if ($exists) {
+	$stmt = $con->prepare("UPDATE members
+					   	   SET member_email=?,
+					   	   	   member_national_id=?,
+					   	       member_resume_name=?
+					   	   WHERE member_netid=? AND member_uin=?");
+
+	$stmt->bind_param('sissi', $userData["member_email"], $userData["member_national_id"], $resumeName, $userData["member_netid"], $userData["member_uin"]);
+}
+
+// For new users: Insert Name, NetID, UIN, Email, National ID, Resume File Name
+else {
+	$stmt = $con->prepare("INSERT INTO members (member_name, member_netid, member_uin, member_email, member_national_id, member_resume_name) VALUES (?,?,?,?,?,?)");
+
+	$stmt->bind_param('ssisis', $userData["member_name"], $userData["member_netid"], $userData["member_uin"], $userData["member_email"], $userData["member_national_id"], $resumeName);
+}
+
+// Insert/Update the DB, checking if there are any errors
+if (!$stmt->execute()) {
+    $ret = array("success" => false,
+				 "message" => "<h4>Could not submit form. Please try again later.</h4>",
+				 "error" => "Insert/Update failed."
+				 );
+	die(json_encode($ret));
+}
+
+var_dump($stmt->get_result());
+
+// Close the connection
+$stmt->close();
+
+$ret = array("success" => true,
+			 "message" => 'o',
+			 );
+
+echo json_encode($ret);
+
+exit();
+
+/* For both existing and new users: 
+	1. Subscribe to Announce, if they chose to
+	2. Subscribe to their chosen committees and TAGs
+	3. Send Resume 
+*/
+if (isset($userData["announce"])) {
+	subscribe("ieee-announce", $userData["member_email"]);
+}
+subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
+sendResume($resumeName);
+
+?>

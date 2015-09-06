@@ -100,7 +100,7 @@ function submitJoin() {
 
 	// Send it over, and fill the response the response
 	$.ajax({
-	  url: "/assets/php/join.php",
+	  url: "join.php",
 	  type: "POST",
 	  data: fd,
 	  processData: false,
