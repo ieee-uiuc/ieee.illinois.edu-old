@@ -8,6 +8,40 @@
 
 */
 
+$subscribeResults = array("ieee-announce" => false,
+						  "ieee-projects" => false,
+						  "ieee-technical-events" => false,
+						  "ieee-jsdc" => false,
+						  "ieee-corporate" => false,
+						  "ieee-networking" => false,
+						  "ieee-external" => false,
+						  "ieee-social" => false,
+						  "ieee-spark" => false,
+						  "ieee-tag-circuits" => false,
+						  "ieee-tag-dsp" => false,
+						  "ieee-tag-cps" => false,
+						  "ieee-tag-bot" => false,
+						  "ieee-tag-energy" => false,
+						  "ieee-tag-vr" => false
+						  );
+
+$mailingLists = array("ieee-announce" => 'IEEE Announce (Weekly Newsletter)',
+					  "ieee-projects" => 'IEEE Projects Committee',
+					  "ieee-technical-events" => 'IEEE Technical Events Committee',
+					  "ieee-jsdc" => 'IEEE JSDC Team',
+					  "ieee-corporate" => 'IEEE Corporate Committee',
+					  "ieee-networking" => 'IEEE Networking Committee',
+					  "ieee-external" => 'IEEE External Relations Committee',
+					  "ieee-social" => 'IEEE Social Committee',
+					  "ieee-spark" => 'IEEE Spark Committee',
+					  "ieee-tag-circuits" => 'IEEE TAG-Circuits',
+					  "ieee-tag-dsp" => 'IEEE TAG-DSP',
+					  "ieee-tag-cps" => 'IEEE TAG-CPS',
+					  "ieee-tag-bot" => 'IEEE TAG-Bot',
+					  "ieee-tag-energy" => 'IEEE TAG-Energy',
+					  "ieee-tag-vr" => 'IEEE TAG-VR'
+					  );
+
 /*
 Description: Subscribes to a CITES Sympa mailing list
 Return: 0 if the email was already subscribed or if it just subscribed, -1 if subscription failed
@@ -15,6 +49,8 @@ TODO: convert this to a more asynchronous or parallel way
 */
 function subscribe($mailingList, $subscribeEmail) {
 	include_once('../assets/php/simple_html_dom.php');
+
+	global $subscribeResults;
 
 	// Build Sympa POST request
 	$url = "https://lists.illinois.edu/lists";
@@ -42,6 +78,7 @@ function subscribe($mailingList, $subscribeEmail) {
 
 	// Check if they're already subscribed or if they successfully subscribed justnow
 	if ( (strpos($sympa_response, "You are already subscribed") !== false) || (strpos($sympa_response, "You've made a subscription request") !== false) ) {
+		$subscribeResults[$mailingList] = true;
 		return 0;
 	}
 
@@ -64,7 +101,7 @@ function subscribeMultiple($committees, $tags, $subscribeEmail) {
 Description: Sends the user's resume to our database in Google Drive
 Return: true if mail sent successfully, false if not
 */
-function sendResume($resumeName) {
+function sendResume($resumeName, $member_name) {
 	// Send resume if present
 	if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
 		include_once('../assets/php/PHPMailer.php');
@@ -133,22 +170,17 @@ if (!isset($userData["member_national_id"])) {
 $stmt = $con->prepare("SELECT * FROM members WHERE member_netid=?");
 $stmt->bind_param('s', $userData["member_netid"]);
 $stmt->execute();
-$result = $stmt->get_result();
-
-var_dump($result);
-
-// $result->num_rows supposedly holds null, but when you var_dump it, it says int 1
-var_dump($result->num_rows);
+$stmt->store_result();
 
 $exists = false;
-if ($result->num_rows) {
+if ($stmt->num_rows) {
 	$exists = true;
 }
 
 $stmt->close();
 
 // For existing users: Update Email, National ID, Resume Name | WHERE=netid
-// Both NetID AND UIN are checked to reduce the chance of someone overwriting someone else's data
+// Both NetID AND UIN are checked to reduce the chance of someone overwriting someone else's data (since most people don't know other people's UINs)
 if ($exists) {
 	$stmt = $con->prepare("UPDATE members
 					   	   SET member_email=?,
@@ -175,18 +207,8 @@ if (!$stmt->execute()) {
 	die(json_encode($ret));
 }
 
-var_dump($stmt->get_result());
-
 // Close the connection
 $stmt->close();
-
-$ret = array("success" => true,
-			 "message" => 'o',
-			 );
-
-echo json_encode($ret);
-
-exit();
 
 /* For both existing and new users: 
 	1. Subscribe to Announce, if they chose to
@@ -194,9 +216,28 @@ exit();
 	3. Send Resume 
 */
 if (isset($userData["announce"])) {
-	subscribe("ieee-announce", $userData["member_email"]);
+	$announce = "ieee-announce";
+	subscribe($announce, $userData["member_email"]);
 }
+
 subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
-sendResume($resumeName);
+sendResume($resumeName, $userData["member_name"]);
+
+$html = '<h4>Thanks for joining IEEE UIUC! Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
+
+// Tell them which ones they subscribed for
+foreach ($subscribeResults as $list => $status) {
+	if ($status) {
+		$html .= '<li>' . $mailingLists[$list] . '</li>';
+	}
+}
+
+$html .= '</h4>';
+
+$ret = array("success" => true,
+			 "message" => $html,
+			 );
+
+echo json_encode($ret);
 
 ?>
