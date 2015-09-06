@@ -155,7 +155,7 @@ parse_str($_POST["userData"], $userData);
 
 // Following "<Name> - <NetID> - Resume" naming scheme
 if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
-	$resumeName = $userData["member_name"] . " - " . $userData["member_netid"] . " - " . "Resume";
+	$resumeName = $userData["member_name"] . " - " . $userData["member_netid"] . " - " . "Resume.pdf";
 }
 else {
 	$resumeName = '';
