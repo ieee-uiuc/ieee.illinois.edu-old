@@ -220,6 +220,13 @@ if (isset($userData["announce"])) {
 	subscribe($announce, $userData["member_email"]);
 }
 
+// Kind of a jank way of doing it, but in the event the user doesn't choose any committees or TAGs, then make sure the subscribeMultiple call doesn't fail
+if (!isset($userData["committees"]))
+	$userData["committees"] = array();
+
+if (!isset($userData["tags"]))
+	$userData["tags"] = array();
+
 subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
 sendResume($resumeName, $userData["member_name"]);
 
