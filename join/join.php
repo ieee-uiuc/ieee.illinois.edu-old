@@ -102,26 +102,23 @@ Description: Sends the user's resume to our database in Google Drive
 Return: true if mail sent successfully, false if not
 */
 function sendResume($resumeName, $member_name) {
-	// Send resume if present
-	if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
-		include_once('../assets/php/PHPMailer.php');
+	include_once('../assets/php/PHPMailer.php');
 
-	    // Set up the mailing information
-		$mail = new PHPMailer;
+    // Set up the mailing information
+	$mail = new PHPMailer;
 
-		$mail->From = "resume@ieee.illinois.edu";
-		$mail->FromName = "IEEE UIUC Resume Mailer";
-		$mail->addAddress("ieee.uiuc@gmail.com");
+	$mail->From = "resume@ieee.illinois.edu";
+	$mail->FromName = "IEEE UIUC Resume Mailer";
+	$mail->addAddress("ieee.uiuc@gmail.com");
 
-		$mail->isHTML(true);
-		$mail->Subject = "{$member_name}'s Resume";
-		$mail->Body = "Here is the resume of <b>{$member_name}</b>";
+	$mail->Subject = "{$member_name}'s Resume";
+	$mail->Body = "Here is the resume of <b>{$member_name}</b>";
+	$mail->isHTML(true);
 
-	    $mail->AddAttachment($_FILES['resume']['tmp_name'], $resumeName);
+    $mail->AddAttachment($_FILES['resume']['tmp_name'], $resumeName);
 
-	    // Send the mail, saving the status messsage
-	    return $mail->send();
-	}
+    // Send the mail, saving the status messsage
+    return $mail->send();
 }
 
 /* BEGIN PROCESSING */
@@ -153,9 +150,14 @@ if ($con->connect_error) {
 $userData = array();
 parse_str($_POST["userData"], $userData);
 
+// Check if resume was supplied
+$resumeGiven = (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK);
+
 // Following "<Name> - <NetID> - Resume" naming scheme
-if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
-	$resumeName = $userData["member_name"] . " - " . $userData["member_netid"] . " - " . "Resume.pdf";
+if ($resumeGiven) {
+	$info = pathinfo($_FILES['resume']['name']);
+	$ext = $info['extension'];
+	$resumeName = $userData["member_name"] . ' - ' . $userData["member_netid"] . " - Resume." . $ext;
 }
 else {
 	$resumeName = '';
@@ -232,7 +234,11 @@ if (!isset($userData["tags"]))
 	$userData["tags"] = array();
 
 subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
-sendResume($resumeName, $userData["member_name"]);
+
+// Only send the resume if present
+if ($resumeGiven) {
+	sendResume($resumeName, $userData["member_name"]);
+}
 
 $html = $action . ' Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
 
