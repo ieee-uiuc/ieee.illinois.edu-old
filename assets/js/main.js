@@ -98,6 +98,9 @@ function submitJoin() {
 	fd.append("userData", userData);
 	fd.append("resume", resumeFile);
 
+	// Fade the join form out
+	$('#join_form').fadeOut("fast");
+
 	// Send it over, and fill the response the response
 	$.ajax({
 	  url: "join.php",
@@ -107,12 +110,9 @@ function submitJoin() {
 	  contentType: false,
 	  success: function(data, textStatus, jqXHR) {
 	  	response = JSON.parse(data);
-
-		$('#join_form').fadeOut("slow", function() {
-			var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + response.message + "</div></div>").hide();
-			$(this).replaceWith(div);
-			$('#join_results').fadeIn("slow");
-		});
+		var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + response.message + "</div></div>").hide();
+		$('#join_form').replaceWith(div);
+		$('#join_results').fadeIn("fast");
 	  }
 	});
 }

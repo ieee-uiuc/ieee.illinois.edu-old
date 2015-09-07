@@ -189,6 +189,8 @@ if ($exists) {
 					   	   WHERE member_netid=? AND member_uin=?");
 
 	$stmt->bind_param('sissi', $userData["member_email"], $userData["member_national_id"], $resumeName, $userData["member_netid"], $userData["member_uin"]);
+
+	$action = 'Thanks for updating your information.';
 }
 
 // For new users: Insert Name, NetID, UIN, Email, National ID, Resume File Name
@@ -196,6 +198,8 @@ else {
 	$stmt = $con->prepare("INSERT INTO members (member_name, member_netid, member_uin, member_email, member_national_id, member_resume_name) VALUES (?,?,?,?,?,?)");
 
 	$stmt->bind_param('ssisis', $userData["member_name"], $userData["member_netid"], $userData["member_uin"], $userData["member_email"], $userData["member_national_id"], $resumeName);
+
+	$action = 'Thanks for joining IEEE UIUC!';
 }
 
 // Insert/Update the DB, checking if there are any errors
@@ -230,7 +234,7 @@ if (!isset($userData["tags"]))
 subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
 sendResume($resumeName, $userData["member_name"]);
 
-$html = '<h4>Thanks for joining IEEE UIUC! Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
+$html = '<h4>' . $action . ' Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
 
 // Tell them which ones they subscribed for
 foreach ($subscribeResults as $list => $status) {
