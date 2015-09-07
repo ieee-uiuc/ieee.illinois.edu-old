@@ -143,7 +143,7 @@ $con = new mysqli($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db
 // Check connection
 if ($con->connect_error) {
     $ret = array("success" => false,
-				 "message" => "<h4>Could not submit form. Please try again later.</h4>",
+				 "message" => "Could not submit form. Please try again later.",
 				 "error" => "Database connection error."
 				 );
 	die(json_encode($ret));
@@ -205,7 +205,7 @@ else {
 // Insert/Update the DB, checking if there are any errors
 if (!$stmt->execute()) {
     $ret = array("success" => false,
-				 "message" => "<h4>Could not submit form. Please try again later.</h4>",
+				 "message" => "Could not submit form. Please try again later.",
 				 "error" => "Insert/Update failed."
 				 );
 	die(json_encode($ret));
@@ -234,7 +234,7 @@ if (!isset($userData["tags"]))
 subscribeMultiple($userData["committees"], $userData["tags"], $userData["member_email"]);
 sendResume($resumeName, $userData["member_name"]);
 
-$html = '<h4>' . $action . ' Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
+$html = $action . ' Here are the mailing lists you just signed up for. You will receive emails for confirming subscription momentarily. Please note that you will have to confirm your subscription in order to receive any future emails.';
 
 // Tell them which ones they subscribed for
 foreach ($subscribeResults as $list => $status) {
@@ -242,8 +242,6 @@ foreach ($subscribeResults as $list => $status) {
 		$html .= '<li>' . $mailingLists[$list] . '</li>';
 	}
 }
-
-$html .= '</h4>';
 
 $ret = array("success" => true,
 			 "message" => $html,

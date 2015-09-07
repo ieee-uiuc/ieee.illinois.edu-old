@@ -99,7 +99,11 @@ function submitJoin() {
 	fd.append("resume", resumeFile);
 
 	// Fade the join form out
-	$('#join_form').fadeOut("fast");
+	$('#join_form').fadeOut('fast');
+
+	// Put the temp message in
+	$('#join_results').html('<h4>' + 'Joining. Please wait...' + '</h4>');
+	$('#join_results').fadeIn('fast');
 
 	// Send it over, and fill the response the response
 	$.ajax({
@@ -110,9 +114,11 @@ function submitJoin() {
 	  contentType: false,
 	  success: function(data, textStatus, jqXHR) {
 	  	response = JSON.parse(data);
-		var div = $("<div class='pure-g' id='join_results'><div class='pure-u-1'>" + response.message + "</div></div>").hide();
-		$('#join_form').replaceWith(div);
-		$('#join_results').fadeIn("fast");
+
+	  	// TODO: fade this in
+	  	$('#join_results').fadeOut('fast');
+	  	$('#join_results').html('<h4>' + response.message + '</h4>');
+	  	$('#join_results').fadeIn('fast');
 	  }
 	});
 }
