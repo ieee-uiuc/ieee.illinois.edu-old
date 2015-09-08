@@ -33,19 +33,6 @@
 			<ul class="slides">
 			</ul>
 		</div>
-
-		<!-- quad day sign up -->
-		<div class="splash-head" id="quadDay">
-			<h4>Sign up by subscribing to our newsletter!</h4>
-			<form action="javascript:quadDaySubscribe()" id="subscribe_form" class="pure-form pure-form-aligned">
-				<div class="pure-control-group">
-					<input class="pure-input-rounded grey-text" name="email" type="text" placeholder="Email (netid@illinois.edu)" required autofocus>
-				</div>
-				<div class="pure-controls">
-            		<input type="submit" class="pure-button" value="Join!" />
-          		</div>
-			</form>
-		</div>
 	</div>
 </div>
 
@@ -124,46 +111,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider.min.js"></script>
 <script src="/assets/js/main.js"></script>
-
-<script type="text/javascript" charset="utf-8">
-	// If it's quad day, hide the main splash and enable the quadDay
-    var beginQuadDay = new Date('August 23, 2015 12:00:00');
-    var endQuadDay = new Date('August 23, 2015 16:00:00');
-    var currTime = new Date();
-
-    // If it's Quad Day
-    if ( (currTime > beginQuadDay) && (currTime < endQuadDay) ) {
-    	$('#quadDay').show();
-    	$('#normalSplash').hide();
-    }
-
-    // Business as usual
-    else {
-    	$('#quadDay').hide();
-    	$(document).ready(function() {
-			loadFrontNews();
-  		});
-    }
-
-    // Quad Day submit form function 
-    function quadDaySubscribe() {
-    	var joinEmail = $("#subscribe_form input").serialize();
-		$.ajax({
-			url: "/assets/php/announce-subscribe.php",
-			type: "POST",
-			data: joinEmail,
-			success: function(data, textStatus, jqXHR) {
-				$('#quadDay').fadeOut("fast", function() {
-					$(this).html('<h4>' + data + '</h4>');
-					$('#quadDay').fadeIn("fast");
-				});
-			},
-			error: function(data, textStatus, jqXHR) {
-				alert('Sorry, something went wrong. Please try again.');
-			}
-		});
-    }
-</script>
 
 </body>
 
