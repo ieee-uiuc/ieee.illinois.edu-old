@@ -1,7 +1,7 @@
 <?php
 
 require_once("mysql_credentials.php");
- 
+
 // Connect to the mysql server, and check if it was successful
 $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db);
 if (!$con)
@@ -39,7 +39,7 @@ else {
 
 	/* Strip any html from the descriptions except for <a> tags and line breaks */
 	foreach ($results as $key => $post) {
-		$results[$key]["post_description"] = strip_tags($post["post_description"], "<a></a><br><br/>");
+		$results[$key]["post_description_short"] = strip_tags($post["post_description_short"], "<a></a><br><br/>");
 	}
 
 	// Reverse the $results array so it's newest to oldest
