@@ -40,7 +40,7 @@ function solidNav() {
 	}
 	else {
 		nav.removeClass("solid-nav");
-		logo.removeClass("small-logo");		
+		logo.removeClass("small-logo");
 	}
 }
 
@@ -74,7 +74,7 @@ function showGeneratedAnnounce() {
 		$('#generatedAnnounce').append('<h3>Incorrect password. Please try again.</h3>');
 	}
 
-	
+
 }
 
 
@@ -134,7 +134,7 @@ function loadNews() {
 		try {
 			data = $.parseJSON(data);
 		}
-		
+
 		catch(e) {
 			news.append(no_posts_str);
 			return;
@@ -158,7 +158,7 @@ function loadNews() {
 				// only set the pic if url is present
 				var div = '<div class="pure-u-1"><div class="pure-g">';
 				var title = '<div class="pure-u-1"><h3 class="news-title">' + curr.post_title + '</h3></div>';
-				
+
 				var pic = '';
 				var x = 4;
 
@@ -169,7 +169,7 @@ function loadNews() {
 					x = 3;
 				}
 
-				var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description.replace(/\n/g,"<br>") + '</p></div></div><hr></div>';
+				var desc = '<div class="pure-u-1 pure-u-md-' + x + '-4"><p>' + curr.post_description_short.replace(/\n/g,"<br>") + '</p></div></div><hr></div>';
 
 				news.append(div + title + pic + desc);
 			});
@@ -186,7 +186,7 @@ function loadFrontNews() {
 		try {
 			data = $.parseJSON(data);
 		}
-		
+
 		catch(e) {
 			slides.append(no_posts_str);
 			return;
@@ -205,7 +205,7 @@ function loadFrontNews() {
 		// Otherwise, draw all the posts
 		else {
 			$(data.results).each(function(index, curr) {
-				slides.append('<li><h3>' + curr.post_title + '</h3>' + '<h4>' + curr.post_description.replace(/\n/g,"<br>") + '</h4></li>');
+				slides.append('<li><h3>' + curr.post_title + '</h3>' + '<h4>' + curr.post_description_short.replace(/\n/g,"<br>") + '</h4></li>');
 			});
 		}
 
@@ -239,7 +239,7 @@ function pickSplash() {
 		'/news/' : 'quad.jpg',
 		'/projects/' : 'grainger-2.jpg',
 		'/awards/' : 'foellinger.jpg'
-		
+
 	}
 
 	var splash = splashURLs[path];
@@ -303,7 +303,7 @@ $(function() {
 
 // Close the nav on mobile (or small desktop) if you click outside of it and it's already open
 $(document).on("mouseup touchend", function (e) {
-    if ( nav.hasClass('open') && !nav.is(e.target) && nav.has(e.target).length === 0 ) 
+    if ( nav.hasClass('open') && !nav.is(e.target) && nav.has(e.target).length === 0 )
     {
         toggleMenu();
     }
