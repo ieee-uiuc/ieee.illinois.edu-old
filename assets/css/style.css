@@ -140,6 +140,7 @@ a {
 .highlight {
 	background-color: rgb(68, 85, 92);
 	color: rgb(243, 243, 243);
+	padding-bottom: 0.5em;
 }
 
 /* ----------->>> Buttons <<<------------*/
@@ -250,7 +251,7 @@ a {
 .flex-direction-nav a:before,
 .flex-direction-nav a.flex-prev:before,
 .flex-direction-nav a,
-.flex-control-paging li a, 
+.flex-control-paging li a,
 .flex-control-paging li a.flex-active {
 	z-index: 5000;
 	color: rgb(243,243,243);
@@ -360,7 +361,7 @@ a {
 	content: '';
 }
 .toggle-icon:before {
-	top: -.8rem; 
+	top: -.8rem;
 }
 .toggle-icon:after {
 	top: .8rem;
@@ -637,7 +638,7 @@ you are welcome to flip this around to make it consistent.
 		max-height: 3rem;
 	}
 
-	.splash-head 
+	.splash-head
 	{
 		width: 95%;
 	}
@@ -671,7 +672,7 @@ you are welcome to flip this around to make it consistent.
 		max-height: 3rem;
 	}
 
-	.splash-head 
+	.splash-head
 	{
 		width: 95%;
 	}
