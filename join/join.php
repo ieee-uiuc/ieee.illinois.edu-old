@@ -4,7 +4,7 @@
 
 1. Store the new user's data and send their resume, responding with "Thank you for becoming a member. You've joined the following mailing lists: <list the mailing lists they are a member of>"
 2. Update an existing user's data and resume
-3. Or, do nothing 
+3. Or, do nothing
 
 */
 
@@ -21,8 +21,7 @@ $subscribeResults = array("ieee-announce" => false,
 						  "ieee-tag-dsp" => false,
 						  "ieee-tag-cps" => false,
 						  "ieee-tag-bot" => false,
-						  "ieee-tag-energy" => false,
-						  "ieee-tag-vr" => false
+						  "ieee-tag-energy" => false
 						  );
 
 $mailingLists = array("ieee-announce" => 'IEEE Announce (Weekly Newsletter)',
@@ -38,8 +37,7 @@ $mailingLists = array("ieee-announce" => 'IEEE Announce (Weekly Newsletter)',
 					  "ieee-tag-dsp" => 'IEEE TAG-DSP',
 					  "ieee-tag-cps" => 'IEEE TAG-CPS',
 					  "ieee-tag-bot" => 'IEEE TAG-Bot',
-					  "ieee-tag-energy" => 'IEEE TAG-Energy',
-					  "ieee-tag-vr" => 'IEEE TAG-VR'
+					  "ieee-tag-energy" => 'IEEE TAG-Energy'
 					  );
 
 /*
@@ -216,10 +214,10 @@ if (!$stmt->execute()) {
 // Close the connection
 $stmt->close();
 
-/* For both existing and new users: 
+/* For both existing and new users:
 	1. Subscribe to Announce, if they chose to
 	2. Subscribe to their chosen committees and TAGs
-	3. Send Resume 
+	3. Send Resume
 */
 if (isset($userData["announce"])) {
 	$announce = "ieee-announce";
