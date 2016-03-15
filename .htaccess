@@ -34,6 +34,8 @@
 
 </IfModule>
 
+IndexIgnore *
+
 <IfModule mod_rewrite.c> 
   RewriteEngine On 
   RewriteCond %{HTTPS} off 
