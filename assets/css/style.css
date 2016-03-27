@@ -560,14 +560,6 @@ you are welcome to flip this around to make it consistent.
 		line-height: 1;
 	}
 
-	.flex-nav {
-		/* Firefox Desktop: stretch to fill height and center. This is due to incomplete flex support. */
-		/* On MS Edge, this makes the navbar go off to the left because of the position: absolute */
-		/* Hopefully a day will come where we can remove this class */
-		top: 0;
-		bottom: 0;
-	}
-
 	.pure-offset-1-4 {
 		margin-left: 25%;
 	}
