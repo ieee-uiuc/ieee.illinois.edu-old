@@ -11,33 +11,28 @@
 $subscribeResults = array("ieee-announce" => false,
 						  "ieee-projects" => false,
 						  "ieee-technical-events" => false,
-						  "ieee-jsdc" => false,
 						  "ieee-corporate" => false,
-						  "ieee-networking" => false,
-						  "ieee-external" => false,
+						  "ieee-profdev" => false,
 						  "ieee-social" => false,
 						  "ieee-spark" => false,
 						  "ieee-tag-circuits" => false,
 						  "ieee-tag-dsp" => false,
 						  "ieee-tag-cps" => false,
-						  "ieee-tag-bot" => false,
+						  "ieee-robotics" => false,
 						  "ieee-tag-energy" => false
 						  );
 
 $mailingLists = array("ieee-announce" => 'IEEE Announce (Weekly Newsletter)',
 					  "ieee-projects" => 'IEEE Projects Committee',
 					  "ieee-technical-events" => 'IEEE Technical Events Committee',
-					  "ieee-jsdc" => 'IEEE JSDC Team',
 					  "ieee-corporate" => 'IEEE Corporate Committee',
-					  "ieee-networking" => 'IEEE Networking Committee',
-					  "ieee-external" => 'IEEE External Relations Committee',
+					  "ieee-profdev" => 'IEEE Professional Development Committee',
 					  "ieee-social" => 'IEEE Social Committee',
 					  "ieee-spark" => 'IEEE Spark Committee',
 					  "ieee-tag-circuits" => 'IEEE TAG-Circuits',
 					  "ieee-tag-dsp" => 'IEEE TAG-DSP',
 					  "ieee-tag-cps" => 'IEEE TAG-CPS',
-					  "ieee-tag-bot" => 'IEEE TAG-Bot',
-					  "ieee-tag-energy" => 'IEEE TAG-Energy'
+					  "ieee-robotics" => 'IEEE Robotics',
 					  );
 
 /*
