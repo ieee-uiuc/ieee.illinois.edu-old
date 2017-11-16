@@ -205,9 +205,9 @@ function loadFrontNews() {
 		// Otherwise, draw all the posts
 		//TODO Uncomment when have access to cpanel database
 		else {
-			// $(data.results).each(function(index, curr) {
-			// 	slides.append('<li><h3>' + curr.post_title + '</h3>' + '<h4>' + curr.post_description_short.replace(/\n/g,"<br>") + '</h4></li>');
-			// });
+			 $(data.results).each(function(index, curr) {
+			 	slides.append('<li><h3>' + curr.post_title + '</h3>' + '<h4>' + curr.post_description_short.replace(/\n/g,"<br>") + '</h4></li>');
+			 });
 		}
 
 		// now that it's all loaded, call the flexslider stuff
