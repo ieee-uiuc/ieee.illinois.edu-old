@@ -28,7 +28,7 @@ $result = mysqli_query($con, $query);
 if (!$result)
 {
 	$ret = array("success" => false,
-				 "message" => "Could not load news items. Please try refreshing the page.",
+				 "message" => "Could not load the news items. Please try refreshing the page.",
 				 "error" => "Query failed."
 				 );
 }
