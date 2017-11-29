@@ -7,7 +7,7 @@ $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysql
 if (!$con)
 {
 	$ret = array("success" => false,
-				 "message" => "<h4>Could not load news items. Please try refreshing the page.</h4>",
+				 "message" => "<h4>Could not load the news items. Please try refreshing the page.</h4>",
 				 "error" => "Database connection error."
 				 );
 	die(json_encode($ret));
