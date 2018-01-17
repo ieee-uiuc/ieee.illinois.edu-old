@@ -1,8 +1,8 @@
 <?php
 
 require_once("mysql_credentials.php");
-$mysqli_server = "ieeeatill.web.engr.illinois.edu";
-$mysqli_username  = "ieeeatill_main";
+$mysqli_server = "localhost:3306";
+$mysqli_username  = "ieeeatill";
 $mysqli_password = "";
 $mysqli_db = "ieeeatill_main";
 
