@@ -26,7 +26,7 @@ $query = "SELECT * FROM news";
 if ($_GET["type"] == "front")
 	$query = $query + " WHERE front_page=1";
 
-$result = mysqli_query($con, "SELECT * FROM news");
+$result = mysqli_query($con, "SELECT * FROM news WHERE front_page=1");
 
 // If the query failed, we're done
 if (!$result)
