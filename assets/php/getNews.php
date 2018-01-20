@@ -1,6 +1,6 @@
 <?php
 
-require_once("mysql_credentials.php");
+require("mysql_credentials.php");
 
 // Connect to the mysql server, and check if it was successful
 $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db, "3306");
