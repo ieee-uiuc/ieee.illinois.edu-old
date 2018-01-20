@@ -1,7 +1,7 @@
 <?php
 
 //require_once("mysql_credentials.php");
-$mysqli_server = "localhost";
+$mysqli_server = "localhost:3306";
 $mysqli_username  = "ieeeatill_temp";
 $mysqli_password = "1Ya#!m%^R00;";
 $mysqli_db = "ieeeatill_main";
