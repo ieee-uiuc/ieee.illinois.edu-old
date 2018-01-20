@@ -20,9 +20,9 @@ $query = "SELECT * FROM news";
 
 // If the front page is requesting news, then only return those that should be only those
 if ($_GET["type"] == "front")
-	$query = $query + " WHERE front_page=1";
+	$query = "SELECT * FROM news WHERE front_page=1";
 
-$result = mysqli_query($con, "SELECT * FROM news WHERE front_page=1");
+$result = mysqli_query($con, $query);
 
 // If the query failed, we're done
 if (!$result)
