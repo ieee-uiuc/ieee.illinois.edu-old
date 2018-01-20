@@ -11,7 +11,7 @@ $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysql
 if (!$con)
 {
 	$ret = array("success" => false,
-				 "message" => "<h4>Could not load news items. Please try refreshing the page.</h4>",
+				 "message" => "<h4>Could not the load news items. Please try refreshing the page.</h4>",
 				 "error" => "Database connection error."
 				 );
 	die(json_encode($ret));
@@ -26,7 +26,7 @@ $query = "SELECT * FROM news";
 if ($_GET["type"] == "front")
 	$query = $query + " WHERE front_page=1";
 
-$result = mysqli_query($con, $query);
+$result = mysqli_query($con, "SELECT * FROM news");
 
 // If the query failed, we're done
 if (!$result)
