@@ -4,7 +4,7 @@
 $mysqli_server = "localhost";
 $mysqli_username  = "ieeeatill_temp";
 $mysqli_password = "1Ya#!m%^R00;";
-$mysqli_db = "ieeeatill_main";
+$mysqli_db = "ieeeatil_main";
 
 // Connect to the mysql server, and check if it was successful
 $con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db, "3306");
