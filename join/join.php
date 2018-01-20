@@ -126,7 +126,11 @@ if ( ($_SERVER['REQUEST_METHOD'] != 'POST') || !(isset($_POST["userData"])) ) {
 }
 
 // Include MySQL credentials and connect
-require_once("../assets/php/mysql_credentials.php");
+//require_once("../assets/php/mysql_credentials.php");
+$mysqli_server = "localhost";
+$mysqli_username  = "ieeeatill_temp";
+$mysqli_password = "1Ya#!m%^R00;";
+$mysqli_db = "ieeeatil_main";
 
 $con = new mysqli($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db);
 
