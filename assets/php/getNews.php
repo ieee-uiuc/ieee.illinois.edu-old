@@ -1,17 +1,17 @@
 <?php
 
 //require_once("mysql_credentials.php");
-$mysqli_server = "localhost:3306";
+$mysqli_server = "localhost";
 $mysqli_username  = "ieeeatill_temp";
 $mysqli_password = "1Ya#!m%^R00;";
 $mysqli_db = "ieeeatill_main";
 
 // Connect to the mysql server, and check if it was successful
-$con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db);
+$con = mysqli_connect($mysqli_server, $mysqli_username, $mysqli_password, $mysqli_db, "3306");
 if (!$con)
 {
 	$ret = array("success" => false,
-				 "message" => "<h4>Could not load the news items. Please try refreshing the page.</h4>",
+				 "message" => "<h4>Could not load news items. Please try refreshing the page.</h4>",
 				 "error" => "Database connection error."
 				 );
 	die(json_encode($ret));
