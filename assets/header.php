@@ -2,10 +2,10 @@
 	$path = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
 
 	$arr = Array("/about/" => "About",
-				 "/news/" => "News",
+				// "/news/" => "News",
 				 "/projects/" => "Projects",
-				 "/spark/" => "Spark",
-				 "/awards/" => "Awards",
+				 //"/spark/" => "Spark",
+				 //"/awards/" => "Awards",
 				 "/corporate/" => "Corporate",
 				 "/contact/" => "Contact",
 				 "/join/" => "Join");
