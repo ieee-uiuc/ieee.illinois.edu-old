@@ -461,7 +461,7 @@ footer {
 }
 
 //turn orange on hover
-img.pure-img.footer-logo{height:78px;}
+img.pure-img.footer-logo{color:blue;}
 
 .footer-content {
 	padding: 0.75rem;
