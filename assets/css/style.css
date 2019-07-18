@@ -460,7 +460,8 @@ footer {
   	align-items: center;
 }
 
-footer:hover{background-color: black;}
+//turn orange on hover
+img.pure-img.footer-logo{height:78px;}
 
 .footer-content {
 	padding: 0.75rem;
