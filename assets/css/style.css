@@ -461,19 +461,24 @@ footer {
 }
 
 //turn orange on hover
-img.pure-img.footer-logo:hover{
+/*img.pure-img.footer-logo:hover{
 	background-color: rgb(255, 116, 0)!important;
 	display: block;
 }
+
+.footer-content: hover{
+	background-color: rgb(255, 116, 0)!important;
+}
+
+.footer-logo:hover{
+	background-color: rgb(255, 116, 0)!important;}
+*/
 
 .footer-content {
 	padding: 0.75rem;
 	text-align: center;
 }
 
-.footer-content: hover{
-	background-color: rgb(255, 116, 0)!important;
-}
 
 .footer-content > * {
 	margin: auto;
@@ -484,9 +489,6 @@ img.pure-img.footer-logo:hover{
 	height: 48px;
 	margin: auto;
 }
-
-.footer-logo:hover{
-	background-color: rgb(255, 116, 0)!important;}
 
 /*////////////////////////////////////////////
 //                                          //
