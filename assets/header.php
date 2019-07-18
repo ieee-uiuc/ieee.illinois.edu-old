@@ -3,7 +3,7 @@
 
 	$arr = Array("/about/" => "About",
 		     		//"/events/" => "Events",
-				 "/events/" => "Events",
+				 "/news/" => "News",
 				 "/projects/" => "Projects",
 				 //"/spark/" => "Spark",
 				 //"/awards/" => "Awards",
