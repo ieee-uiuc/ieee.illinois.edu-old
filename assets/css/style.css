@@ -513,7 +513,7 @@ footer {
 	width: 100%!important;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
     background: #F17563;
@@ -587,7 +587,7 @@ label:hover :checked + .card {
     transform: rotateX(160deg);
     -webkit-transform: rotateX(160deg);
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
-}
+}*/
 
 /* ----------->>> News <<<------------*/
 
