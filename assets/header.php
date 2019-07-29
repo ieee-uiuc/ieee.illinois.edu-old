@@ -8,7 +8,6 @@
 				 //"/spark/" => "Spark",
 				 //"/awards/" => "Awards",
 				 "/corporate/" => "Corporate",
-		     		 "/board/" => "The Board",
 				 "/contact/" => "Contact",
 				 "/join/" => "Join");
 
