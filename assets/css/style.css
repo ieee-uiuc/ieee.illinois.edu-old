@@ -615,13 +615,13 @@ label:hover :checked + .card {
 
 /* ----------->>> Contact Us <<<------------*/
 
-.left-column {
+#left {
 	width: 50%;
 	text-align: center;
 	float:left;
 }
 
-.right-column{
+#right{
 	width: 50%;
 	text-align: center;
 	float:right;
