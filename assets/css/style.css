@@ -618,11 +618,13 @@ label:hover :checked + .card {
 .left-column {
 	width: 50%;
 	text-align: center;
+	float:left;
 }
 
 .right-column{
 	width: 50%;
 	text-align: center;
+	float:right;
 }
 
 
