@@ -627,6 +627,8 @@ label:hover :checked + .card {
 	float:right;
 }
 
+h3{ color: orange;}
+
 
 /* ----------->>> Spark <<<------------*/
 
