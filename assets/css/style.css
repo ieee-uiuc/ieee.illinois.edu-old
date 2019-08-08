@@ -613,6 +613,19 @@ label:hover :checked + .card {
 	}
 }
 
+/* ----------->>> Contact Us <<<------------*/
+
+.left-column {
+	width: 50%;
+	text-align: center;
+}
+
+.right-column{
+	width: 50%;
+	text-align: center;
+}
+
+
 /* ----------->>> Spark <<<------------*/
 
 #spark-viewer object {
