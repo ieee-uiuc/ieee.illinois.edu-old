@@ -607,11 +607,11 @@ label:hover :checked + .card {
 
 /* On phone, show agenda view */
 /* On desktop/tablet, show month view */
-@media (max-width: 47.999em) {
+/*@media (max-width: 47.999em) {
 	.desktopCalendar {
 		display: none;
 	}
-}
+}*/
 
 /* ----------->>> Contact Us <<<------------*/
 
