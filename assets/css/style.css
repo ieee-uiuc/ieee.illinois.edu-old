@@ -576,6 +576,9 @@ label:hover .card {
 
 input {
     display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 :checked + .card {
