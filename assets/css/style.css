@@ -641,6 +641,11 @@ label:hover :checked + .card {
 	display: none;
 }
 
+.pure-control-group {
+	display: flex;
+	align-items: center;
+}
+
 /*////////////////////////////////////////////
 //                                          //
 //               Media Queries              //
