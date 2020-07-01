@@ -644,6 +644,7 @@ label:hover :checked + .card {
 .pure-control-group {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 /*////////////////////////////////////////////
