@@ -27,6 +27,8 @@ body {
 
 section .pure-g > div {
 	padding: 2vh 3vw;
+	align-content: center;
+   	justify-content: center;
 }
 
 .pure-hidden {
