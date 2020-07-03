@@ -651,6 +651,12 @@ label:hover :checked + .card {
 	align-items: center;
 	justify-content: center;
 }
+.resume-input{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 10%
+}
 
 /*////////////////////////////////////////////
 //                                          //
@@ -683,7 +689,7 @@ you are welcome to flip this around to make it consistent.
 	}
 
 	.pure-offset-1-8 {
-		margin-left: 12.5%;
+/* 		margin-left: 12.5%; */
 	}
 
 	/* On desktop, the footer content should be aligned nicely */
