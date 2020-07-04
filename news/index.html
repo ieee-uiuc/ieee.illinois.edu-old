@@ -1,3 +1,97 @@
+<!-- <html>
+
+<head>
+ -->
+<!-- Meta tags -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8"> -->
+
+<!-- CSS frameworks from CDNs -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css"> -->
+<!-- Local CSS -->
+<!-- <link rel="stylesheet" href="/assets/css/style.css" /> -->
+
+<!-- Favicon -->
+<!-- <link rel="icon" href="/favicon.png" />
+
+<title>News | IEEE UIUC</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-21233316-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body> -->
+
+<!-- Header and navigation bar -->
+<!-- <div class="navbar-wrapper pure-g pure-menu-fixed"></div> -->
+
+<!-- Splash image -->
+<!-- <div class="splash-wrapper">
+    <div class="splash">
+      <h1>News</h1>
+    </div>
+</div> -->
+
+<!-- Hill, content, footer -->
+<!-- <div class="content-wrapper">
+
+  <section> -->
+<!--     <div class="pure-g">
+      <div class="pure-u-1">
+          <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-2 center-align">
+              <a class="pure-button pure-button-md" href="calendar/">Calendar</a>
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2 center-align">
+              <a class="pure-button pure-button-md" href="announce/">Announce Archive</a>
+            </div>
+          </div>
+      </div>
+
+      <div class="pure-u-1">
+        <h2>For all the latest news</h2>
+      </div>
+
+      <div class="pure-u-1 pure-u-md-3-4 pure-offset-1-8" id="news-container">
+
+      </div>
+
+    </div> -->
+<!--   </section>
+
+  <footer class="pure-g" id="footer"></footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    loadNews();
+  });
+</script>
+
+</body>
+
+</html> -->
+
+
+
+<!-- UNCOMMENT THE ABOVE CODE TO GET THE ORIGINAL "NEWS TAB" CODE BACK -->
+<!-- CODE FOR CALENDAR PAGE-->
+
+
 <html>
 
 <head>
@@ -15,7 +109,7 @@
 <!-- Favicon -->
 <link rel="icon" href="/favicon.png" />
 
-<title>News | IEEE UIUC</title>
+<title>Calendar | IEEE UIUC</title>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -37,37 +131,22 @@
 <!-- Splash image -->
 <div class="splash-wrapper">
     <div class="splash">
-      <h1>News</h1>
+      <h1>Calendar</h1>
     </div>
 </div>
 
 <!-- Hill, content, footer -->
+  
 <div class="content-wrapper">
 
   <section>
-    <div class="pure-g">
-      <div class="pure-u-1">
-          <div class="pure-g">
-            <div class="pure-u-1 pure-u-md-1-2 center-align">
-              <a class="pure-button pure-button-md" href="calendar/">Calendar</a>
-            </div>
+    <!--<iframe class="desktopCalendar" src="https://calendar.google.com/calendar/embed?src=illinois.edu_qefgjbkun4bun6pe38h7ds009s%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>-->
+    
+   <iframe src="https://calendar.google.com/calendar/embed?src=illinois.edu_qefgjbkun4bun6pe38h7ds009s%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
-            <div class="pure-u-1 pure-u-md-1-2 center-align">
-              <a class="pure-button pure-button-md" href="announce/">Announce Archive</a>
-            </div>
-          </div>
-      </div>
-
-      <div class="pure-u-1">
-        <h2>For all the latest news</h2>
-      </div>
-
-      <div class="pure-u-1 pure-u-md-3-4 pure-offset-1-8" id="news-container">
-
-      </div>
-
-    </div>
-  </section>
+    <iframe class="mobileCalendar" src="https://calendar.google.com/calendar/embed?src=illinois.edu_qefgjbkun4bun6pe38h7ds009s%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    <!--<iframe class="mobileCalendar" src="https://calendar.google.com/calendar/embed?src=illinois.edu_qefgjbkun4bun6pe38h7ds009s%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  --></section>
 
   <footer class="pure-g" id="footer"></footer>
 
@@ -75,12 +154,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/assets/js/main.js"></script>
-
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function() {
-    loadNews();
-  });
-</script>
 
 </body>
 
