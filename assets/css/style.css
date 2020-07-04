@@ -655,7 +655,7 @@ label:hover :checked + .card {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-left: 10%
+	padding-left: 15%
 }
 
 /*////////////////////////////////////////////
