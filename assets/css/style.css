@@ -632,14 +632,6 @@ label:hover :checked + .card {
 	float:right;
 }
 
-.sm-logo{
-	background-color: rgb(255, 116, 0);	
-}
-
-.sm-logo:hover{
-	background-color:color: rgb(255, 116, 0)!important;
-}
-
 
 /* ----------->>> Spark <<<------------*/
 
