@@ -102,7 +102,7 @@ function sendResume($resumeName, $member_name) {
 
 	$mail->From = "resume@ieee.illinois.edu";
 	$mail->FromName = "IEEE UIUC Resume Mailer";
-	$mail->addAddress("ieee.uiuc1@gmail.com");
+	$mail->addAddress("ieee.uiuc@gmail.com");
 
 	$mail->Subject = "{$member_name}'s Resume";
 	$mail->Body = "Here is the resume of <b>{$member_name}</b>";
